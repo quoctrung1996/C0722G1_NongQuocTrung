@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th style="width: 20px"></th>
+        <th>From Currency</th>
+        <th style="width: 20px"></th>
+        <th>To Currency</th>
+        <th style="width: 10px"></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="text" id="1" style="width: 100px"></td>
+        <td></td>
+        <td>
+            <select id="2" style="width: 100px">               //nhớ thêm id vào
+                <option value="vnd">VND</option>               //phải có value
+                <option value="usd">USD</option>
+            </select>
+        </td>
+        <td></td>
+        <td>
+            <select id="3" style="width: 100px">       //id để liên kết với câu lệnh phia dưới
+                <option value="usd">USD</option>
+                <option value="vnd">VND</option>
+            </select>
+        </td>
+        <td></td>
+        <td>
+            <button type="button" onclick="Convert()">Convert</button>
+        </td>
+
+    </tr>
+</table>
+<p id="4"></p>    //để suất kết quả dưới bảng
+<script>
+    function Convert() {
+
+        let Amount = document.getElementById('1').value;       //chú ý phaỉ có value
+        let FC = document.getElementById('2').value;
+        let TC = document.getElementById('3').value;
+        let chuyen_doi;
+        if (FC == "vnd" && TC == "usd") {                      //  "vnd" dùng value của option
+            chuyen_doi = ("số tiền chuyển đổi là:" + Amount / 24000 +"$");
+        }else if(FC=="usd"&& TC=="vnd"){
+            chuyen_doi=("số tiền chuyển đổi là"+ Amount*24000+"đồng");
+        }
+        document.getElementById("4").innerHTML = chuyen_doi; //xuất ra
+    }
+</script>
+</body>
+
+</html>
