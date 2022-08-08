@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="1">
+<button onclick="nhapvao()">click</button>
+<p id="demo"></p>
+<script>
+    function nhapvao() {
+        let year = parseInt(document.getElementById('1').value);
+        if (year % 4 == 0 && year % 100 !== 0) {
+            // alert(year + ' là năm nhuận');
+            document.getElementById("demo").innerHTML = year + 'là năm nhuận'
+        } else if (year % 100 == 0 && year % 400 == 0) {
+            // alert(year + ' là năm nhuận');
+            document.getElementById("demo").innerHTML = year + 'là năm nhuận'
+        } else {
+            document.getElementById("demo").innerHTML = year + ' không phải là năm nhuận'
+        }
+    }
+</script>
+</body>
+</html>

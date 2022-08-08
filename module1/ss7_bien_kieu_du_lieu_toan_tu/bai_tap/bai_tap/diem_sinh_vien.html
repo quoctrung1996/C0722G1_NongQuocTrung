@@ -6,17 +6,17 @@
 </head>
 <body>
 <script>
-  vatly=prompt("nhập điểm vật lý");
-  hoahoc=prompt("nhập điểm hoa học");
-  sinhhoc=prompt("nhập điểm sinh học");
+ let vatly=prompt("nhập điểm vật lý");
+  let hoahoc=prompt("nhập điểm hoa học");
+ let sinhhoc=prompt("nhập điểm sinh học");
   // vatly=parseFloat(vatly);
   // hoahoc=parseFloat(hoahoc);
   // sinhhoc=parseFloat(sinhhoc);
-  let b=vatly*1+hoahoc*1+sinhhoc*1;//phải nhân với một
-  let a=b/3;
-  document.write("điểm trung bình ba môn="+a);
-  document.write("<br>");//xuống hàng cũng phải đặt trong này
-  document.write("tổng điểm 3 môn="+b);
+  let tong =vatly*1+hoahoc*1+sinhhoc*1;      //phải nhân với một
+  let diemTrungBinh =tong/3;
+  document.write("điểm trung bình ba môn="+diemTrungBinh);
+  document.write("<br>");                 //xuống hàng cũng phải đặt trong này
+  document.write("tổng điểm 3 môn="+tong);
 </script>
 </body>
 </html>
