@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+
+  // Bậc	Thu nhập tháng	    Số thuế phải nộp
+  // 1   	TN <= 5tr	        TN x 5%
+  // 2	    5tr < TN <= 10tr	TN x 10%
+  // 3	    10tr < TN <= 18tr	TN x 15%
+  // 4	    18tr < TN <= 32tr	TN x 20%
+  // 5	    32tr < TN <= 52tr	TN x 25%
+  // 6	    52tr < TN <= 80tr	TN x 30%
+  // 7	    TN > 80tr	        TN x 35%
+let TN=+prompt('thu nhập một tháng của bạn bao nhiêu triệu');
+if(TN>80){
+    alert('thuế thu nhập một tháng:'+ TN*0.35+'triệu')
+    alert('thuế thu nhập một năm:'+ 12*TN*0.35+'triệu')
+}else if(TN>52){
+    alert('thuế thu nhập một tháng:'+ TN*0.3+'triệu')
+    alert('thuế thu nhập một năm:'+ 12*TN*0.3+'triệu')
+}else if(TN>32){
+    alert('thuế thu nhập một tháng:'+ TN*0.25+'triệu')
+    alert('thuế thu nhập một năm:'+ 12*TN*0.25+'triệu')
+}else if(TN>18){
+    alert('thuế thu nhập một tháng:'+ TN*0.2+'triệu')
+    alert('thuế thu nhập một năm:'+ 12*TN*0.2+'triệu')
+}else if(TN>10){
+    alert('thuế thu nhập một tháng:'+ TN*0.15+'triệu')
+    alert('thuế thu nhập một năm:'+ 12*TN*0.15+'triệu')
+}else if(TN>5){
+    alert('thuế thu nhập một tháng:'+ TN*0.1+'triệu')
+    alert('thuế thu nhập một năm:'+ 12*TN*0.1+'triệu')
+}else {
+    alert('thuế thu nhập một tháng:' +  TN * 0.05+'triệu')
+    alert('thuế thu nhập một năm:' +  12 * TN * 0.05+'triệu')
+}
+</script>
+</body>
+</html>

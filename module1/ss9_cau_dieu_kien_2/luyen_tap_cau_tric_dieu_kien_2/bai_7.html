@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Bài 7: Giải phương trình bậc 2.
+  // ax2+bx+c=0
+  // denta=b2-4ac
+  let a=prompt('nhập a');
+  let b=prompt('nhập b');
+  let c=prompt('nhập c');
+  let delta=b*b-4*a*c;
+  if(delta<0){
+    alert('PT vô nghiệm')
+  }else {
+    if(delta>0){
+      alert('phương trình có nghiệm x1=' +(-b+Math.sqrt(delta))/(2*a))
+      alert('phương trình có nghiệm x2=' +(-b-Math.sqrt(delta))/(2*a))
+    }else {
+      alert('phương trình có nghệm kép x1=x2=' +-b/(2*a))
+    }
+
+  }
+</script>
+</body>
+</html>

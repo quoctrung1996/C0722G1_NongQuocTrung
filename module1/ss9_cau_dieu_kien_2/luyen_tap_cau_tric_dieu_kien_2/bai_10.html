@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Bài 10: Viết chương trình tính giá điện.
+
+  // Bậc 1 (0 đến 50kWh): 1.678 đồng/kWh
+  // Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh
+  // Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh
+  // Bậc 4 (201 đến 300 kWh): 2.536 đồng/kWh
+  // Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh
+  // Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh
+  let kiDien=+prompt('số kí điện đã dùng');
+  if(kiDien>400){
+    alert('tổng tiền điện:' +kiDien*2.927)
+  }else if(kiDien>300){
+    alert('tổng tiền điện:' +kiDien*2.834)
+  }else if(kiDien>200){
+    alert('tổng tiền điện:' +kiDien*2.536)
+  }else if(kiDien>100){
+    alert('tổng tiền điện:' +kiDien*2.014)
+  }else if(kiDien>50){
+    alert('tổng tiền điện:' +kiDien*1.734)
+  }else {
+    alert('tổng tiền điện:' +kiDien*1.678)
+  }
+
+
+</script>
+</body>
+</html>

@@ -9,21 +9,32 @@
 <!--Còn lại nếu số đó nhỏ hơn 0 thì hiển thị -1-->
 <!--Còn lại hiển thị 0-->
 <input type="text" id="demo">
-<button type="button" onclick="click();">Click</button>
+<button type="button" value="clickMe" onclick="click1();">clickMe</button>
 <p id="text"></p>
 <script>
-    function click() {
-        let number = parseInt(document.getElementById('demo').value);
+    function click1() {
+        let number = document.getElementById('demo').value;
+        number=parseInt(number);
         let thongBao;
         if (number == 0){
           thongBao = ("có giá trị bằng 0");
-        } else if (number > 0) {
-             thongBao = ("có giá trị lớn hơn 0");
-        } else {
+        } else if (number < 0) {
             thongBao = ("có giá trị nhỏ hơn 0");
+        } else {
+            thongBao = ("có giá trị lớn hơn 0");
         }
-        document.getElementById('text').innerHTML=thongBao;
+        document.getElementById("text").innerHTML=thongBao;
     }
 </script>
+<!--<script>-->
+<!--    let number=parseInt(prompt('nhập vào số bất kì:'))-->
+<!--    if (number==0){-->
+<!--        alert('có giá trị bằng 0');-->
+<!--    }else if (number>0){-->
+<!--        alert('có giá trị > 0');-->
+<!--    }else {-->
+<!--        alert('có giá trị < 0');-->
+<!--    }-->
+<!--</script>-->
 </body>
 </html>

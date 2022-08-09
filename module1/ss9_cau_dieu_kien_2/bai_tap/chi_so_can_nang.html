@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // bmi = weight / ( height ^ 2 )
+  let weight=parseFloat(prompt('nhap can nang :'));
+  let height=parseFloat(prompt('nhap chieu cao :'));
+  let bmi=weight/(height*height);
+  if (bmi < 18)
+    document.write("bạn bị thiếu cân");
+  else if (bmi < 25.0)
+    document.write("bạn bình thường");
+  else if (bmi < 30.0)
+    document.write("bạn bị thừa cân");
+  else
+    document.write("quá xui bạn đã béo phì,hu hu hu");
+
+</script>
+</body>
+</html>

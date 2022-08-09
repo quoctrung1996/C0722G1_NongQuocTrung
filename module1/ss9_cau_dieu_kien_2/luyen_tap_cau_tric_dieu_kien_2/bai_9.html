@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:
+    //         a,b,c > 0
+    // a + b > c
+    // b + c > a
+    // a + c > b
+    let canh1 = +prompt('nhập cạnh thứ nhất');
+    let canh2 = +prompt('nhập cạnh thứ hai');
+    let canh3 = +prompt('nhập cạnh thứ ba');
+    if ((canh1 || canh2 || canh3) < 0) {
+        alert('không phải là một tam giác ')
+    } else {
+        if ((canh1 + canh2 )> canh3) {
+            if ((canh2 + canh3) > canh1) {
+                if ((canh1 + canh3 )> canh2) {
+                    alert('là một tam giác')
+                } else {
+                    alert('không phải là một tam giác ')
+                }
+            } else {
+                alert('không phải là một tam giác ')
+            }
+        } else {
+            alert('không phải là một tam giác ')
+        }
+    }
+
+</script>
+</body>
+</html>
