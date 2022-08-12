@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt('nhập giá trị cạnh cho tam giác'))
+    let i, j;
+    let star;
+    let nbsp;
+    // for (i=1;i<6;i++){
+    //     star=star +'*';
+    //     document.write(star);
+    //     document.write('<br>');
+    // }
+
+    for (i = 1; i <= number; i++) {
+        star = '';
+        for (j = 1; j <= i; j++) {
+            star = star + '*';
+        }
+        document.write(star);
+        document.write('<br>');
+    }
+
+
+    document.write('<br>');
+    document.write('<br>');
+
+
+    // for (i = 1; i <=number; i++) {
+    //     star = '';
+    //     for (j = number; j >=1; j--) {
+    //         star = star + '*';
+    //     }
+    //     document.write(star);
+    //     document.write('<br>');
+    // }
+    for (i = number; i >= 1; i--) {
+        star = '';
+        for (j = 1; j <= i; j++) {
+            star = star + '*';
+        }
+        document.write(star);
+        document.write('<br>');
+    }
+
+    document.write('<br>');
+    document.write('<br>');
+
+    // nbsp = "";
+    // for (let i = 1; i <= number; i++) {
+    //     for (let j = number - i; j >= 1; j--) {
+    //         nbsp += "&nbsp;&nbsp;";
+    //     }
+    //     for (let j = 1; j <= i; j++) {
+    //         nbsp += "*"
+    //     }
+    //     nbsp += "<br>"
+    // }
+    // document.write(nbsp)
+      let result = "";
+      for ( i = 1; i <= number; i++) {
+          for (let j = 1; j<=number;j++) {
+              if (j<=(number-i)){
+                  result += "&nbsp;&nbsp;";
+              }else {
+                  result += "*";
+              }
+          }
+          result+="<br>"
+      }
+      document.write(result)
+    document.write('<br>');
+    document.write('<br>');
+
+    nbsp = "";
+    for (let i = 1; i <= number; i++) {
+        for (let j = 2; j <= i; j++) {
+            nbsp += "&nbsp;&nbsp;";
+        }
+        //nbsp += "*";
+        for (let j = 0; j <= number - i; j++) {
+            nbsp += "*";
+        }
+        nbsp += "<br>"
+    }
+    document.write(nbsp)
+</script>
+</body>
+</html>

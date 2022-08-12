@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+
+    let number1=0;
+    let number2=1;
+    let fibonacci;
+    let number3=number1+' '+number2+' ';
+    for (let i = 0; i < 18; i++) {
+        fibonacci = number1 + number2;
+        number1 = number2;
+        number2 = fibonacci;
+        number3=number3+fibonacci+' ';
+    }
+    document.write(number3);
+
+
+</script>
+</body>
+</html>

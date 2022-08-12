@@ -5,98 +5,115 @@
     <title>Title</title>
 </head>
 <body>
-<input type="text" id="out" >
 <table>
-    <tr >
-        <td><button onclick="nhap1()">1</button></td>
-        <td><button onclick="nhap2()">2</button></td>
-        <td><button onclick="nhap3()">3</button></td>
-        <td><button onclick="nhapCong()">+</button></td>
-    </tr>
     <tr>
-        <td><button onclick="nhap4()">4</button></td>
-        <td><button onclick="nhap5()">5</button></td>
-        <td><button onclick="nhap6()">6</button></td>
-        <td><button onclick="nhapTru()">-</button></td>
+        <td colspan="4"><input type="text></td>
     </tr>
-    <tr>
-        <td><button onclick="nhap7()">7</button></td>
-        <td><button onclick="nhap8()">8</button></td>
-        <td><button onclick="nhap9()">9</button></td>
-        <td><button onclick="nhapNhan()">*</button></td>
-    </tr>
-    <tr>
-        <td><button onclick="nhapXoa()">AC</button></td>
-        <td><button onclick="nhap0()">0</button></td>
-        <td><button onclick="nhapBang()">=</button></td>
-        <td><button onclick="nhapChia()">/</button></td>
-    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
 </table>
+
+<!--<table>-->
+<!--    <tr>-->
+<!--        <td colspan="4"><input type="text" id="window"></td>-->
+<!--    </tr>-->
+<!--    <tr >-->
+<!--        <td><input type="button" value="1" onclick="nhap1()"></td>-->
+<!--        <td><input type="button" onclick="nhap2()" value="2"></td>-->
+<!--        <td><button onclick="nhap3()">3</button></td>-->
+<!--        <td><input type="button" onclick="nhapCong()" value="+"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td><button onclick="nhap4()">4</button></td>-->
+<!--        <td><button onclick="nhap5()">5</button></td>-->
+<!--        <td><button onclick="nhap6()">6</button></td>-->
+<!--        <td><button onclick="nhapTru()">-</button></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td><button onclick="nhap7()">7</button></td>-->
+<!--        <td><button onclick="nhap8()">8</button></td>-->
+<!--        <td><button onclick="nhap9()">9</button></td>-->
+<!--        <td><button onclick="nhapNhan()">*</button></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td><button onclick="Xoa()">AC</button></td>-->
+<!--        <td><button onclick="nhap0()">0</button></td>-->
+<!--        <td><button onclick="Bang()">=</button></td>-->
+<!--        <td><button onclick="nhapChia()">/</button></td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+<!--<script>-->
+// function nhap1(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '1';
+//}
+// function nhap(so){
+//     document.getElementById('out').value+=so;
+//     //document.getElementById('out').value=eval(so);
+
+// function nhap3(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '3';
+// }
+//  function nhapCong(){
+//     let nhap=document.getElementById('windou').value;
+//     document.getElementById('windou').value=nhap+ '+';
+//  }
+// function nhap4(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '4';
+// }
+// function nhap5(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '5';
+// }
+// function nhap6(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '6';
+// }
+// function nhapTru(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '-';
+// }
+// function nhap7(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '7';
+// }
+// function nhap8(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '8';
+// }
+// function nhap9(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '9';
+// }
+// function nhapNhan(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '*';
+// }
+//function Xoa(){
+   // let nhap=document.getElementById('out').value;
+   // document.getElementById('out').value= "";
+ //}
+// // function nhap0(){
+// //     let nhap=document.getElementById('out').value;
+// //     document.getElementById('out').value=nhap+ '0';
+// // }
+ function Bang(){
+    let bieuThuc=document.getElementById('windou').value;
+    let ketQua=eval(bieuThuc);
+    document.getElementById('windou').value=ketQua;
+ }
+// function nhapChia(){
+//     let nhap=document.getElementById('out').value;
+//     document.getElementById('out').value=nhap+ '/';
+// }
+function nhap(trung) {
+    // a =a+1 => a+=1
+    document.getElementById('windou').value += trung;
+}
 </body>
-<script>
-function nhap1(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '1';
-}
-function nhap2(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '2';
-}
-function nhap3(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '3';
-}
-function nhapCong(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '+';
-}
-function nhap4(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '4';
-}
-function nhap5(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '5';
-}
-function nhap6(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '6';
-}
-function nhapTru(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '-';
-}
-function nhap7(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '7';
-}
-function nhap8(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '8';
-}
-function nhap9(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '9';
-}
-function nhapNhan(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '*';
-}
-function nhapXoa(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value= "";
-}
-function nhap0(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '0';
-}
-function nhapBang(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=eval(nhap);
-}
-function nhapChia(){
-    let nhap=document.getElementById('out').value;
-    document.getElementById('out').value=nhap+ '/';
-}
-</script>
 </html>

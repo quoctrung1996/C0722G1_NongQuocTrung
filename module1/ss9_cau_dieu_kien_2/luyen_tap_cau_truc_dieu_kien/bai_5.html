@@ -6,20 +6,20 @@
 </head>
 <body>
 <script>
-  // Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
-  let kietTra=+prompt('điểm kiêm tra');
-  let giuaKy=+prompt('điểm giữa kì');
-  let cuoiKy=+prompt('điểm cuối ki');
-  let point=(kietTra+giuaKy*2+cuoiKy*3)/6
-  if(point>=8){
-      alert('gioi')
-  }else if(point>=6.5){
-      alert('khá')
-  }else if(point>=5){
-      alert('trung bình')
-  }else {
-      alert('yếu')
-  }
+    // Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+    let kietTra = +prompt('điểm kiêm tra');
+    let giuaKy = +prompt('điểm giữa kì');
+    let cuoiKy = +prompt('điểm cuối ki');
+    let point = (kietTra + giuaKy * 2 + cuoiKy * 3) / 6
+    if (point >= 8) {
+        alert('gioi')
+    } else if (point >= 6.5) {
+        alert('khá')
+    } else if (point >= 5) {
+        alert('trung bình')
+    } else {
+        alert('yếu')
+    }
 </script>
 </body>
 </html>

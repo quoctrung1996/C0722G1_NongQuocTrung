@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 4: In hình chữ nhật
+    let chieuDai = +prompt('nhập chiều dài hình chữ nhật');
+    let chieuRong = +prompt('nhap chiều rong hinh chu nhat');
+    let i, j;
+    let cout = '';
+    for (i = 1; i <= chieuRong; i++) {
+        for (j = 1; j <= chieuDai; j++) {
+            if (i === 1 || i === chieuRong) {
+                cout += '*';
+            } else {
+                if(j===1||j===chieuDai){
+                    cout+='*';
+                }else {
+                 cout += "&nbsp;&nbsp;";}
+            }
+        }cout=cout+'<br>';
+    }
+    document.write(cout);
+</script>
+</body>
+</html>
