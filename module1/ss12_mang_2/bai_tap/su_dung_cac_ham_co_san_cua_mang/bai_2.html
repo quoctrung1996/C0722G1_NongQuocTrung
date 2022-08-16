@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn. Ví dụ nếu bạn
+    // nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.
+     let a=[];
+    let num=+prompt('nhap phan tu cho mang');
+    for (let i = 0; i < num; i++) {
+        let number=+prompt('nhập phần tử thứ '+i);
+        a[i]=number;
+    }
+    for (let i = 1; i < a.length; i++) {
+        if(a[i]%2==0&&a[i-1]%2==0){
+            a[i-1]=a[i-1]+'-';
+        }
+    }
+    document.write(a.join(''));
+
+</script>
+</body>
+</html>
