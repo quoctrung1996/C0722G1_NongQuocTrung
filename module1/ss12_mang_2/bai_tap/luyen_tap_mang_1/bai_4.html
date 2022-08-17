@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+  function bai4() {
+    let number = parseInt(prompt('nhập phần tử cho mảng'));
+    let a = [];
+    for (let i = 0; i < number; i++) {
+      let num = parseInt(prompt('nhập phần tử thứ ' + i));
+      a[i] = num
+    }
+    document.write(a.reverse());
+  }
+
+  bai4();
+</script>
 </body>
 </html>

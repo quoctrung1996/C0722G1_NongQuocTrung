@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title></title>
 </head>
 <body>
-$END$
+<script>
+    let a1 = [];//khai bao mang
+    let a2 = new Array();
+    let a3 = Array();
+    a1 = [3, 4, 5,]//gan gia tri cho mang
+    //gop khai bao va gan gia tri luon
+    let b = new Array(1, 2, 3, 4,);
+    let b1 = [3, 4, 5, 6, 7.34325];
+
+    //truy xuat,lay du lieu ra,gan gia tri
+    document.writeln(a1[0]);
+    a1[0] = 100;
+    document.writeln(a1[0]);
+
+    //duyet mảng
+    document.write(a1[0]);
+    document.write(a2[1]);
+
+    for (let i = 0; i < a1.length; i++) {
+        document.write(a1[i]);
+    }
+    //cu phap for/in
+    //dang sau in la mang
+    //tương đương câu lệnh for phía trên
+    for (const key in a1) { //const thay bằng let hay var đều được
+        document.write(a1[key]);
+    }
+</script>
 </body>
 </html>

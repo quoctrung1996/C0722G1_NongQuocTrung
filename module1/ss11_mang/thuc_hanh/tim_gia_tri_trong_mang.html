@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // Viết một chương trình JavaScript để tìm một giá tri được nhập vào từ hộp thoại có nằm trong mảng hay không. Nếu có in ra vị trí của phần tử đó.
+  let number=+prompt('nhập vào số bất kì');
+  let a=[1,2,3,4,5,6,7,8,9,0];
+  for (let i = 0; i < a.length; i++) {
+    if (a[i]==number){
+      document.write(number +' nằm trong mảng tại vị trí thứ '+i);
+    }
+  }
+</script>
 </body>
 </html>

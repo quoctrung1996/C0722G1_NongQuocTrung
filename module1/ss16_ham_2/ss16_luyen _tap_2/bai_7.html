@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+  function changeNumber(arr){
+    let num=arr[0];
+    arr[0]=arr[1];
+    arr[1]=num;
+    return arr;
+  }
+  let arr=[];
+   arr[0]=+prompt('nhập số thứ nhât');
+   arr[1]=+prompt('nhâp số thứ hai');
+  document.write(changeNumber(arr));
+</script>
+</body>
+</html>

@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+
+    //    if (typeof 'a'=='string'){
+    //        alert(true)
+
+    // let a=[1,'y'];
+    // if (typeof a[0]=='number'){
+    //     alert(true)
+    // }
+
+
+    //Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.
+    function bai3() {
+        let number = parseInt(prompt('nhập kích thước của mảng'));
+        let mang = [];
+        let kiTu = 0;
+        let so = 0;
+        let daySo=[1,2,3,4,5,6,7,8,9,0];
+        for (let i = 0; i < number; i++) {
+            let giaTri = prompt('nhập phần tử thứ ' + i + ' cho mảng');
+            mang[i] = giaTri;
+        }
+
+        // document.write(mang+'<br>');
+        // for (let j = 0; j < mang.length; j++) {
+        //     if (mang[j]!=''){
+        //         kiTu++;
+        //     }
+       // }
+        for (let i = 0; i < daySo.length; i++) {
+            for (let j = 0; j < mang.length; j++) {
+                if (daySo[i]==mang[j]) {
+                    so++;
+                }
+            }
+        }
+
+        document.write('có '+(mang.length-so)+' kí tự'+'<br>')
+        document.write('có '+so+' số')
+    }
+
+    bai3();
+</script>
 </body>
 </html>

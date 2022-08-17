@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function bai6() {
+        // Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.Chương trình tìm xem
+        // V có nằm trong mảng sốnguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+        let mang = [];
+        let count=0;
+        for (let i = 0; i < 10; i++) {
+            let number = parseInt(prompt('nhâp phần tử thứ ' + i));
+            mang[i] = number;
+        }
+        document.write(mang + '<br>');
+        let V = parseInt(prompt('nhập 1 số yêu thích'));
+        for (let j = 0; j < mang.length; j++) {
+            if (V === mang[j]) {
+                count++;
+            }
+        }
+        if(count>=1){
+            document.write(V+' nằm trong mảng');
+        }else {
+            document.write(V+' không nằm trong mảng');
+        }
+    }
+
+    bai6();
+</script>
 </body>
 </html>

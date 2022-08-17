@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    //         Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+    function bai2() {
+        let mang = [2, 4, 8, -9, 45, 124, 67, 0, -67, 123];
+        let max = mang[0];
+        let number = 0;
+        for (let i = 1; i < mang.length; i++) {
+            if (mang[i] >= max) {
+                max = mang[i];
+                number = i;
+            }
+        }
+        document.write('giá trị lớn nhất ' + max + ' tại vị trí ' + number);
+    }
+
+    bai2();
+</script>
 </body>
 </html>

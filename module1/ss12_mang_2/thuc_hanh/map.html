@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var a =[
+        {
+           'id':1,
+            'name':'trung'
+        },
+        {
+            'id':2,
+        'name':'kha'
+        }
+    ]
+    var b=a.map(function (c) {
+        if (c.id ==1) {
+            c.name = 'anh đây'
+        }
+        return c
+    })
+    console.log(b);
+</script>
 </body>
 </html>

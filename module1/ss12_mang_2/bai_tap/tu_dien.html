@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<label>Nhập từ:</label>
+<input type="text" id="check">
+<input type="button" onclick="timKiem();" value="tìm kiếm">
+<div id="out"></div>
+<script>
+    // Bước 1: Tạo một trang web với một form đơn giản cho phép người dùng nhập từ cần tìm kiếm.
+    //
+    //     Bước 2: Viết mã Javascript
+    //
+    // Tạo 2 mảng có độ dài bằng nhau để lưu trữ danh sách các từ. Mảng 1 lưu trữ các từ tiếng Anh, mảng 2 lưu trữ các từ tiếng Việt tương ứng.
+    //     Khi tìm kiếm, tìm vị trí của từ tiếng Anh trong mảng 1. Nếu tìm thấy thì hiển thị từ tiếng Việt ở cùng vị trí trong mảng 2.
+    // Nếu không tìm thấy thì hiển thị thông báo không tìm thấy.
+    let mang1 = ["banana", "apple", "orange", "pen", "pencil", "book", "i love you"];
+    let mang2 = ["chuối", "táo", "cam", "bút", "bút chì", "sách", "anh yêu em"];
+
+    function timKiem() {
+        let a = document.getElementById('check').value;
+        for (let i = 0; i < mang2.length; i++) {
+            if (a === mang2[i]) {
+                a = mang1[i];
+            }
+        }
+        document.getElementById('out').innerHTML = a;
+    }
+</script>
 </body>
 </html>

@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+    // •Phương thức shift() để xóa phần tử vào đầu mảng
+    // •Phương thức unshift() để nối phần tử đầu tiên của mảng
+
+    //phương thức tostring:
+    //     •Phương thức chuyển toàn bộ các phần tử trong mảng sang
+    // dạng chuỗi
+
+
+    let a = [1, 4, 5, 6];
+    let b = ['c', 'a', 'g']
+    let c
+    a.push(2);   //them phan tu vao cuoi mang
+    a[5]=10;
+    a.reverse(); //dao nguoc phan tu
+    b.sort(); //sap xep theo thu tu
+
+    //nối các pần tử lại với nhau
+    a = a.concat(-1, -4);
+    b = b.concat('i', 'j');
+    c = a.concat(b)
+
+    document.write(a + '<br>');
+    document.write(b + '<br>');
+    document.write(c)
+</script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function footToMeter(foot){
+    var chuyen=foot*0.305;
+    return chuyen;
+  }
+  let feet =+prompt('nhập feet');
+  document.write('meter là '+footToMeter(feet)+'<br>');
+  function  meterToFoot(meter){
+    var chuyen=3.279 * meter;
+    return chuyen;
+  }
+  let meter =+prompt('nhập meter');
+  document.write('feet là '+meterToFoot(meter));
+</script>
+</body>
+</html>

@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a = [];
+
+    function nhapMang() {
+        let number = parseInt(prompt('mời bạn nhập số lượng phần tử'));
+        for (let i = 0; i < number; i++) {
+            let num = parseInt(prompt('nhập giá trị cho phần tử thứ ' + i));
+            //thêm phần tử vào mảng a
+            a[i]=num  // == a.push(num);
+        }
+        document.write(a);
+    }
+        nhapMang();
+
+
+</script>
 </body>
 </html>

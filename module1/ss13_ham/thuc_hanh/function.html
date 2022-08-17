@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  function cong(a,b){
+    return a+b;
+    console.log('alo');//dòng lệnh không được thực hiện
+    alert('f');        //dòng lệnh không được thực hiện
+  }
+  var tong=cong(2,8);
+  var tong2=cong(3,5);
+  document.write(tong)
+  document.write(tong2)
+</script>
 </body>
 </html>

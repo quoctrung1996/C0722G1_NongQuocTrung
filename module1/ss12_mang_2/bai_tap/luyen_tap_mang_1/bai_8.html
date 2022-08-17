@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+    //         Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+    function bai8() {
+        let mang = [];
+        for (let i = 0; i < 10; i++) {
+            let number = parseInt(prompt('nhâp phần tử thứ ' + i));
+            mang[i] = number;
+        }
+
+        mang.sort((mang, b) => b - mang);//hàm có sẵn
+        document.write(mang);
+    }
+
+    bai8();
+</script>
 </body>
 </html>

@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // Bài 4: Viết một chương trình để đếm số từ trong một chuỗi
+    function bai4() {
+        // let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        // let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        // let chuoi = 'Viet mot chuong trinh de dem so tu trong mot chuoi';
+        // let count = 0;
+        // for (let i = 0; i < chuoi.length; i++) {
+        //     if (LOWER.indexOf(chuoi[i])!==-1||UPPER.indexOf(chuoi[i])!==-1) {
+        //         count++
+        //     }
+        // }
+        // document.write(count)
+
+        let chuoi = prompt('nhập vào 1 chuỗi ');
+        let mang = chuoi.split(' ');
+console.log(mang)
+        let count = 0;
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i] != '') {
+                count++;
+            }
+        }
+        document.write('số từ trong 1 chuỗi:' +
+            ' ' + count);
+    }
+
+    bai4();
+</script>
 </body>
 </html>

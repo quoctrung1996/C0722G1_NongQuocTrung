@@ -12,7 +12,7 @@
   let month=parseFloat(prompt('số tháng cho vay'));
   let laiSuat=parseFloat(prompt('lãi suất cho vay hàng tháng'));
   for(i=1;i<=month;i++){
-      money=money+money*(laiSuat/100);
+      money+=money*(laiSuat/100);
   }
   document.write('số tiền sau '+month+' tháng là '+money);
 </script>

@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+    function bai5() {
+        let chuoi1 = [];
+        let chuoi2=[];
+        let count = 0;
+        for (let i = 0; i < 5; i++) {
+            let num1 = +prompt('nhập phần tử cho chuỗi 1');
+            chuoi1.push(num1);
+        }
+        for (let i = 0; i < 5; i++) {
+            let num2 = +prompt('nhập phần tử cho chuỗi 2');
+            chuoi2.push(num2);
+        }
+        for (let i = 0; i < 5; i++) {
+            if (chuoi1.length === chuoi2.length) {
+                if (chuoi1[i] !== chuoi2[i]) {
+                    count++;
+                }
+            }else {
+                document.write('hai chuỗi khác nhau');
+            }
+        }
+        if (count==0){
+            document.write('hai chuỗi giống nhau');
+        }else {
+            document.write('hai chuỗi khác nhau');
+        }
+    }
+    bai5();
+</script>
 </body>
 </html>

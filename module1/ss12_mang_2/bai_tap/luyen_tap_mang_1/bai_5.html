@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi
+  function bai5(){
+let mang=[-1,-2,-3,-4,-5,-6,1,3,4,2,4,5,-10]
+    let count=0;
+    for (let i = 0; i < mang.length; i++) {
+      if(mang[i]<0){
+        count++
+      }
+    }
+    document.write('có '+count+' số nguyên âm')
+  }
+  bai5();
+</script>
 </body>
 </html>

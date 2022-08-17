@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+    //       Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+
+    function kiemTra(mang) {
+        let count = 0;
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i] == kyTu)
+                count++;
+        }
+        if (count != 0) {
+            return count;
+        } else {
+            return -1;
+        }
+    }
+
+    let number = prompt('nhập độ dài mảng');
+    let mang = [];
+    for (let i = 0; i < number; i++) {
+        mang[i] = prompt('nhập phần tử thứ' + (i + 1));
+    }
+    let kyTu = prompt('nhập 1 ký tự');
+    document.write(kiemTra(mang));
+
+</script>
+</body>
+</html>
