@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    class NhietDo {
+        constructor(doC) {
+            this.doC = doC;
+        }
+
+        tinhDoF() {
+            document.writeln('độ F: ' + (9 / 5 * this.doC + 32)+'<br>')
+        }
+
+        tinhDoK() {
+            document.writeln('độ K: ' + (this.doC + 273.15)+'<br>');
+        }
+
+        setDoC(doC) {
+            this.doC = doC;
+        }
+    }
+
+    let nhietDo = new NhietDo(25);
+    document.write('nhiệt độ: '+nhietDo.doC+'<br>');
+    nhietDo.tinhDoF();
+    nhietDo.tinhDoK();
+    nhietDo.setDoC(30);
+    document.write('nhiệt độ: '+nhietDo.doC+'<br>');
+    nhietDo.tinhDoF();
+    nhietDo.tinhDoK();
+</script>
 </body>
 </html>

@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function kiemTraDoiXung(arr) {
+        for (let i = 0; i < arr.length / 2; i++) {
+            if (arr[i] != arr[arr.length - 1 - i]) {
+                return false
+            }
+        }
+        return true
+    }
+
+    let arr1 = [1, 2, 3, 3, 2, 0];
+    let arr2 = [1, 2, 3, 2, 2, 1];
+    let arr3 = ['a', 'b', 'c', 'c', 'b', 'a'];
+    alert(kiemTraDoiXung(arr1));
+    alert(kiemTraDoiXung(arr2));
+    alert(kiemTraDoiXung(arr3));
+</script>
 </body>
 </html>

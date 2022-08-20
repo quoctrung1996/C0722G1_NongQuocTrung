@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // function student(id,name,address){
+  //   this.id=id;
+  //   this.name=name;
+  //   this.address=address;
+  //   this.getInfor=function (){
+  //     return 'id='+this.id+'name='+this.name+'address='+this.address;
+  //   }
+  // }
+  // var student=new student(1,'nông quốc trung','daklak');
+  //
+  var student={
+    id:1,
+    name:'nong quoc trung',
+    address:'daklak',
+    getInfor:function (){
+        return 'id='+this.id+'name='+this.name+'address='+this.address;
+    }
+  }
+  alert(student.name);
+  alert(student.getInfor());
+</script>
 </body>
 </html>

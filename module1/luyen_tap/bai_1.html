@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+ // 1. Viết 1 hàm nhận vào 1 số nguyên bất kì. Hiển thị các số KHÔNG phải số nguyên tố từ 0 đến số đấy.
+ function khongPhaiLaSNT(number){
+   if(number<2){
+     return true
+   }
+   for (let i = 2; i <= Math.sqrt(number); i++) {
+     if(number%i===0){
+       return true;
+     }
+   }
+   return false;
+ }
+ let num=parseInt(prompt('nhập vào số nguyên bất kì'))
+ for (let i = 0; i < num; i++) {
+   if(khongPhaiLaSNT(i)){
+     document.write(i+'<br>');
+   }
+ }
+</script>
 </body>
 </html>

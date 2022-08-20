@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // 3. Viết 1 hàm nhận vào 1 số nguyên duy nhất hàm trả về mảng số nguyên từ 0 đến số được truyền vào và phải thỏa mãn 2 yêu cầu:
+    //         thứ nhất số đó thuộc dãy fibonacci , thứ 2 số đó phải là số nguyên tố. In ra mảng đấy.
+    function timSoNguyenTo(number) {
+        if (number < 2)
+            return false;
+        for (let i = 2; i < Math.sqrt(number); i++) {
+            if (number % i == 0)
+                return false
+        }
+        return number;
+    }
+
+    function timSoFibonacci(number) {
+        let num1 = 0;
+        let num2 = 1;
+        let sum = 0;
+        for (let i = 0; i < number; i++) {
+            sum = num1 + num2;
+            num1 = num2;
+            num2 = sum;
+            if (sum == number) {
+                return number;
+            }
+        }
+    }
+
+    let arr = [];
+    let number = parseInt(prompt('nhập vào 1 số'));
+    for (let i = 0; i < number; i++) {
+        if (timSoNguyenTo(i) == timSoFibonacci(i)) {
+            arr.push(i);
+        }
+    }
+    document.write(arr.join(' '));
+
+</script>
 </body>
 </html>

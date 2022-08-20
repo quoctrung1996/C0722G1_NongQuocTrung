@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getArea() {
+            document.write('diện tích ' + this.width * this.height + '<br>');
+        }
+
+        getPerimer() {
+            document.write('chu vi ' + (this.width + this.height) * 2 + '<br>');
+        }
+
+        getInfor() {
+            document.write('hình chữ nhật có chiều dài: ' + this.height + ',' + ' chiều rộng: ' + this.width + '<br>');
+        }
+
+        setWidth(width) {              //set
+            return this.width = width;
+        }
+
+        setHeight(height) {
+            return this.height = height;
+        }
+    }
+
+    let rectangle = new Rectangle(10, 20);
+    //let rectangle2=new Rectangle(15,20);
+    rectangle.getInfor();
+    rectangle.getArea();
+    rectangle.getPerimer();
+    rectangle.setWidth(20);
+    rectangle.setHeight(30);
+    rectangle.getInfor();
+    rectangle.getArea();
+    rectangle.getPerimer();
+
+</script>
 </body>
 </html>

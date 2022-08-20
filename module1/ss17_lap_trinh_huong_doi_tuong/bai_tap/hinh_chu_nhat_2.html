@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  class HinhChuNhat{
+    constructor(dai,rong) {
+      this.dai=dai;
+      this.rong=rong;
+    }
+    thongTin(){
+      return 'chiều dài: '+this.dai+',chiều rộng: '+this.rong;
+    }
+    dienTich(){
+      return this.dai*this.rong;
+  }
+  chuVi(){
+      return (this.dai+this.rong)*2;
+  }
+  }
+  let hinhChuNhat=new HinhChuNhat(10,20);
+  alert(hinhChuNhat.thongTin());
+  alert(hinhChuNhat.dienTich());
+  alert(hinhChuNhat.chuVi());
+</script>
 </body>
 </html>

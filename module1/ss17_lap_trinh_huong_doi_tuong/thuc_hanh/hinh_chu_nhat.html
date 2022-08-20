@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  //khai báo lớp cách 1
+  let Retangle=function (width, height){
+    //khai báo thuộc tính
+    this.width=width;
+    this.height=height;
+    
+    //khai báo phương thức
+    this.getArea=function () {
+      return this.width*this.height;
+    }
+
+    this.getPerimer= function(){
+      return (this.height+this.width)*2;
+    }
+  }
+
+  //khai báo lớp cách 2
+  class Rectangle2{
+    //khởi tạo
+    constructor(width,height) {
+      this.width=width;
+      this.height=height;
+        this.getArea=function () {
+            return this.width*this.height;
+        }
+
+        this.getPerimer= function(){
+            return (this.height+this.width)*2;
+        }
+    }
+  }
+  //tạo đối tượng mới dùng từ khóa new
+  let hinhChuNhat1=new Retangle(20,15)
+  let hinhChuNhat2=new Rectangle2(20,15)
+  document.write(hinhChuNhat1.getArea());
+  document.write(hinhChuNhat2.getArea());
+  document.write(hinhChuNhat1.getPerimer());
+  document.write(hinhChuNhat2.getPerimer());
+</script>
 </body>
 </html>
