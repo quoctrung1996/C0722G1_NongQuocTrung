@@ -1,10 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  class Tao {
+    constructor() {
+      this.khoiLuong = 10;
+    }
+  }
+
+  class ConNguoi {
+    constructor(ten, gioiTinh, canNang) {
+      this.ten = ten;
+      this.gioiTinh = gioiTinh;
+      this.canNang = canNang;
+      this.loiNoi = "";
+    }
+
+    thongTin() {
+      return this.ten + ", " + this.gioiTinh + ", " + this.canNang;
+    }
+
+    noi(loiNoi) {
+      this.loiNoi = loiNoi;
+      console.log(this.loiNoi);
+    }
+
+    anTao(tao) {
+      if (tao.khoiLuong > 0) {
+        this.canNang++;
+        tao.khoiLuong--;
+      }
+    }
+
+    kiemTraTao(tao) {
+      this.noi('Khối lượng quả táo là: ' + tao.khoiLuong);
+    }
+
+    kiemTraCanNang() {
+      console.log("Khối lượng sau khi ăn: " + this.canNang);
+    }
+
+  }
+
+  let tao1 = new Tao();
+  let adam = new ConNguoi("Adam", "nam", 100);
+  let eva = new ConNguoi("Eva", "nữ", 50);
+  adam.kiemTraTao(tao1);
+  console.log(eva.thongTin());
+  console.log(adam.thongTin());
+  // adam.anTao(tao1);
+  // console.log(tao1.khoiLuong);
+  // console.log(adam.canNang);
+
+  while (tao1.khoiLuong > 0) {
+    adam.anTao(tao1);
+    adam.kiemTraTao(tao1);
+    adam.kiemTraCanNang();
+    if(tao1.khoiLuong <=0){
+      adam.noi("hết táo rồi !");
+      break;
+    }
+    eva.anTao(tao1);
+    eva.kiemTraTao(tao1);
+    eva.kiemTraCanNang();
+    if(tao1.khoiLuong <=0){
+      adam.noi("hết táo rồi!!z")
+    }
+  }
+</script>
 </body>
 </html>

@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // 5. Xây dựng 1 hàm nhận vào 1 mảng số nguyên và 1 số nguyên number bất kì. Hàm trả về 1 mảng thỏa mãn điều kiện sau:
+    //         •	Nếu number là số lẻ, thì tất cả số chẵn trong mảng sẽ tăng lên 1 đơn vị.Ngược lại nếu number là số chẵn thì
+    // tất cả số lẻ trong mảng tăng lên 1 đơn vị. Ngoài ra tất cả các số trong mảng trùng với number sẽ được đổi thành -1.
+    let arr = new Array(5);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = parseInt(prompt('nhập phần tử thứ' + i));
+    }
+    let number = +prompt('nhập số nguyên bất kì');
+
+    document.write('trước khi thay đổi: '+arr+'<br>');
+    document.write('số nguyên nhập vào: '+number+'<br>')
+
+    function display(arr) {
+
+        if (number % 2 != 0) {
+            for (let i = 0; i < arr.length; i += 2) {
+                arr[i] = arr[i] + 1;
+            }
+        } else {
+            for (let i = 1; i < arr.length; i += 2) {
+                arr[i] = arr[i] + 1;
+
+            }
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == number) {
+                arr[i] = -1;
+            }
+        }
+        document.write('sau khi thay đổi: '+arr+'<br>');
+    }
+    display(arr);
+</script>
 </body>
 </html>

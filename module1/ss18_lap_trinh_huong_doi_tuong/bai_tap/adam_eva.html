@@ -1,10 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    //cái nào có void là không return;
+    class Tao {
+        constructor(khoiLuong) {
+            this.khoiLuong = khoiLuong;
+        }
+
+        giam() {
+            this.khoiLuong--;
+        }
+
+        daHet() {
+            if (this.khoiLuong < 1) {
+                document.write('hết táo' + '<br>');
+            } else {
+                document.write('vẫn còn táo' + '<br>');
+            }
+        }
+
+        layKhoiLuong() {
+            return this.khoiLuong;
+        }
+    }
+
+    class ConNguoi {
+        constructor(ten, gioiTinh, canNang) {
+            this.ten = ten;
+            this.gioiTinh = gioiTinh;
+            this.canNang = canNang;
+        }
+
+        ganGioiTinh(gioiTinhMoi) {
+            this.gioiTinh = gioiTinhMoi;
+        }
+
+        anTao(tao) {
+            if (tao.layKhoiLuong() > -1) {
+                this.canNang++;
+                //tao.giam();
+            }
+        }
+
+        noiChuyen(loiNoi) {
+            this.loiNoi = loiNoi;
+        }
+
+        layTen() {
+            return this.ten;
+        }
+
+        ganTen(ten) {
+            this.ten = ten;
+        }
+
+        layCanNang() {
+            return this.canNang;
+        }
+
+        ganCanNang(canNang) {
+            this.canNang = canNang;
+        }
+    }
+
+    let tao1 = new Tao(10);
+    let nguoi1 = new ConNguoi('ADAM', 'Male', 70);
+    let nguoi2 = new ConNguoi('EVA', 'Female', 50);
+
+    for (let i = 0; i < 5; i++) {
+        document.write(nguoi1.layTen() + ' ăn táo' + '<br>');
+        tao1.giam();
+        tao1.daHet();
+        document.write('quả táo còn ' + tao1.layKhoiLuong() + ' đơn vị' + '<br>')
+        nguoi1.anTao(tao1);
+        document.write('cân nặng của ADAM là' + nguoi1.layCanNang() + '<br>' + '<br>');
+        document.write(nguoi2.layTen() + ' ăn táo' + '<br>');
+        tao1.giam();
+        tao1.daHet();
+        document.write('quả táo còn ' + tao1.layKhoiLuong() + ' đơn vị' + '<br>')
+        nguoi2.anTao(tao1);
+        document.write('cân nặng của EVA là' + nguoi2.layCanNang() + '<br>' + '<br>');
+    }
+    // Eva ăn táo
+    // Quả táo còn:8 đơn vị
+    // Cân nặng là: 56 đơn vị
+    // Adam ăn táo
+    // Quả táo còn:7 đơn vị
+    // Cân nặng của Adm là: 67 đơn vị
+
+</script>
 </body>
 </html>

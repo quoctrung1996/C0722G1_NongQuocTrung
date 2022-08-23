@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    class DanhSachXeMay{
+        constructor(bienSoXe,hoTen,cmnd,hangXe,phiGuiXe) {
+            this.bienSoXe=bienSoXe;
+            this.hoTen=hoTen;
+            this.cmnd=cmnd;
+            this.hangXe=hangXe;
+            this.phiGuiXe=phiGuiXe;
+        }
+        thongTin(){
+            document.write('biển số: '+this.bienSoXe+'<br>'+'Họ Tên: '+this.hoTen+'<br>'+
+            'Chứng minh nhân dân: '+this.cmnd+'<br>'+'Hãng xe: '+ this.hangXe+'<br>'+'phí gửi xe: '+this.phiGuiXe);
+        }
+
+    }
+    let danhSach=new DanhSachXeMay('47M1-33288','Nông Quốc Trung',123456789,'Yamaha',300000)
+    danhSach.thongTin();
+</script>
 </body>
 </html>

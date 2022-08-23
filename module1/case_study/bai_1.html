@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m theo hình dưới đây.
+  //         Ví dụ: x = 4, y = 5
+  //         * * * * *
+  //         *       *
+  //         *       *
+  //         * * * * *
+
+  let star='';
+  for (let x = 0; x < 4; x++) {
+    for (let y=0;y<5;y++){
+      if(x==0||x==3||y==0||y==4){
+        star=star+'*';
+      }else {
+          star=star+'&nbsp&nbsp';
+      }
+    }
+    star=star+'<br>';
+  }
+  document.write(star)
+
+</script>
 </body>
 </html>

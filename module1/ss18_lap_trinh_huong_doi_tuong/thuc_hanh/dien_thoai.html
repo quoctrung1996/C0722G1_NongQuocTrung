@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // class Mobile{
+  //   constructor(id,name) {
+  //     this.id=id;
+  //     this.name=name;
+  //     this.message='';
+  //   }
+  //   setMessage(message){
+  //     this.message=message;
+  //   }
+  //   getMessage(){
+  //     return this.message;
+  //   }
+  //   sendMessage(message,mobile){
+  //     mobile.setMessage(message);
+  //   }
+  // }
+  // let iphone=new Mobile(1,'iphone');
+  // let android=new Mobile(2,'samsung');
+  // iphone.sendMessage('gửi tin nhắn từ iphone',android);
+  // let message=android.getMessage();
+  // document.write(message);
+  class Mobile{
+      constructor(id,name) {
+          this.id=id;
+          this.name=name;
+          this.message='';
+      }
+      setMesssage(message){
+          this.message=message;
+      }
+      getMessage(){
+          return this.message;
+      }
+      sendMessage(message,mobile){
+          mobile.setMesssage(message);
+      }
+  }
+  let iphone=new Mobile(1,'iphone');
+  let android=new Mobile(2,'samsung');
+  iphone.sendMessage('gửi tin nhắn từ iphone',android);
+  let message=android.getMessage();
+  alert(message);
+</script>
 </body>
 </html>

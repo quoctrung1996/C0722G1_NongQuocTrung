@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // var person1 = new Object({
+    //     name: 'Chris',
+    //     age: 38,
+    //     greeting: function () {
+    //         alert('Hi! I\'m ' + this.name + '.');
+    //     }
+    // });
+    // var person2 = Object.create(person1);
+    // document.write(person1.name);
+    // document.write(person2.name);
+    // person1.greeting();
+    // person2.greeting();
+    class Student{
+        constructor(first,last) {
+            this.name={
+                first,last
+            };
+        }
+    }
+    var student=new Student('quoc','trung');
+    alert(student.name.first);
+</script>
 </body>
 </html>

@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    //   6. Xây dựng 1 hàm nhận vào 2 mảng bất kì. Nếu mảng thứ 2 là con của mảng thứ nhất thì trả về true, ngược lại trả về false. Ví dụ:
+    //           •	Mảng thứ nhất [ 1, 2, 3, 4 ] mảng thứ 2 [2, 3] => true.
+    // •	Mảng thứ nhất [ 1, 2, 3, 4 ] mảng thứ 2 [3, 2] => false.
+    let num1 = +prompt('nhập độ dài mảng 1');
+    let num2 = +prompt('nhập độ dài mảng 2');
+    let arr1 = [];
+    let arr2 = [];
+    if (num2 >= num1) {
+        document.write('nhập lại');
+    } else {
+        for (let i = 0; i < num1; i++) {
+            arr1[i] = parseInt(prompt('nhập phần tử thứ ' + i + ' mảng 1'));
+        }
+        for (let i = 0; i < num2; i++) {
+            arr2[i] = parseInt(prompt('nhập phần tử thứ ' + i + ' mảng 2'));
+
+        }
+    }
+
+    function compare(arr1, arr2) {
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr2[j] == arr1[i] && arr2[j + 1] == arr1[i + 1]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    document.write(arr1 + '<br>');
+    document.write(arr2 + '<br>');
+    document.write(compare(arr1, arr2));
+</script>
 </body>
 </html>
