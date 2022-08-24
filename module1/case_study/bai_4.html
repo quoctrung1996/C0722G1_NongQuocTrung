@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // Bài 4: Vẽ tam giác cân rỗng có chiều cao h. Ví dụ: h = 5
+  let num=+prompt('nhập chiều dài tam giác');
+  let star='';
+  for (let i = 1; i <=num; i+=2) {
+      for (let j = 1; j <= num - i; j++) {
+          star += '&nbsp';
+      }
+      for (let j = 1; j <= i; j++) {
+          if (j === 1 || j === i || i === (num-1)||i===num) {
+              star += '*';
+          } else {
+              star += '&nbsp&nbsp';
+          }
+      }
+      star += '<br>';
+  }
+  document.write(star);
+</script>
 </body>
 </html>

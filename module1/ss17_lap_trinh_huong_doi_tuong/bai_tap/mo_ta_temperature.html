@@ -12,26 +12,30 @@
         }
 
         tinhDoF() {
-            document.writeln('độ F: ' + (9 / 5 * this.doC + 32)+'<br>')
+            return 9 / 5 * this.doC + 32;
         }
 
         tinhDoK() {
-            document.writeln('độ K: ' + (this.doC + 273.15)+'<br>');
+            return this.doC + 273.15;
         }
 
         setDoC(doC) {
             this.doC = doC;
         }
+        getDoC(){
+            return this.doC;
+        }
     }
 
     let nhietDo = new NhietDo(25);
-    document.write('nhiệt độ: '+nhietDo.doC+'<br>');
-    nhietDo.tinhDoF();
-    nhietDo.tinhDoK();
+    document.write('nhiệt độ: ' + nhietDo.doC + '<br>');
+    document.writeln('độ F: ' + nhietDo.tinhDoF() + '<br>')
+    document.writeln('độ K: ' + nhietDo.tinhDoK() + '<br>');
     nhietDo.setDoC(30);
-    document.write('nhiệt độ: '+nhietDo.doC+'<br>');
-    nhietDo.tinhDoF();
-    nhietDo.tinhDoK();
+    nhietDo.getDoC();
+    document.write('nhiệt độ: ' + nhietDo.doC + '<br>');
+    document.writeln('độ F: ' + nhietDo.tinhDoF() + '<br>')
+    document.writeln('độ K: ' + nhietDo.tinhDoK() + '<br>');
 </script>
 </body>
 </html>

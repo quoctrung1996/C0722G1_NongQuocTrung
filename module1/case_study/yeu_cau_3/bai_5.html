@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let str;
+    let num;
+    let tongTien = 0;
+    do {
+        str = +prompt('bấm số để lựa chọn đồ uống\n 1 (cafe)\n 2 (cam vắt)\n ' +
+            '3(nước ép cà rốt)\n 4(nước ép cà chua)\n 5(nước lọc)\n 6(nước dừa)\n 7(thoát gọi món)')
+        let arr = [1, 2, 3, 4, 5, 6];
+        let arr1 = ['cafe', 'cam vắt', 'nước ép cà rốt', 'nước ép cà chua', 'nước lọc', 'nước dừa']
+        let arr2 = [15000, 20000, 25000, 25000, 5000, 20000];
+        for (let i = 0; i < arr.length; i++) {
+            if (str == arr[i]) {
+                num = +prompt(arr1[i] + ' có đơn giá ' + arr2[i] + '\nnhập số lượng cần mua');
+                tongTien += arr2[i] * num;
+            }
+        }
+
+    }
+    while (str !== 7)
+    document.write('hóa đơn của bạn là ' + tongTien);
+</script>
 </body>
 </html>

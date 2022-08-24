@@ -13,36 +13,45 @@
         }
 
         getArea() {
-            document.write('diện tích ' + this.width * this.height + '<br>');
+            return this.width * this.height;
         }
 
         getPerimer() {
-            document.write('chu vi ' + (this.width + this.height) * 2 + '<br>');
+            return (this.width + this.height) * 2;
         }
 
         getInfor() {
-            document.write('hình chữ nhật có chiều dài: ' + this.height + ',' + ' chiều rộng: ' + this.width + '<br>');
+            return this.height+','+this.width;
+
         }
 
         setWidth(width) {              //set
-            return this.width = width;
+            this.width = width;
         }
+        getWidth(){
+        return this.width;
+    }
 
         setHeight(height) {
-            return this.height = height;
+            this.height = height;
+        }
+        getHeight(){
+            return this.height;
         }
     }
 
     let rectangle = new Rectangle(10, 20);
     //let rectangle2=new Rectangle(15,20);
-    rectangle.getInfor();
-    rectangle.getArea();
-    rectangle.getPerimer();
+    document.write('HCN có chiều dài,chiểu rộng là: '+ rectangle.getInfor()+'<br>');
+    document.write('diện tích: '+ rectangle.getArea()+'<br>');
+    document.write('chu vi: '+ rectangle.getPerimer()+'<br>');
     rectangle.setWidth(20);
+    rectangle.getWidth();
     rectangle.setHeight(30);
-    rectangle.getInfor();
-    rectangle.getArea();
-    rectangle.getPerimer();
+    rectangle.getHeight()
+    document.write('HCN có chiều dài,chiểu rộng là: '+ rectangle.getInfor()+'<br>');
+    document.write('diện tích: '+ rectangle.getArea()+'<br>');
+    document.write('chu vi: '+ rectangle.getPerimer()+'<br>');
 
 </script>
 </body>

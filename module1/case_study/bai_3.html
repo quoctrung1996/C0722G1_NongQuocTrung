@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // Bài 3: Vẽ tam giác cân đặc có chiều cao h. Ví dụ: h = 5
+  let num=+prompt('nhập chiều dài tam giác');
+  let star='';
+  for (let i = 0; i < num; i+=2) {
+    for (let j = 0; j < num-i; j++) {
+      star+='&nbsp';
+    }
+    for (let j = 0; j <=i ; j++) {
+      star+='*';
+    }
+    star+='<br>'
+  }
+  document.write(star)
+</script>
 </body>
 </html>
