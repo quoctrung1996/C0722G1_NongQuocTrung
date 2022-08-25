@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +5,25 @@
 </head>
 <body>
 <script>
-// <!--  Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.-->
-// <!--          Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.-->
-// <!--⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.-->
-let str1='aabcc';
-let str2='adcaa';
+    // <!--  Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.-->
+    // <!--          Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.-->
+    // <!--⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.-->
+    let str1 = 'aabcc';
+    let str2 = 'adcaa';
+    let arr1 = str1.split('');
+    let arr2 = str2.split('');
+    let arr = [];
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] == arr2[j]) {
+                arr.push(arr1[i]);
+                arr1.splice(i, 1);
+                arr2.splice(j, 1);
+            }
+        }
+    }
+    document.write(arr1 + ' ,' + arr2 + '<br>')
+    document.write(arr)
 </script>
 </body>
 </html>

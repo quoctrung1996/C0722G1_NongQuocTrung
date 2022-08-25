@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
+  let num1=+prompt('nhập độ dài mảng lớn');
+  let num2=+prompt('nhập độ dài mảng con');
+  let arr=[];
+  for (let i = 0; i < num1; i++) {
+    arr[i]=[];
+    for (let j = 0; j < num2; j++) {
+      arr[i][j] = +prompt('nhập phần tử thứ ' + i + ',' + j);
+    }
+  }
+  function checkMin(arr){
+    let min=arr[0][0];
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr[i].length; j++) {
+        if (min>=arr[i][j]){
+          min=arr[i][j];
+        }
+      }
+    }
+    document.write('GTNN '+min +'<br>');
+  }
+  function checkMax(arr){
+      let max=arr[0][0];
+      for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr[i].length; j++) {
+              if (max<=arr[i][j]){
+                  max=arr[i][j];
+              }
+          }
+      }
+      document.write('GTLN '+max);
+  }
+  checkMin(arr);
+  checkMax(arr);
+</script>
 </body>
 </html>

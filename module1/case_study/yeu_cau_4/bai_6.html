@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let str = 'abcdefghijklmnopqrstuvwxyz';
+    let string='Tran Van Chanh';
+    let string1=' Tran Van Chanh'
+//let str=str1.split('')
+    function checkFullName(string) {
+
+        if ((string[0] ===' ') || (string[string.length - 1] ==='')){
+            return false
+        }
+         if(str.indexOf(string[0])!==-1) {
+             return false
+         }
+
+        for (i = 1; i < string.length; i++) {
+            if (string[i] === ' ') {
+
+                if (str.indexOf(string[i + 1]) == -1) {
+                    return true;
+                }
+                if (str.indexOf(string[i - 1] !== -1)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+document.write(string1[0])
+    document.write(checkFullName(string));
+    document.write(checkFullName(string1));
+    document.write(checkFullName('tran Van Chanh'));
+    document.write(checkFullName('TraN Van Chanh'));
+
+</script>
 </body>
 </html>

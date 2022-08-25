@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  let arr=[1,2,3,4,5,6];
+  let count=0;
+  function kiemTraTangDan(arr){
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i]<arr[i+1]){
+        count++;
+      }
+    }
+
+    if (count===(arr.length-1))
+            return true;
+  }
+  if (kiemTraTangDan(arr)){
+    alert('OK')
+  }else {
+    alert('NO')
+  }
+  document.write(count);
+</script>
 </body>
 </html>

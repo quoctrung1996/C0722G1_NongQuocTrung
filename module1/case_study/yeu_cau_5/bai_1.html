@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  // Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.
+ let num1=+prompt('nhập độ dài mảng lớn');
+ let num2=+prompt('nhập độ dài mảng con');
+ let arr=[];
+ let sum=0;
+  for (let i = 0; i < num1; i++) {
+      arr[i]=[];
+      for (let j = 0; j < num2; j++) {
+          arr[i][j] = +prompt('nhập phần tử thứ ' + i + ',' + j);
+      }
+  }
+  for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr[i].length; j++) {
+          if(arr[i][j]%2==0){
+              sum+=arr[i][j];
+          }
+      }
+  }
+  document.write(arr+'<br>');
+  document.write(sum);
+</script>
 </body>
 </html>
