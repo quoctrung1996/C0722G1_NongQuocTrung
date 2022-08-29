@@ -1,10 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input type="text" id="id" placeholder="nhập id">
+<input type="text" id="name" placeholder="nhập tên">
+<input type="text" id="age" placeholder="nhập tuổi">
+<input type="button" onclick="add()" value="Thêm mới">
+<p id="play"></p>
+<script>
+    class Student {
+        constructor(id, name, age) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setAge(age) {
+            this.age = age;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getAge() {
+            return this.age;
+        }
+    }
+
+    let student1 = new Student(1, 'trung', 10);
+    let student2 = new Student(2, 'nong', 15);
+    let student3 = new Student(3, 'quoc', 20);
+    let studentList = [student1, student2, student3];
+
+    function display(array) {
+        let table = '<table border="1" style="border-collapse: collapse">\n' +
+            '  <tr>\n' +
+            '    <th>STT</th>\n' +
+            '    <th>ID</th>\n' +
+            '    <th>Name</th>\n' +
+            '    <th>Age</th>\n' +
+            '    <th>Delete</th>\n' +
+            '    <th>Edit</th>\n' +
+            '  </tr>';
+        for (let i = 0; i < array.length; i++) {
+            table += '<tr>\n' +
+                '    <td>' + (i + 1) + '</td>\n' +
+                '    <td>' + array[i].getId() + '</td>\n' +
+                '    <td>' + array[i].getName() + '</td>\n' +
+                '    <td>' + array[i].getAge() + '</td>\n' +
+                '    <td><input type="button"onclick="deleteStudent(' + i + ')"value="Delete"></td>\n' +
+                '    <td><input type="button"onclick="editStudent(' + i + ')"value="Edit"></td>\n' +
+
+                '  </tr>'
+        }
+        table += '</table>';
+        document.getElementById('play').innerHTML = table;
+    }
+
+    display(studentList);
+
+    function add() {
+        let id = document.getElementById('id').value;
+        let name = document.getElementById('name').value;
+        let age = document.getElementById('age').value;
+        let newStudent = new Student(id, name, age);
+        studentList.push(newStudent);
+        display(studentList);
+        document.getElementById('id').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('age').value = '';
+    }
+
+    function deleteStudent(index) {
+        let delet = confirm('bạn có chắc chăn muốn xóa không');
+        if (delet) {
+            studentList.splice(index, 1);
+        } else {
+            alert('không dám xóa à');
+        }
+        display(studentList);
+    }
+
+    function editStudent(index) {
+        let editId = prompt('nhập lại id mới, '+'id cũ: '+studentList[index].getId());
+        let editName = prompt('nhập lại tên');
+        let editAge = prompt('nhập lại tuổi');
+        studentList[index].setId(editId);
+        studentList[index].setName(editName);
+        studentList[index].setAge(editAge);
+        display(studentList);
+    }
+
+</script>
+
+
 </body>
 </html>
