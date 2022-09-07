@@ -1,10 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input type="text" id="maMay" placeholder="mã máy">
+<input type="text" id="tenMay" placeholder="tên máy">
+<input type="text" id="hangSanXuat" placeholder="hãng sản xuất">
+<input type="number" id="giaBan" placeholder="giá bán">
+<input type="button" onclick="themMoi()" value="thêm mới">
+<p id="display"></p>
+<script>
+    // Câu 4: Tạo một lớp Máy tính  có:
+    //         - Thuộc tính:
+    //         + Mã máy (string)
+    // + Tên máy(string)
+    // + Tên Hãng sản xuất (string)
+    // + Giá bán (number).
+    // - Các phương thức getter và setter cho các thuộc tính
+    // - Phương thức  toString() : phương thức lấy các thông tin của đối tượng.
+    // -Yêu cầu: Viết chương trình quản lý  Máy tính    với các chức năng sau;
+    // + Thêm mới 1 máy tính
+    // + Hiển thị được danh sách máytinhs
+    class MayTinh {
+        constructor(maMay, tenMay, hangSanXuat, giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.hangSanXuat = hangSanXuat;
+            this.giaBan = giaBan;
+        }
+
+        setMaMay(maMay) {
+            this.maMay = maMay;
+        }
+
+        setTenMay(tenMay) {
+            this.tenMay = tenMay;
+        }
+
+        setHangSanXuat(hangSanXuat) {
+            this.hangSanXuat = hangSanXuat;
+        }
+
+        setGiaBan(giaBan) {
+            this.giaBan = giaBan;
+        }
+
+        getMaMay() {
+            return this.maMay;
+        }
+
+        getTenMay() {
+            return this.tenMay;
+        }
+
+        getHangSanXuat() {
+            return this.hangSanXuat;
+        }
+
+        getGiaBan() {
+            return this.giaBan;
+        }
+
+        getThongTin() {
+            document.write('mã máy: ' + this.maMay + ',tên máy: ' + this.tenMay + ',hãng sản xuất: ' + this.hangSanXuat + ',giá bán: ' + this.giaBan);
+        }
+    }
+
+    let mayTinh1 = new MayTinh('T1', 'MB1', 'Apple', 1);
+    let mayTinh2 = new MayTinh('T2', 'MB2', 'Apple', 2);
+    let mayTinh3 = new MayTinh('T3', 'MB3', 'Apple', 3);
+    let mangMayTinh = [mayTinh1, mayTinh2, mayTinh3];
+
+    function quanLyMayTinh(mayTinh) {
+        let danhSachMayTinh = '<table border="1" style="border-collapse: collapse">\n' +
+            '  <tr>\n' +
+            '    <th>Mã Máy</th>\n' +
+            '    <th>Tên Máy</th>\n' +
+            '    <th>Hãng Sản Xuất</th>\n' +
+            '    <th>Giá Bán</th>\n' +
+            '    <th>Sửa</th>\n' +
+            '    <th>Xóa</th>\n' +
+            '  </tr>'
+        for (let i = 0; i < mayTinh.length; i++) {
+            danhSachMayTinh += ' <tr>\n' +
+                '    <td>' + mayTinh[i].getMaMay() + '</td>\n' +
+                '    <td>' + mayTinh[i].getTenMay() + '</td>\n' +
+                '    <td>' + mayTinh[i].getHangSanXuat() + '</td>\n' +
+                '    <td>' + mayTinh[i].getGiaBan() + '</td>\n' +
+                '    <td>' + '<input type="button" onclick="suaMayTinh(' + i + ')"value="Sửa" ' + '</td>\n' +
+                '    <td>' + '<input type="button" onclick="xoaMayTinh(' + i + ')"value="Xóa" ' + '</td>\n' +
+                '  </tr>'
+        }
+        danhSachMayTinh += '</table>';
+        document.getElementById('display').innerHTML = danhSachMayTinh;
+    }
+
+    quanLyMayTinh(mangMayTinh)
+
+    function themMoi() {
+        let maMay = document.getElementById('maMay').value;
+        let tenMay = document.getElementById('tenMay').value;
+        let hangSanXuat = document.getElementById('hangSanXuat').value;
+        let giaBan = document.getElementById('giaBan').value;
+        let mayTinhMoi = new MayTinh(maMay, tenMay, hangSanXuat, giaBan);
+        mangMayTinh.push(mayTinhMoi);
+        quanLyMayTinh(mangMayTinh);
+        document.getElementById('maMay').value = '';
+        document.getElementById('tenMay').value = '';
+        document.getElementById('hangSanXuat').value = '';
+        document.getElementById('giaBan').value = '';
+    }
+
+    function suaMayTinh(viTri) {
+        let maMay = prompt('nhập mã máy mới');
+        let tenMay = prompt('nhập tên máy mới');
+        let hangSanXuat = prompt('nhập hãng sản xuất mới');
+        let giaBan = +prompt('nhập giá bán mới');
+        mangMayTinh[viTri].setMaMay(maMay);
+        mangMayTinh[viTri].setTenMay(tenMay);
+        mangMayTinh[viTri].setHangSanXuat(hangSanXuat);
+        mangMayTinh[viTri].setGiaBan(giaBan);
+        quanLyMayTinh(mangMayTinh);
+    }
+
+    function xoaMayTinh(viTri) {
+        let xoa = confirm('bạn có muốn xóa máy tính có mã máy ' + mangMayTinh[viTri].getMaMay());
+        if (xoa) {
+            mangMayTinh.splice(viTri, 1);
+        } else {
+            alert('sợ à');
+        }
+        quanLyMayTinh(mangMayTinh);
+    }
+
+</script>
 </body>
 </html>

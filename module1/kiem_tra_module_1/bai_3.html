@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // Bài 3: Viết hàm có tham số truyền vào là một mảng ,tìm các số fibonaci có trong mảng(số này đã làm bài tập ở jame).
+    // Hàm trả về 1 mảng số fibonaci được tìm thấy trong mảng ( Yêu cầu sắp xếp tăng dần).
+    // Gợi ý đây là dãy số fibonaci: 0,1,1,2,3,5,8,13,21,…..
+    let arr = [1, 5, 6, 13, 9, 12, 8, 0, 5, 1];
+
+    function checkFibonaci(arr) {
+        let num1 = 0;
+        let num2 = 1;
+        let arr1 = [];
+        let arr2 = [];
+        let sum = 0;
+
+        for (let i = 0; i < 100; i++) {
+            arr1.push(sum);
+            sum = num1 + num2;
+            num1 = num2;
+            num2 = sum;
+        }
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr1.length; j++) {
+                if (arr[i] === arr1[j]) {
+                    arr2.push(arr[i]);
+                }
+            }
+        }
+        //arr2.sort((a, b) => a - b);
+        return arr2;
+    }
+
+    document.write(checkFibonaci(arr) + '<br>');
+    document.write(checkFibonaci(arr).sort((a, b) => a - b));
+
+</script>
 </body>
 </html>

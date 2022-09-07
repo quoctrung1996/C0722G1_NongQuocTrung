@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let so = +prompt('nhập vào một số nguyên');
+    let so1 = +prompt('nhập độ dài mảng');
+    let mang = [];
+    for (let i = 0; i < so1; i++) {
+        mang[i] = +prompt('nhập phần tử thứ ' + (i + 1));
+    }
+
+    function kiemTraChiaHet(mang, so) {
+        let mang1 = [];
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i] % so == 0) {
+                mang1.push(mang[i]);
+            }
+        }
+        for (let i = 0; i < mang1.length; i++) {
+            let bienDem = 0;
+            let viTri = 0;
+            for (let j = 0; j < mang1.length; j++) {
+                if (mang1[i] === mang1[j]) {
+                    bienDem++;
+                    viTri = j;
+                }
+            }
+            if (bienDem > 1) {
+                mang1.splice(viTri, 1);
+            }
+        }
+        return mang1;
+    }
+
+    document.write(kiemTraChiaHet(mang, so).length);
+
+</script>
 </body>
 </html>

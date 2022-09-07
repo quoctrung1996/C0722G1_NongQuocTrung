@@ -5,23 +5,116 @@
     <title>Title</title>
 </head>
 <body>
+<input type="text" id="bienSoXe" placeholder="Biển số xe">
+<input type="text" id="hoTen" placeholder="Họ và tên">
+<input type="number" id="cmnd" placeholder="CMND">
+<input type="text" id="hangXe" placeholder="Hãng xe">
+<input type="number" id="phiGuiXe" placeholder="Phí gửi xe">
+<input type="button" onclick="themMoi()" value="thêm mới">
+<p id="display"></p>
 <script>
-    class DanhSachXeMay{
-        constructor(bienSoXe,hoTen,cmnd,hangXe,phiGuiXe) {
-            this.bienSoXe=bienSoXe;
-            this.hoTen=hoTen;
-            this.cmnd=cmnd;
-            this.hangXe=hangXe;
-            this.phiGuiXe=phiGuiXe;
-        }
-        thongTin(){
-            document.write('biển số: '+this.bienSoXe+'<br>'+'Họ Tên: '+this.hoTen+'<br>'+
-            'Chứng minh nhân dân: '+this.cmnd+'<br>'+'Hãng xe: '+ this.hangXe+'<br>'+'phí gửi xe: '+this.phiGuiXe);
+    class DanhSachXeMay {
+        constructor(bienSoXe, hoTen, cmnd, hangXe, phiGuiXe) {
+            this.bienSoXe = bienSoXe;
+            this.hoTen = hoTen;
+            this.cmnd = cmnd;
+            this.hangXe = hangXe;
+            this.phiGuiXe = phiGuiXe;
         }
 
+        setBienSoXe(bienSo) {
+            this.bienSoXe = bienSo;
+        }
+
+        setHoTen(hoTen) {
+            this.hoTen = hoTen;
+        }
+
+        setCmnd(cmnd) {
+            this.cmnd = cmnd;
+        }
+
+        setHangXe(hangXe) {
+            this.hangXe = hangXe;
+        }
+
+        setPhiGuixe(phiGuixe) {
+            this.phiGuiXe = phiGuixe;
+        }
+
+        getBienSoXe() {
+            return this.bienSoXe;
+        }
+
+        getHoTen() {
+            return this.hoTen;
+        }
+
+        getCmnd() {
+            return this.cmnd;
+        }
+
+        getHangXe() {
+            return this.hangXe;
+        }
+
+        getPhiGuiXe() {
+            return this.phiGuiXe;
+        }
     }
-    let danhSach=new DanhSachXeMay('47M1-33288','Nông Quốc Trung',123456789,'Yamaha',300000)
-    danhSach.thongTin();
+
+    let danhSach1 = new DanhSachXeMay('47M1-33288', 'Nông Quốc Trung', 123456789, 'Yamaha', 300000);
+    let danhSach2 = new DanhSachXeMay('48M1-33288', 'Nông Trung', 123456789, 'Yamaha', 300000);
+    let danhSach3 = new DanhSachXeMay('49M1-33288', 'Quốc Trung', 123456789, 'Yamaha', 300000);
+    let danhSach = [danhSach1, danhSach2, danhSach3];
+
+    function quanLyXeMay(xeMay) {
+        let danhSachXeMay = '<table border="1" style="border-collapse: collapse">\n' +
+            '  <tr>\n' +
+            '    <th style="width: 150px">Biển số xe</th>\n' +
+            '    <th style="width: 150px">Họ và tên</th>\n' +
+            '    <th style="width: 200px">Chứng minh nhân dân</th>\n' +
+            '    <th style="width: 150px">Hãng xe</th>\n' +
+            '    <th style="width: 150px">Phí gửi xe</th>\n' +
+            '  </tr>'
+        for (let i = 0; i < xeMay.length; i++) {
+            danhSachXeMay += ' <tr>\n' +
+                '    <td>' + xeMay[i].getBienSoXe() + '</td>\n' +
+                '    <td>' + xeMay[i].getHoTen() + '</td>\n' +
+                '    <td>' + xeMay[i].getCmnd() + '</td>\n' +
+                '    <td>' + xeMay[i].getHangXe() + '</td>\n' +
+                '    <td>' + xeMay[i].getPhiGuiXe() + '</td>\n' +
+                '  </tr>'
+        }
+        danhSachXeMay += '</table>';
+        document.getElementById('display').innerHTML = danhSachXeMay;
+    }
+
+    quanLyXeMay(danhSach);
+
+    function themMoi() {
+        let bienSoXe = document.getElementById('bienSoXe').value;
+        let hoTen = document.getElementById('hoTen').value;
+        let cmnd = document.getElementById('cmnd').value;
+        let hangXe = document.getElementById('hangXe').value;
+        let phiGuiXe = document.getElementById('phiGuiXe').value;
+        for (let i = 0; i < danhSach.length; i++) {
+            if(bienSoXe==danhSach[i].getBienSoXe()){
+                return alert('biển số xe đã tồn tại');
+            }
+        }
+        if(bienSoXe.length)
+        let danhSachMoi = new DanhSachXeMay(bienSoXe, hoTen, cmnd, hangXe, phiGuiXe);
+        danhSach.push(danhSachMoi);
+        quanLyXeMay(danhSach);
+        alert('Thêm mới thành công');
+        document.getElementById('bienSoXe').value = '';
+        document.getElementById('hoTen').value = '';
+        document.getElementById('cmnd').value = '';
+        document.getElementById('hangXe').value = '';
+        document.getElementById('phiGuiXe').value = '';
+    }
+
 </script>
 </body>
 </html>

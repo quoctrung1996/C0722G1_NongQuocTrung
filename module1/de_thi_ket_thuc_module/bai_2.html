@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let arr = [];
+    let arr1 = [];
+    let number = +prompt('nhập độ dài mảng');
+    for (let i = 0; i < number; i++) {
+        arr[i] = +prompt('nhập phần tử thứ ' + (i + 1));
+    }
+
+    function checkMin(arr) {
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 1; j < arr.length; j++) {
+                if (arr[j] <= min) {
+                    min = arr[j];
+                }
+            }
+        }
+        return min;
+    }
+
+    function checkMax(arr) {
+        let max = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 1; j < arr.length; j++) {
+                if (arr[j] >= max) {
+                    max = arr[j];
+                }
+            }
+        }
+        return max;
+    }
+
+    arr1.push(arr.indexOf(checkMin(arr)), arr.indexOf(checkMax(arr)));
+    document.write(arr1 + '<br>');
+    document.write('phần tử bé nhất là ' + checkMin(arr) + ',xuất hiện lần đầu ở vị trí ' + arr.indexOf(checkMin(arr)) + '<br>');
+    document.write('phần tử lớn nhất là ' + checkMax(arr) + ',xuất hiện lần đầu ở vị trí ' + arr.indexOf(checkMax(arr)) + '<br>');
+
+</script>
 </body>
 </html>

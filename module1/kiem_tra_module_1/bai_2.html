@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // Bài 2: Viết hàm có tham số truyền vào là một chuỗi các ký tự.Hàm thực hiện tạo ra một cụm từ viết tắt
+    // -	Nếu chuỗi có nhiều hơn hoặc bằng 2 từ trở lên thì hàm sẽ trả về 1 cụm từ viết tắt là lấy các ký tự đầu tiên của từng từ và đổi sang in hoa.
+    //         Ví dụ:   object     Oriented     programming => kết quả trả về :OOP
+    // -	Nếu Chuỗi chỉ có duy nhất 1 từ thì kết quả trả về là 1 thông báo "Chuỗi chỉ có 1 từ nên không cần viết tắc"
+    // -	    Ví du:   ObjectOriented => chuỗi này chỉ được tính chỉ có 1 từ
+    let string = prompt('nhập chuỗi kí tự');
+
+    function test(str) {
+        let arr1 = [];
+        let arr2 = [];
+        //str = str.split(' ')
+        // for (let i = 0; i < str.length; i++) {
+        //     if (str[i] !== '') {      // '' không có dấu cách
+        //         arr1.push(str[i]);
+        //     }
+        // }
+        // document.write(arr1)
+        arr1 = str.split(' ');
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] === '') {       //duyệt mảng thì đưa về giá trị rỗng(không có dấu cách)
+                arr1.splice(i, 1);
+                i--;                    //hay quá Bảo ơi
+            }
+        }
+        if (arr1.length === 1) {
+            return "Chuỗi chỉ có 1 từ nên không cần viết tắc";
+        } else {
+            for (let i = 0; i < arr1.length; i++) {
+                arr2.push(arr1[i][0].toUpperCase());
+            }
+        }
+        return arr2.join('');
+    }
+
+    document.write(test(string));
+</script>
 </body>
 </html>

@@ -6,23 +6,24 @@
 </head>
 <body>
 <script>
-  let arr=[];
-  let number=parseInt(prompt('nhâp độ dài mảng'));
-  if (number<=50){
-    for (let i = 0; i < number; i++) {
-      arr[i]=parseInt(prompt('nhập phần tử thứ '+(i+1)));
+    let arr = [];
+    let count = 0;
+    let number = parseInt(prompt('nhâp độ dài mảng'));
+    for (; number > 50 || number < 1;) {
+        number = parseInt(prompt('nhâp laij độ dài mảng'));
     }
-  }
-  document.write(arr);
-  for (let i = 0; i < number; i++) {
-      if ((arr[i]<arr[i+1]&&arr[i+1]>arr[i+2])||(arr[i]>arr[i+1]&&arr[i+1]<arr[i+2])){
-          continue;
-      }else {
-          document.write(false);
-          break;
-      }
-      document.write(true);
-  }
+    for (let i = 0; i < number; i++) {
+        arr[i] = parseInt(prompt('nhập phần tử thứ ' + (i + 1)));
+    }
+    document.write(arr + '<br>');
+    for (let i = 0; i < number; i++) {
+        if ((arr[i] < arr[i - 1] && arr[i + 1] > arr[i]) || (arr[i] > arr[i + 1] && arr[i] > arr[i - 1])) {
+            continue;
+        } else {
+            count++;
+        }
+    }
+    count === 2 ? alert('true') : alert('false');
 </script>
 </body>
 </html>

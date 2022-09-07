@@ -6,30 +6,37 @@
 </head>
 <body>
 <script>
+
     let nhapChuoi = prompt('nhập ngày tháng năm sinh');
 
     function kiemTra(chuoi) {
-        if (chuoi[2] === '/' && chuoi[5] === '/') {
-            return true;
+        if (chuoi[2] !== '/' || chuoi[5] !== '/' || chuoi.length !== 10) {
+            return false;
         } else {
-            document.write('Yêu cầu nhập dúng định dạng dd/MM/yyyy');
-
+            chuoi = chuoi.split('/');
+            if (isNaN(chuoi[0]) === true || isNaN(chuoi[1]) === true || isNaN(chuoi[2]) === true) {
+                return false;
+            }
+            if (chuoi[0] * 1 < 1 || chuoi[0] * 1 > 31 || chuoi[1] * 1 < 1 || chuoi[1] * 1 > 12 || chuoi[2] * 1 < 1) {
+                return false;
+            }
         }
+        return true;
     }
-
-    // kiemTra(nhapChuoi);
 
     let mang = nhapChuoi.split('/');
     if (kiemTra(nhapChuoi)) {
         function kiemTraNamNhuan(nam) {
-            if (nam % 4 == 0 && nam % 100 !== 0) {
+            if (nam % 4 == 0 && nam % 100 != 0) {
                 document.write(nam + 'là năm nhuận');
             } else if (nam % 100 == 0 && nam % 400 == 0) {
-                document.write(nam + 'là năm nhuận');
+                document.write(nam + ' là năm nhuận');
             } else {
                 document.write(nam + ' không phải là năm nhuận');
             }
         }
+    } else {
+        document.write('Yêu cầu nhập dúng định dạng dd/MM/yyyy');
     }
     kiemTraNamNhuan(mang[2]);
 </script>

@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let number = prompt('nhập vào một số nguyên');
+    while (isNaN(number) || number < 0) {
+        number = prompt('nhập lại số nguyên');
+    }
+    for (let i = 1; i <= number; i++) {
+        if (number % i == 0) {
+            document.write(i + ',');
+        }
+    }
+
+</script>
 </body>
 </html>

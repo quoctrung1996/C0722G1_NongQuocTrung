@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // 2. Nhập vào tháng, năm bất kỳ. In ra số ngày tương ứng với tháng, năm đó.
+    let num1 = +prompt('nhập tháng');
+    let num2 = +prompt('nhập năm');
+
+    function checkYear(num) {
+        if (num % 4 === 0 && num % 100 !== 0) {
+            return true;
+        } else if (num % 100 === 0 && num % 400 === 0) {
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    switch (num1) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            alert('có 31 ngày');
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            alert('có 30 ngày');
+            break;
+    }
+    if (checkYear(num2)) {
+        if (num1 === 2) {
+            alert('có 29 ngày');
+        }
+    } else {
+        if (num1 === 2) {
+            alert('có 28 ngày');
+        }
+    }
+</script>
 </body>
 </html>
