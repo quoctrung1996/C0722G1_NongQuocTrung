@@ -11,22 +11,27 @@ public class MaxValue {
         Scanner sc = new Scanner(System.in);
         System.out.println("nhập độ dài mảng 2 chiều");
         int num1 = Integer.parseInt(sc.nextLine());
-        System.out.println("nhập độ dài phần tử trog mảng");
+        System.out.println("nhập độ dài mảng con");
         int num2 = Integer.parseInt(sc.nextLine());
         int[][] arr = new int[num1][num2];
         for (int i = 0; i < num1; i++) {
             for (int j = 0; j < num2; j++) {
                 arr[i][j] = new Random().nextInt(100);
             }
+            System.out.print(Arrays.toString(arr[i]) + ",");
         }
-        for (int i = 0; i < num1; i++) {
-            for (int j = 0; j < num2; j++) {
-                System.out.print(arr[i][j] +"    ");
+        int max = arr[0][0];
+        int index1 = 0;
+        int index2 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] >= max) {
+                    max = arr[i][j];
+                    index1 = i;
+                    index2 = j;
+                }
             }
-            System.out.println();
         }
-        System.out.println(Arrays.toString(arr));
-        double max=arr[0][0];
-
+        System.out.printf("\ngtln là %s tại tọa độ %s,%s", max, index1, index2);
     }
 }
