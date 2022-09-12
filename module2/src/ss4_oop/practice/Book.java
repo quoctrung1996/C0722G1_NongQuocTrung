@@ -5,17 +5,24 @@ public class Book {
     String name;
     int price;
     String author;
-    static String source="tiki";//có thể truy cập thông qua tên lớp
-    public Book(){
+    static String source = "tiki";//có thể truy cập thông qua tên lớp
+
+    public Book() {
     }
-    public Book(String code){
-        this.code=code;
+
+    public Book(String code) {
+        this.code = code;
     }
-    public Book(String code,String name,int price,String author){
-        this.code=code;
-        this.name=name;
-        this.price=price;
-        this.author=author;
+
+    public Book(String code, String name, int price, String author) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.author = author;
+    }
+
+    public static void xyz(int a) {
+        System.out.println(a);
     }
 
     public String getCode() {
