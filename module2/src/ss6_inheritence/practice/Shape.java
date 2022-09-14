@@ -6,9 +6,6 @@ public class Shape {
 
     public Shape() {
     }
-    public String getTrung(){
-        return "trung";
-    }
 
     public Shape(String color, boolean filled) {
         this.color = color;

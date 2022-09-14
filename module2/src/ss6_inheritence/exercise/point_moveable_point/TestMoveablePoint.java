@@ -8,6 +8,7 @@ public class TestMoveablePoint {
         MoveablePoint moveablePoint1=new MoveablePoint(1,2,3,4);
         System.out.println(moveablePoint1);
         System.out.println(moveablePoint1.move());
+        System.out.println(moveablePoint1.move());
     }
 
 }

@@ -1,7 +1,7 @@
 package ss6_inheritence.domo;
 
 public class Con extends Cha {
-    public String sex;
+    public String sex="male";
 
     public Con() {
         //vãn được gọi nhưng mà nó ẩn đi
@@ -23,7 +23,7 @@ public class Con extends Cha {
         this.sex = sex;
     }
     public void m2(){
-        super.getName();
+        System.out.println(super.getName());
     }
     @Override
     //ghi đè
@@ -34,8 +34,8 @@ public class Con extends Cha {
     @Override
     public String toString() {
         return "Con{" +
-                "name"+this.getName()+
-                "sex='" + sex + '\'' +
+                "name= "+this.getName()+
+                ", sex='" + sex + '\'' +
                 '}';
     }
 }

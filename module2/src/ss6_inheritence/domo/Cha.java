@@ -1,8 +1,8 @@
 package ss6_inheritence.domo;
 
 public class Cha {
-    private String name;
-    private String age;
+    private String name="trung";
+    private String age="18";
 
     public Cha() {
         System.out.println("hàm khởi tạo cha");
