@@ -2,6 +2,7 @@ package ss7_abstract.exercise.interface_colorable;
 
 public class TestInterfaceColorable {
     public static void main(String[] args) {
+        int[]a=new int[]{1,2,3};
         Colorable[] colorables = new Colorable[3];
         colorables[0] = new Square(2);
         colorables[1] = new Square(4);
