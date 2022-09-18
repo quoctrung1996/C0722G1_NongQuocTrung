@@ -16,8 +16,8 @@ public class CircleComparatorTest {
             System.out.println(circle);
         }
 
-        Comparator circleComparator = new CircleComparator();
-        Arrays.sort(circles, circleComparator);
+       // Comparator circleComparator = new CircleComparator();
+        Arrays.sort(circles, new CircleComparator());
 
         System.out.println("After-sorted:");
         for (Circle circle : circles) {
