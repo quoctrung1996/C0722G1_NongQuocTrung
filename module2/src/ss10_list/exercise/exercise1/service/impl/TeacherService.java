@@ -50,7 +50,7 @@ public class TeacherService implements ITeacherService {
         String id = sc.nextLine();
         System.out.println("Mời bạn nhập tên Giáo Viên");
         String name = sc.nextLine();
-        System.out.println("Mời bạn nhập ngày tháng năm sinh: ");
+        System.out.println("Mời bạn nhập ngày tháng năm sinh(dd/mm/yyyy): ");
         String birthday = sc.nextLine();
         System.out.println("Mời bạn nhập vào giới tính: ");
         String tempSex = sc.nextLine();

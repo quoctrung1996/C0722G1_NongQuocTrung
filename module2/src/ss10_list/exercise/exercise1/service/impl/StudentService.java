@@ -55,7 +55,7 @@ public class StudentService implements IStudentService {
         String code = sc.nextLine();
         System.out.println("Mời bạn nhập tên Sinh Viên: ");
         String name = sc.nextLine();
-        System.out.println("Mời bạn nhập năm ngày tháng năm sinh: ");
+        System.out.println("Mời bạn nhập năm ngày tháng năm sinh(dd/mm/yyyy): ");
         String birthday = sc.nextLine();
         System.out.println("Mời bạn nhập giới tính Sinh Viên");
         String tempSex = sc.nextLine();

@@ -6,7 +6,7 @@ import ss10_list.exercise.exercise1.service.impl.StudentService;
 import java.util.Scanner;
 
 public class StudentController {
-    private static IStudentService iStudentServeice = new StudentService();
+    private static IStudentService iStudentService = new StudentService();
     private static Scanner sc = new Scanner(System.in);
 
     public static void menuStudent() {
@@ -21,13 +21,13 @@ public class StudentController {
             int choice = Integer.parseInt(sc.nextLine());
             switch (choice) {
                 case 1:
-                    iStudentServeice.addStudent();
+                    iStudentService.addStudent();
                     break;
                 case 2:
-                    iStudentServeice.displayAllStudent();
+                    iStudentService.displayAllStudent();
                     break;
                 case 3:
-                    iStudentServeice.removeStudent();
+                    iStudentService.removeStudent();
                     break;
                 case 4:
                     return;
