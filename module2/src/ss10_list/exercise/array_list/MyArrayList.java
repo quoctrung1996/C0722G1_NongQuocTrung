@@ -40,21 +40,21 @@ public class MyArrayList<E> {
     }
 
     public void add(E element, int index) {
-        if (index > elements.length) {
-            throw new IllegalArgumentException("index: " + index);
-        } else if (elements.length == size) {
+        if (index > this.elements.length || index < 0) {
+            System.out.println("Enter index again");
+        } else if (this.elements.length == size) {
             this.ensureCapacity(5);
         }
-        if (elements[index] == null) {
-            elements[index] = element;
-            size++;
+        if (this.elements[index] == null) {
+            this.elements[index] = element;
+            this.size++;
         } else {
-            for (int i = size; i >= index; i--) {
-                elements[i] = elements[i - 1];
+            for (int i = size; i > index; i--) {
+                this.elements[i] = this.elements[i - 1];
             }
-            elements[index] = element;
-            size++;
         }
+        this.elements[index] = element;
+        size++;
     }
 
     public void ensureCapacity(int minCapacity) {
