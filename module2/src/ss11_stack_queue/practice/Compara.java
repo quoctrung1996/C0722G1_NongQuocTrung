@@ -58,6 +58,14 @@ public class Compara implements Comparable<Compara> {
         arrayList.add(comparator2);
         arrayList.add(comparator3);
 //        arrayList.sort(comparator1);
+        Collections.sort(arrayList, new Comparator<Compara>() {
+            @Override
+            public int compare(Compara o1, Compara o2) {
+                if (o1.heiht > o2.heiht) return 1;
+                if (o1.heiht < o2.heiht) return -1;
+                return 0;
+            }
+        });
 //        Comparator<Compara> comparator = new Comparator<Compara>() {
 //            @Override
 //            public int compare(Compara o1, Compara o2) {
@@ -66,17 +74,17 @@ public class Compara implements Comparable<Compara> {
 //                return 0;
 //            }
 //        };
-//        arrayList.sort(comparator);
-        System.out.println(arrayList);
-        Collections.sort(arrayList);
+ //       arrayList.sort(comparator);
+ //       System.out.println(arrayList);
+//        Collections.sort(arrayList);
         System.out.println(arrayList);
 
-        Arrays.sort(comparas);
-        for (int i = 0; i <comparas.length ; i++) {
-            System.out.println(comparas[i]);
-
-        }
-        Collections.sort(arrayList, new TestCompara());
+//        Arrays.sort(comparas);
+//        for (int i = 0; i <comparas.length ; i++) {
+//            System.out.println(comparas[i]);
+//
+//        }
+ //       Collections.sort(arrayList, new TestCompara());
         System.out.println(arrayList);
 
     }
