@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function solution(str){
+    let string="ZXCVBNMLKJHGFDSAQWERTYUIOP";
+    let str1=str.split("");
+    for (let i = 1; i < str1.length; i++) {
+      if (string.includes(str1[i])){
+        str1.splice(i,0," ");
+        i++;
+      }
+    }
+    document.writeln(str1.join("").toLowerCase());
+  }
+  solution("Hello");
+</script>
+</body>
+</html>

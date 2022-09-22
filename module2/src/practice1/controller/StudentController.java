@@ -16,7 +16,8 @@ public class StudentController {
             System.out.println("1,Thêm mới học sinh");
             System.out.println("2,Xóa học sinh");
             System.out.println("3,Xem danh sách học sinh");
-            System.out.println("4,Quay về menu chính");
+            System.out.println("4,Tìm kiếm học sinh");
+            System.out.println("5,Quay về menu chính");
             System.out.println("0,Thoát chương trình");
             System.out.println("Chọn chức năng");
             int choise = Integer.parseInt(sc.nextLine());
@@ -31,6 +32,9 @@ public class StudentController {
                     iStudentService.displayAllStudents();
                     break;
                 case 4:
+                    iStudentService.searchStudent();
+                    break;
+                case 5:
                     return;
                 case 0:
                     System.exit(0);

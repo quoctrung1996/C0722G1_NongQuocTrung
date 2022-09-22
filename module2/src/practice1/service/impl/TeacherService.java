@@ -51,6 +51,33 @@ public class TeacherService implements ITeacherService {
         }
     }
 
+    @Override
+    public void searchTeacher() {
+        System.out.println("Bạn muốn tìm kiếm theo:");
+        System.out.println("1.Tên giáo viên:");
+        System.out.println("2.Mã giáo viên:");
+        int choise= Integer.parseInt(sc.nextLine());
+        switch (choise){
+            case 1:
+                System.out.println("Nhập tên giáo viên:");
+                String name=sc.nextLine();
+                for (int i = 0; i < teacherList.size(); i++) {
+                    if (teacherList.get(i).getName().contains(name)){
+                        System.out.println(teacherList.get(i));
+                    }
+                }
+            case 2:
+                System.out.println("Nhập mã giáo viên:");
+                String code=sc.nextLine();
+                for (int i = 0; i < teacherList.size(); i++) {
+                    if (teacherList.get(i).getName().equals(code)){
+                        System.out.println(teacherList.get(i));
+                        break;
+                    }
+                }
+        }
+    }
+
     public Teacher inforTeacher() {
         System.out.println("Nhập mã giáo viên");
         String code = sc.nextLine();

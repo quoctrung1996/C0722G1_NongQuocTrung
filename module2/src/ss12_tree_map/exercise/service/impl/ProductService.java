@@ -36,7 +36,7 @@ public class ProductService implements IProductService {
             }
         }
         if (!isEdit) {
-            System.out.println("id bạn nhập không hợp lệ,vui lòng nhâp lại");
+            System.out.println("Không tìm thấy id hợp lệ");
         }
 
     }
@@ -59,7 +59,7 @@ public class ProductService implements IProductService {
             }
         }
         if (!isDelete) {
-            System.out.println("id bạn nhập không hợp lệ,vui lòng nhâp lại");
+            System.out.println("Không tìm thấy id hợp lệ");
         }
     }
 
@@ -79,16 +79,15 @@ public class ProductService implements IProductService {
             if (list.get(i).getName().contains(name)) {
                 System.out.println(list.get(i).toString());
                 isSeach = true;
-                break;
             }
         }
         if (!isSeach) {
-            System.out.println("Không có sản phẩm này,vui lòng nhâp lại");
+            System.out.println("Không có sản phẩm này");
         }
 
     }
 
-//
+    //
     @Override
     public void upDownPrice() {
         System.out.println("Chọn chức năng:");
@@ -105,7 +104,8 @@ public class ProductService implements IProductService {
                         } else if (o1.getPrice() < o2.getPrice()) {
                             return -1;
                         } else {
-                            return 0;
+                            return o1.getName().compareTo(o2.getName());
+
                         }
                     }
                 });
@@ -122,7 +122,7 @@ public class ProductService implements IProductService {
                         } else if (o1.getPrice() < o2.getPrice()) {
                             return 1;
                         } else {
-                            return 0;
+                            return -o1.getName().compareTo(o2.getName());
                         }
                     }
                 });
