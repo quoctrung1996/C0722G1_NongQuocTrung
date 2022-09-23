@@ -1,16 +1,17 @@
 package practice1.service.impl;
 
+import practice1.model.Student;
 import practice1.model.Teacher;
 import practice1.service.ITeacherService;
-import ss10_list.exercise.exercise1.model.Student;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class TeacherService implements ITeacherService {
     private static Scanner sc = new Scanner(System.in);
-    private static List<Teacher> teacherList = new ArrayList<>();
+    public static List<Teacher> teacherList = new ArrayList<>();
 
     @Override
     public void addTeacher() {
@@ -56,25 +57,58 @@ public class TeacherService implements ITeacherService {
         System.out.println("Bạn muốn tìm kiếm theo:");
         System.out.println("1.Tên giáo viên:");
         System.out.println("2.Mã giáo viên:");
-        int choise= Integer.parseInt(sc.nextLine());
-        switch (choise){
+        int choise = Integer.parseInt(sc.nextLine());
+        switch (choise) {
             case 1:
                 System.out.println("Nhập tên giáo viên:");
-                String name=sc.nextLine();
+                String name = sc.nextLine();
+                boolean isChoise = false;
                 for (int i = 0; i < teacherList.size(); i++) {
-                    if (teacherList.get(i).getName().contains(name)){
+                    if (teacherList.get(i).getName().contains(name)) {
                         System.out.println(teacherList.get(i));
+                        isChoise = true;
                     }
                 }
+                if (!isChoise) {
+                    System.out.println("Không tìm thấy tên cần tìm");
+                }
+                break;
             case 2:
                 System.out.println("Nhập mã giáo viên:");
-                String code=sc.nextLine();
+                String code = sc.nextLine();
+                boolean isChoise2 = false;
                 for (int i = 0; i < teacherList.size(); i++) {
-                    if (teacherList.get(i).getName().equals(code)){
+                    if (teacherList.get(i).getCode().equals(code)) {
                         System.out.println(teacherList.get(i));
+                        isChoise2 = true;
                         break;
                     }
                 }
+                if (!isChoise2) {
+                    System.out.println("Không tìm thấy tên cần tìm");
+                }
+                break;
+        }
+    }
+
+    @Override
+    public void sortTeacher(List<Teacher> teacherList) {
+        for (int i = 0; i < teacherList.size(); i++) {
+            for (int j = 0; j < teacherList.size() - i - 1; j++) {
+                int check = teacherList.get(j).getName().compareTo(teacherList.get(j + 1).getName());
+                if (check > 0) {
+                    Collections.swap(teacherList, j, j + 1);
+                } else if (check == 0) {
+                    if (teacherList.get(j).getCode().compareTo(teacherList.get(j + 1).getCode()) > 0) {
+                        Collections.swap(teacherList, j, j + 1);
+                    }
+                } else {
+                    System.out.println("Danh sách đã được sắp xếp");
+                }
+            }
+        }
+        for (Teacher teacher : teacherList) {
+            System.out.println(teacher);
         }
     }
 
