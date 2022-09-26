@@ -24,7 +24,15 @@ public class StudentController {
             System.out.println("6,Quay về menu chính");
             System.out.println("0,Thoát chương trình");
             System.out.println("Chọn chức năng");
-            int choise = Integer.parseInt(sc.nextLine());
+            int choise = 0;
+            while (true) {
+                try {
+                    choise = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception e) {
+                    System.out.println("Xin hãy nhập vào số");
+                }
+            }
             switch (choise) {
                 case 1:
                     iStudentService.addStudent();
@@ -45,6 +53,8 @@ public class StudentController {
                     return;
                 case 0:
                     System.exit(0);
+                default:
+                    System.out.println("Nhập không đúng,mời nhập lại");
             }
         }
     }

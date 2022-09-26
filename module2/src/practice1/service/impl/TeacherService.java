@@ -1,9 +1,11 @@
 package practice1.service.impl;
 
-import practice1.model.Student;
 import practice1.model.Teacher;
 import practice1.service.ITeacherService;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -117,8 +119,17 @@ public class TeacherService implements ITeacherService {
         String code = sc.nextLine();
         System.out.println("Nhập họ tên giáo viên");
         String name = sc.nextLine();
-        System.out.println("Nhập ngày sinh giáo viên(dd/mm/yyyy)");
-        String birthday = sc.nextLine();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate birthday;
+        while (true) {
+            try {
+                System.out.println("Nhập ngày sinh giáo viên(dd/MM/yyyy)");
+                birthday = LocalDate.parse(sc.nextLine(), formatter);
+                break;
+            } catch (DateTimeParseException e) {
+                System.out.println("ngày sai định dạng,nhập lại!");
+            }
+        }
         System.out.println("Nhập giới tính giáo viên");
         String gender = sc.nextLine();
         if (gender.equals("Nam") || gender.equals("nam")) {

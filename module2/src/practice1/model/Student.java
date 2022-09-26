@@ -1,5 +1,7 @@
 package practice1.model;
 
+import java.time.LocalDate;
+
 public class Student extends Person {
     private String className;
     private double score;
@@ -7,7 +9,7 @@ public class Student extends Person {
     public Student() {
     }
 
-    public Student(String code, String name, String birthday, String gender, String className, double score) {
+    public Student(String code, String name, LocalDate birthday, String gender, String className, double score) {
         super(code, name, birthday, gender);
         this.className = className;
         this.score = score;

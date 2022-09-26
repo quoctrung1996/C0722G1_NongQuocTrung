@@ -2,7 +2,12 @@ package practice1.service.impl;
 
 import practice1.model.Student;
 import practice1.service.IStudentService;
+import practice1.util.StudentException;
 
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 
 public class StudentService implements IStudentService {
@@ -50,7 +55,15 @@ public class StudentService implements IStudentService {
         System.out.println("Bạn muốn tìm kiếm theo:");
         System.out.println("1.Tên học sinh:");
         System.out.println("2.Mã học sinh:");
-        int choise = Integer.parseInt(sc.nextLine());
+        int choise = 0;
+        while (true) {
+            try {
+                choise = Integer.parseInt(sc.nextLine());
+                break;
+            } catch (Exception e) {
+                System.out.println("Xin hãy nhập số");
+            }
+        }
         switch (choise) {
             case 1:
                 System.out.println("Nhập tên học sinh");
@@ -124,10 +137,28 @@ public class StudentService implements IStudentService {
     public Student inforStudent() {
         System.out.println("Nhập mã sinh viên");
         String code = sc.nextLine();
-        System.out.println("Nhập họ tên sinh viên");
-        String name = sc.nextLine();
-        System.out.println("Nhập ngày sinh sinh viên(dd/mm/yyyy)");
-        String birthday = sc.nextLine();
+        String name;
+        while (true) {
+            try {
+                System.out.println("Nhập họ tên sinh viên");
+                name = sc.nextLine();
+                checkName(name);
+                break;
+            } catch (StudentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate birthday;
+        while (true) {
+            try {
+                System.out.println("Nhập ngày sinh sinh viên(dd/MM/yyyy)");
+                birthday = LocalDate.parse(sc.nextLine(), formatter);
+                break;
+            } catch (DateTimeParseException e) {
+                System.out.println("ngày sai định dạng,nhập lại!");
+            }
+        }
         System.out.println("Nhập giới tính sinh viên");
         String gender = sc.nextLine();
         if (gender.equals("Nam") || gender.equals("nam")) {
@@ -139,9 +170,36 @@ public class StudentService implements IStudentService {
         }
         System.out.println("Nhập lớp của sinh viên");
         String className = sc.nextLine();
-        System.out.println("Nhập điểm số sinh viên");
-        double score = Double.parseDouble(sc.nextLine());
+        double score;
+        while (true) {
+            try {
+                System.out.println("Nhập điểm số sinh viên");
+                score = Double.parseDouble(sc.nextLine());
+                checkScore(score);
+                break;
+            } catch (StudentException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Điểm không được chứa kí tự");
+            }
+
+        }
         Student student = new Student(code, name, birthday, gender, className, score);
         return student;
+    }
+
+    public void checkName(String s) throws StudentException {
+        char[] chars = s.toCharArray();
+        for (char c : chars) {
+            if (Character.isDigit(c)) {
+                throw new StudentException("Tên không được chứa số và kí tự đặc biệt,xin nhập lại");
+            }
+        }
+    }
+
+    public void checkScore(double score) throws StudentException {
+        if (score > 10 || score < 0) {
+            throw new StudentException("Điểm không được nhỏ hơn 0 và lớn hơn 10,xin nhập lại");
+        }
     }
 }
