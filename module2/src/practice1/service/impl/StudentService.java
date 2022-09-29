@@ -61,7 +61,8 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void searchStudent() {
+    public void searchStudent() throws IOException {
+        studentList = readFile("src/practice1/data/student");
         System.out.println("Bạn muốn tìm kiếm theo:");
         System.out.println("1.Tên học sinh:");
         System.out.println("2.Mã học sinh:");
@@ -106,6 +107,8 @@ public class StudentService implements IStudentService {
                 break;
 
         }
+        writeFile("src/practice1/data/student", studentList);
+
 
     }
 
@@ -149,7 +152,7 @@ public class StudentService implements IStudentService {
 
     }
 
-    public Student inforStudent() {
+    public Student inforStudent(){
         Integer code;
         while (true) {
             try {
@@ -220,6 +223,7 @@ public class StudentService implements IStudentService {
         }
         Student student = new Student(code, name, birthday, gender, className, score);
         return student;
+
     }
 
     public void checkName(String s) throws StudentException {

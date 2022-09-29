@@ -12,7 +12,7 @@ public interface IStudentService {
 
     void displayAllStudents() throws IOException;
 
-    void searchStudent();
+    void searchStudent() throws IOException;
 
     void sortStudent(List<Student> studentList) throws IOException;
 }
