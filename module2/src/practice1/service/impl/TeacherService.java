@@ -26,7 +26,7 @@ public class TeacherService implements ITeacherService {
     @Override
     public void removeTeacher() {
         System.out.println("Mời bạn nhập mã giáo viên cần xoá: ");
-        String id = sc.nextLine();
+        Integer id = Integer.parseInt(sc.nextLine());
         boolean flagDelete = false;
         for (int i = 0; i < teacherList.size(); i++) {
             if (teacherList.get(i).getCode().equals(id)) {
@@ -77,7 +77,7 @@ public class TeacherService implements ITeacherService {
                 break;
             case 2:
                 System.out.println("Nhập mã giáo viên:");
-                String code = sc.nextLine();
+                Integer code = Integer.parseInt(sc.nextLine());
                 boolean isChoise2 = false;
                 for (int i = 0; i < teacherList.size(); i++) {
                     if (teacherList.get(i).getCode().equals(code)) {
@@ -116,15 +116,15 @@ public class TeacherService implements ITeacherService {
 
     public Teacher inforTeacher() {
         System.out.println("Nhập mã giáo viên");
-        String code = sc.nextLine();
+        Integer code = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập họ tên giáo viên");
         String name = sc.nextLine();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate birthday;
+        String birthday;
         while (true) {
             try {
                 System.out.println("Nhập ngày sinh giáo viên(dd/MM/yyyy)");
-                birthday = LocalDate.parse(sc.nextLine(), formatter);
+                birthday = sc.nextLine();
                 break;
             } catch (DateTimeParseException e) {
                 System.out.println("ngày sai định dạng,nhập lại!");

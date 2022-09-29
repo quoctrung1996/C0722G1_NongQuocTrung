@@ -3,15 +3,15 @@ package practice1.model;
 import java.time.LocalDate;
 
 public abstract class Person {
-    private String code;
+    private Integer code;
     private String name;
-    private LocalDate birthday;
+    private String birthday;
     private String gender;
 
     public Person() {
     }
 
-    public Person(String code, String name, LocalDate birthday, String gender) {
+    public Person(Integer code, String name, String birthday, String gender) {
         this.code = code;
         this.name = name;
         this.birthday = birthday;
@@ -27,19 +27,19 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
-    public LocalDate getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -58,5 +58,8 @@ public abstract class Person {
                 ", birthday='" + birthday + '\'' +
                 ", gender='" + gender + '\'' +
                 '}';
+    }
+    public String getInfo(){
+        return String.format("%s,%s,%s,%s,",this.code,this.name,this.birthday,this.gender);
     }
 }

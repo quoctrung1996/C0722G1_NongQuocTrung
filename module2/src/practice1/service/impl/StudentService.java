@@ -4,7 +4,7 @@ import practice1.model.Student;
 import practice1.service.IStudentService;
 import practice1.util.StudentException;
 
-import java.time.DateTimeException;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -14,17 +14,22 @@ public class StudentService implements IStudentService {
     private static Scanner sc = new Scanner(System.in);
     public static List<Student> studentList = new ArrayList<>();
 
+
     @Override
-    public void addStudent() {
+    public void addStudent() throws IOException {
+        studentList = readFile("src/practice1/data/student");
         Student student = this.inforStudent();
         studentList.add(student);
+
         System.out.println("Thêm thành công");
+        writeFile("src/practice1/data/student", studentList);
     }
 
     @Override
-    public void removeStudent() {
+    public void removeStudent() throws IOException {
+        studentList = readFile("src/practice1/data/student");
         System.out.println("Mời bạn nhập mã sinh viên cần xóa:");
-        String code = sc.nextLine();
+        Integer code = Integer.parseInt(sc.nextLine());
         boolean flagDelete = false;
         for (int i = 0; i < studentList.size(); i++) {
             if (studentList.get(i).getCode().equals(code)) {
@@ -41,13 +46,18 @@ public class StudentService implements IStudentService {
         if (!flagDelete) {
             System.out.println("Không tìm thấy đối tượng cần xóa");
         }
+        writeFile("src/practice1/data/student", studentList);
     }
 
     @Override
-    public void displayAllStudents() {
+    public void displayAllStudents() throws IOException {
+        studentList = readFile("src/practice1/data/student");
+
         for (Student student : studentList) {
-            System.out.println(student);
+            System.out.println(student.getInfo());
         }
+        writeFile("src/practice1/data/student", studentList);
+
     }
 
     @Override
@@ -81,7 +91,7 @@ public class StudentService implements IStudentService {
                 break;
             case 2:
                 System.out.println("Nhập mã học sinh");
-                String code = sc.nextLine();
+                Integer code = Integer.parseInt(sc.nextLine());
                 boolean isChoise2 = false;
                 for (int i = 0; i < studentList.size(); i++) {
                     if (studentList.get(i).getCode().equals(code)) {
@@ -101,42 +111,56 @@ public class StudentService implements IStudentService {
 
 
     @Override
-    public void sortStudent(List<Student> studentList) {
-        for (int i = 0; i < studentList.size(); i++) {
-            for (int j = 0; j < studentList.size() - i - 1; j++) {
-                int check = studentList.get(j).getName().compareTo(studentList.get(j + 1).getName());
-                if (check > 0) {
-//                    Student temp = studentList.get(j+1);
-//                    studentList.set(j + 1, studentList.get(j));
-//                    studentList.set(j,temp);
-                    Collections.swap(studentList, j, j + 1);
-                } else if (check == 0) {
-                    if (studentList.get(j).getCode().compareTo(studentList.get(j + 1).getCode()) > 0) {
-                        Collections.swap(studentList, j, j + 1);
-                    }
-                } else {
-                    System.out.println("Danh sách đã được sắp xếp");
+    public void sortStudent(List<Student> studentList) throws IOException {
+//        for (int i = 0; i < studentList.size(); i++) {
+//            for (int j = 0; j < studentList.size() - i - 1; j++) {
+//                int check = studentList.get(j).getName().compareTo(studentList.get(j + 1).getName());
+//                if (check > 0) {
+////                    Student temp = studentList.get(j+1);
+////                    studentList.set(j + 1, studentList.get(j));
+////                    studentList.set(j,temp);
+//                    Collections.swap(studentList, j, j + 1);
+//                } else if (check == 0) {
+//                    if (studentList.get(j).getCode().compareTo(studentList.get(j + 1).getCode()) > 0) {
+//                        Collections.swap(studentList, j, j + 1);
+//                    }
+//                } else {
+//                    System.out.println("Danh sách đã được sắp xếp");
+//                }
+//            }
+//        }
+
+
+        studentList = readFile("src/practice1/data/student");
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                if (!o1.getName().equals(o2.getName())) {
+                    return o1.getName().compareTo(o2.getName());
                 }
+                return o1.getCode().compareTo(o2.getCode());
             }
-        }
+        });
         for (Student student : studentList) {
-            System.out.println(student);
+            System.out.println(student.getInfo());
         }
+
+        writeFile("src/practice1/data/student", studentList);
+
     }
 
-//        Collections.sort(studentList, new Comparator<Student>() {
-//            @Override
-//            public int compare(Student o1, Student o2) {
-//                if (!o1.getName().equals(o2.getName())) {
-//                    return o1.getName().compareTo(o2.getName());
-//                }
-//                return o1.getCode().compareTo(o2.getCode());
-//            }
-//        });
-
     public Student inforStudent() {
-        System.out.println("Nhập mã sinh viên");
-        String code = sc.nextLine();
+        Integer code;
+        while (true) {
+            try {
+                System.out.println("Nhập mã sinh viên");
+                code = Integer.parseInt(sc.nextLine());
+                break;
+            } catch (Exception e) {
+                System.out.println("Yêu cầu chỉ nhập số");
+            }
+        }
+
         String name;
         while (true) {
             try {
@@ -149,18 +173,28 @@ public class StudentService implements IStudentService {
             }
         }
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate birthday;
+        String birthday;
         while (true) {
             try {
                 System.out.println("Nhập ngày sinh sinh viên(dd/MM/yyyy)");
-                birthday = LocalDate.parse(sc.nextLine(), formatter);
+                birthday = sc.nextLine();
                 break;
             } catch (DateTimeParseException e) {
                 System.out.println("ngày sai định dạng,nhập lại!");
             }
         }
-        System.out.println("Nhập giới tính sinh viên");
-        String gender = sc.nextLine();
+        String gender;
+        while (true) {
+            try {
+                System.out.println("Nhập giới tính sinh viên");
+                gender = sc.nextLine();
+                checkGender(gender);
+                break;
+            } catch (StudentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
         if (gender.equals("Nam") || gender.equals("nam")) {
             gender = "Nam";
         } else if (gender.equals("Nữ") || gender.equals("nữ")) {
@@ -201,5 +235,42 @@ public class StudentService implements IStudentService {
         if (score > 10 || score < 0) {
             throw new StudentException("Điểm không được nhỏ hơn 0 và lớn hơn 10,xin nhập lại");
         }
+    }
+
+    public void checkGender(String gender) throws StudentException {
+        char[] chars = gender.toCharArray();
+        for (char ch : chars) {
+            if (Character.isDigit(ch)) {
+                throw new StudentException("không được chứa chữ số");
+            }
+        }
+    }
+
+    public List<Student> readFile(String filePath) throws IOException {
+        List<Student> studentList = new ArrayList<>();
+        File file = new File(filePath);
+        FileReader fileReader = new FileReader(file);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String line = "";
+        String[] info;
+        Student student = null;
+        while ((line = bufferedReader.readLine()) != null) {
+            info = line.split(",");
+            student = new Student(Integer.parseInt(info[0]), info[1], info[2], info[3], info[4], Double.parseDouble(info[5]));
+            studentList.add(student);
+        }
+        bufferedReader.close();
+        return studentList;
+    }
+
+    public void writeFile(String filePath, List<Student> studentList) throws IOException {
+        File file = new File(filePath);
+        FileWriter fileWriter = new FileWriter(file);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        for (Student student : studentList) {
+            bufferedWriter.write(student.getInfo());
+            bufferedWriter.newLine();
+        }
+        bufferedWriter.close();
     }
 }

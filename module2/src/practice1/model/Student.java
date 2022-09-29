@@ -9,11 +9,13 @@ public class Student extends Person {
     public Student() {
     }
 
-    public Student(String code, String name, LocalDate birthday, String gender, String className, double score) {
+    public Student(Integer code, String name, String birthday, String gender, String className, double score) {
         super(code, name, birthday, gender);
         this.className = className;
         this.score = score;
     }
+
+
 
     public String getClassName() {
         return className;
@@ -37,5 +39,8 @@ public class Student extends Person {
                 "className='" + className + '\'' +
                 ", score=" + score +
                 '}';
+    }
+    public String getInfo(){
+        return super.getInfo()+String.format("%s,%s",this.className,this.score);
     }
 }

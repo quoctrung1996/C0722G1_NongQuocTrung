@@ -1,5 +1,6 @@
 package practice1.controller;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class PersonController {
@@ -7,7 +8,7 @@ public class PersonController {
 //    public static StudentController studentController = new StudentController();
 //    public static TeacherController teacherController = new TeacherController();
     
-    public static void menuPerson() {
+    public static void menuPerson() throws IOException {
         while (true) {
             System.out.println("-------Chương trình quản lý học sing và giáo viên-------");
             System.out.println("Chọn chức năng theo số dể tiếp tục");
