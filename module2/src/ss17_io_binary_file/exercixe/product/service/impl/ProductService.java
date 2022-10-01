@@ -18,6 +18,7 @@ public class ProductService implements IproductService {
         productList.add(product);
         System.out.println("Thêm thành công");
         output();
+
     }
 
     @Override

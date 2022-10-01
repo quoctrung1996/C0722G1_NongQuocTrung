@@ -163,29 +163,37 @@ public class StudentService implements IStudentService {
                 System.out.println("Yêu cầu chỉ nhập số");
             }
         }
-
+        System.out.println("Nhập tên sinh viên");
         String name;
-        while (true) {
-            try {
-                System.out.println("Nhập họ tên sinh viên");
-                name = sc.nextLine();
-                checkName(name);
+        while (true){
+            name=sc.nextLine();
+            if (!checkName(name)){
+                System.out.println("nhập họ tên sai định dạng,mời nhập lại:");
+            }else {
                 break;
-            } catch (StudentException e) {
-                System.out.println(e.getMessage());
             }
         }
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        while (true) {
+//            try {
+//                System.out.println("Nhập họ tên sinh viên");
+//                name = sc.nextLine();
+//                checkName(name);
+//                break;
+//            } catch (StudentException e) {
+//                System.out.println(e.getMessage());
+//            }
+//        }
+        System.out.println("Nhập ngày tháng năm sinh theo định dạng dd/MM/yyyy");
         String birthday;
-        while (true) {
-            try {
-                System.out.println("Nhập ngày sinh sinh viên(dd/MM/yyyy)");
-                birthday = sc.nextLine();
+        while (true){
+            birthday= sc.nextLine();
+            if(!checkBirthday(birthday)){
+                System.out.println("Không đúng định dạng,hãy nhập lại:");
+            }else {
                 break;
-            } catch (DateTimeParseException e) {
-                System.out.println("ngày sai định dạng,nhập lại!");
             }
         }
+
         String gender;
         while (true) {
             try {
@@ -226,14 +234,14 @@ public class StudentService implements IStudentService {
 
     }
 
-    public void checkName(String s) throws StudentException {
-        char[] chars = s.toCharArray();
-        for (char c : chars) {
-            if (Character.isDigit(c)) {
-                throw new StudentException("Tên không được chứa số và kí tự đặc biệt,xin nhập lại");
-            }
-        }
-    }
+//    public void checkName(String s) throws StudentException {
+//        char[] chars = s.toCharArray();
+//        for (char c : chars) {
+//            if (Character.isDigit(c)) {
+//                throw new StudentException("Tên không được chứa số và kí tự đặc biệt,xin nhập lại");
+//            }
+//        }
+//    }
 
     public void checkScore(double score) throws StudentException {
         if (score > 10 || score < 0) {
@@ -276,5 +284,13 @@ public class StudentService implements IStudentService {
             bufferedWriter.newLine();
         }
         bufferedWriter.close();
+    }
+    public boolean checkBirthday(String birthday){
+        String regex= "^([0-2][0-9]|3[0-1])/(0[0-9]|1[0-2])/([0-9][0-9])?[0-9][0-9]$";
+        return birthday.matches(regex);
+    }
+    public boolean checkName(String name){
+        String regex="^([A-Z][a-z]+ )+([A-Z][a-z]+)$";
+        return name.matches(regex);
     }
 }
