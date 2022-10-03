@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteFile {
+
     public static String readFIle(String filePath) {
         File file = new File(filePath);
         String line="";
@@ -48,8 +49,10 @@ public class ReadAndWriteFile {
         }
     }
 
+
+
     public static void main(String[] args) {
-        ReadAndWriteFile.readFIle("src/ss16_io/data/source_file.csv");
-        ReadAndWriteFile.writeFile("src/ss16_io/data/target_file.csv",ReadAndWriteFile.readFIle("src/ss16_io/data/source_file.csv"));
+        ReadAndWriteFile.readFIle("src/ss16_io/exercixe/copy_file_text/data/source_file.csv");
+        ReadAndWriteFile.writeFile("src/ss16_io/exercixe/copy_file_text/data/target_file.csv",ReadAndWriteFile.readFIle("src/ss16_io/exercixe/copy_file_text/data/source_file.csv"));
     }
 }

@@ -245,6 +245,7 @@ public class StudentService implements IStudentService {
 
     public void checkScore(double score) throws StudentException {
         if (score > 10 || score < 0) {
+
             throw new StudentException("Điểm không được nhỏ hơn 0 và lớn hơn 10,xin nhập lại");
         }
     }
@@ -286,7 +287,7 @@ public class StudentService implements IStudentService {
         bufferedWriter.close();
     }
     public boolean checkBirthday(String birthday){
-        String regex= "^([0-2][0-9]|3[0-1])/(0[0-9]|1[0-2])/([0-9][0-9])?[0-9][0-9]$";
+        String regex= "^([0-2][0-9]|3[0-1])/(0[0-9]|1[0-2])/[0-9]{4}$";
         return birthday.matches(regex);
     }
     public boolean checkName(String name){
