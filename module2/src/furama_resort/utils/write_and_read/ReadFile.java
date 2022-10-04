@@ -1,13 +1,17 @@
-package furama_resort.utils;
+package furama_resort.utils.write_and_read;
 
+import furama_resort.model.Customer;
 import furama_resort.model.Employee;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WriteAndRead {
-    public static List<Employee> readFile(String filePath) {
+public class ReadFile {
+    public static List<Employee> readFileEmployee(String filePath) {
         List<Employee> employeeList = new ArrayList<>();
         try {
             FileReader fileReader = new FileReader(filePath);
@@ -37,18 +41,33 @@ public class WriteAndRead {
         }
         return employeeList;
     }
-
-    public static void writeFile(List<Employee> employeeList, String filePath) {
+    public static List<Customer> readFileCustomer(String filePath) {
+        List<Customer> customerList = new ArrayList<>();
         try {
-            FileWriter fileWriter = new FileWriter(filePath);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            for (Employee employee : employeeList) {
-                bufferedWriter.write(employee.getInfo());
-                bufferedWriter.newLine();
+            FileReader fileReader = new FileReader(filePath);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line;
+            String[] info;
+            Customer customer = new Customer();
+            while ((line = bufferedReader.readLine()) != null) {
+                info = line.split(",");
+                customer.setId(Integer.parseInt(info[0]));
+                customer.setName(info[1]);
+                customer.setBirthday(info[2]);
+                customer.setGender(info[3]);
+                customer.setIdentityCard(info[4]);
+                customer.setPhoneNumber(info[5]);
+                customer.setEmail(info[6]);
+                customer.setCustomerType(info[7]);
+                customer.setAddress(info[8]);
+                customerList.add(customer);
             }
-            bufferedWriter.close();
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return customerList;
     }
 }

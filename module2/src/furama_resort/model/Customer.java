@@ -36,4 +36,7 @@ public class Customer extends Person{
                 ", address='" + address + '\'' +
                 '}';
     }
+    public String getInfo(){
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s",getId(),getName(),getBirthday(),getGender(),getIdentityCard(),getPhoneNumber(),getEmail(),getCustomerType(),getAddress());
+    }
 }

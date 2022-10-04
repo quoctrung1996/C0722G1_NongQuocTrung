@@ -2,7 +2,7 @@ package furama_resort.service.impl;
 
 import furama_resort.service.IBookingService;
 
-public class BookingService implements IBookingService {
+public class BookingServiceImpl implements IBookingService {
     @Override
     public void add() {
 
