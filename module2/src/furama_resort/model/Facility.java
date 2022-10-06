@@ -1,6 +1,7 @@
 package furama_resort.model;
 
 public abstract class Facility {
+    private String serviceCode;
     private String serviceName;
     private double areaUse;
     private double rentaClosts;
@@ -10,12 +11,21 @@ public abstract class Facility {
     public Facility() {
     }
 
-    public Facility(String serviceName, double areaUse, double rentaClosts, int people, String rentalType) {
+    public Facility(String serviceCode,String serviceName, double areaUse, double rentaClosts, int people, String rentalType) {
+        this.serviceCode=serviceCode;
         this.serviceName = serviceName;
         this.areaUse = areaUse;
         this.rentaClosts = rentaClosts;
         this.people = people;
         this.rentalType = rentalType;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public String getServiceName() {
@@ -66,6 +76,9 @@ public abstract class Facility {
                 ", rentaClosts=" + rentaClosts +
                 ", people=" + people +
                 ", rentalType='" + rentalType + '\'' +
-                '}';
+                ',';
+    }
+    public String getInfor(){
+        return String.format("%s,%s,%s,%s,%s,%s",getServiceCode(),getServiceName(),getAreaUse(),getRentaClosts(),getPeople(),getRentalType());
     }
 }

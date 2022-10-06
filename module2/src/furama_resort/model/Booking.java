@@ -4,19 +4,19 @@ public class Booking {
     private String codeBooking;
     private int startDay;
     private int endDay;
-    private String codeCustomer;
-    private String nameService;
+    private int id;
+    private String serviceCode;
     private String typeService;
 
     public Booking() {
     }
 
-    public Booking(String codeBooking, int startDay, int endDay, String codeCustomer, String nameService, String typeService) {
+    public Booking(String codeBooking, int startDay, int endDay, int id, String nameService, String typeService) {
         this.codeBooking = codeBooking;
         this.startDay = startDay;
         this.endDay = endDay;
-        this.codeCustomer = codeCustomer;
-        this.nameService = nameService;
+        this.id = id;
+        this.serviceCode = nameService;
         this.typeService = typeService;
     }
 
@@ -44,20 +44,20 @@ public class Booking {
         this.endDay = endDay;
     }
 
-    public String getCodeCustomer() {
-        return codeCustomer;
+    public int getId() {
+        return id;
     }
 
-    public void setCodeCustomer(String codeCustomer) {
-        this.codeCustomer = codeCustomer;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNameService() {
-        return nameService;
+    public String getServiceCode() {
+        return serviceCode;
     }
 
-    public void setNameService(String nameService) {
-        this.nameService = nameService;
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public String getTypeService() {
@@ -74,8 +74,8 @@ public class Booking {
                 "codeBooking='" + codeBooking + '\'' +
                 ", startDay=" + startDay +
                 ", endDay=" + endDay +
-                ", codeCustomer='" + codeCustomer + '\'' +
-                ", nameService='" + nameService + '\'' +
+                ", codeCustomer='" + id + '\'' +
+                ", nameService='" + serviceCode + '\'' +
                 ", typeService='" + typeService + '\'' +
                 '}';
     }

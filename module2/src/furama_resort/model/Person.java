@@ -1,9 +1,12 @@
 package furama_resort.model;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public abstract class Person {
     private int id;
     private String name;
-    private String birthday;
+    private LocalDate birthday;
     private String gender;
     private String identityCard;
     private String phoneNumber;
@@ -12,7 +15,7 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(int id, String name, String birthday, String gender, String identityCard, String phoneNumber, String email) {
+    public Person(int id, String name, LocalDate birthday, String gender, String identityCard, String phoneNumber, String email) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -38,11 +41,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
@@ -83,11 +86,12 @@ public abstract class Person {
         return
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", birthday='" + birthday + '\'' +
+                ", birthday='" + birthday.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + '\'' +
                 ", gender='" + gender + '\'' +
                 ", identityCard='" + identityCard + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
-                '}';
+                ',';
     }
+
 }
