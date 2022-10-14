@@ -25,7 +25,7 @@ public class FuramaController {
             System.out.println("5.Promotion Management");
             System.out.println("6.Exit");
             System.out.println("Xin mời chọn:");
-            int choise = 0;
+            int choise ;
             while (true) {
                 try {
                     choise = Integer.parseInt(sc.nextLine());
@@ -67,7 +67,7 @@ public class FuramaController {
             System.out.println("3.Edit employee");
             System.out.println("4.Return main menu");
             System.out.println("Xin mời chọn chức năng:");
-            int choise = 0;
+            int choise ;
             while (true) {
                 try {
                     choise = Integer.parseInt(sc.nextLine());

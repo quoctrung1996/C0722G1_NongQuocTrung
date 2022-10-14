@@ -5,9 +5,9 @@ import java.util.*;
 public class Compara implements Comparable<Compara> {
     private String name;
     private int age;
-    private double heiht;
+    private int heiht;
 
-    public Compara(String name, int age, double heiht) {
+    public Compara(String name, int age, int heiht) {
         this.name = name;
         this.age = age;
         this.heiht = heiht;
@@ -16,11 +16,27 @@ public class Compara implements Comparable<Compara> {
     public Compara() {
     }
 
-    public double getHeiht() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getHeiht() {
         return heiht;
     }
 
-    public void setHeiht(double heiht) {
+    public void setHeiht(int heiht) {
         this.heiht = heiht;
     }
 
@@ -35,7 +51,7 @@ public class Compara implements Comparable<Compara> {
 
     @Override
     public int compareTo(Compara o) {
-        return this.name.compareTo(o.name);
+        return this.age-(o.age);
     }
 
 //    @Override
@@ -44,11 +60,12 @@ public class Compara implements Comparable<Compara> {
 //        if (o1.age<o2.age) return -1;
 //        return 0;
 //    }
+ 
 
     public static void main(String[] args) {
-        Compara comparator1 = new Compara("trung", 26, 1.72);
+        Compara comparator1 = new Compara("trung", 26, 10);
         Compara comparator2 = new Compara("kha", 21, 2);
-        Compara comparator3 = new Compara("trung", 25, 1.70);
+        Compara comparator3 = new Compara("trung", 25, 11);
         Compara[] comparas=new Compara[3];
         comparas[1]=comparator1;
         comparas[2]=comparator2;
@@ -57,13 +74,13 @@ public class Compara implements Comparable<Compara> {
         arrayList.add(comparator1);
         arrayList.add(comparator2);
         arrayList.add(comparator3);
-//        arrayList.sort(comparator1);
+
         Collections.sort(arrayList, new Comparator<Compara>() {
             @Override
             public int compare(Compara o1, Compara o2) {
-                if (o1.heiht > o2.heiht) return 1;
-                if (o1.heiht < o2.heiht) return -1;
-                return 0;
+                int n=Integer.compare(o1.getAge(),o2.getAge());
+                if(n!=0) return n;
+                return  o1.getHeiht()-o2.getHeiht();
             }
         });
 //        Comparator<Compara> comparator = new Comparator<Compara>() {

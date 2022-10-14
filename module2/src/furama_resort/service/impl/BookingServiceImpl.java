@@ -28,7 +28,4 @@ public class BookingServiceImpl implements IBookingService {
     public void editContracts() {
 
     }
-    public Booking info(){
-
-    }
 }
