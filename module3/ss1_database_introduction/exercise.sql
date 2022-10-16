@@ -7,11 +7,11 @@ id int primary key,
 age int,
 country varchar(45));
 
-create table Class(
+create table class(
 id int primary key,
 `name` varchar(45));
 
-create table Teacher(
+create table teacher(
 id int,
 `name` varchar(50),
 age int,
