@@ -68,15 +68,15 @@ ten_dich_vu varchar(45),
 dien_tich int,
 chi_phi_thue double,
 so_nguoi_toi_da int,
+tieu_chuan_phong varchar(45),
+ma_ta_tien_nghi_khac varchar(45),
+dien_tich_ho_boi double,
+so_tang int,
+dich_vu_mien_phi_di_kem text,
 ma_kieu_thue int,
 foreign key(ma_kieu_thue) references kieu_thue(ma_kieu_thue),
 ma_loai_dich_vu int,
-foreign key(ma_loai_dich_vu) references loai_dich_vu(ma_loai_dich_vu),
-tieu_chuan_phong varchar(45),
-ma_ta_ten_nghi_khac varchar(45),
-dien_tich_ho_boi double,
-so_tang int,
-dich_vu_mien_phi_di_kem text
+foreign key(ma_loai_dich_vu) references loai_dich_vu(ma_loai_dich_vu)
 );
 
 create table hop_dong(
