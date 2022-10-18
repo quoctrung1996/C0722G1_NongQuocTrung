@@ -22,6 +22,36 @@ order by count(ma_hop_dong);
 --  tong_tien (Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá, với Số Lượng và Giá là 
 -- từ bảng dich_vu_di_kem, hop_dong_chi_tiet) cho tất cả các khách hàng đã từng đặt phòng.
 --  (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
+select 
+k.ma_khach_hang,
+k.ho_ten,
+l.ten_loai_khach,
+h.ma_hop_dong,
+d.ten_dich_vu,
+h.ngay_lam_hop_dong,
+h.ngay_ket_thuc,
+sum(d.chi_phi_thue+hd.so_luong*dv.gia) as tong_tien from loai_khach l
 
+join khach_hang k  on k.ma_loai_khach=l.ma_loai_khach
+left join hop_dong h on k.ma_khach_hang=h.ma_khach_hang
+left join dich_vu d on h.ma_dich_vu=d.ma_dich_vu
+left join hop_dong_chi_tiet hd on h.ma_hop_dong=hd.ma_hop_dong
+left join dich_vu_di_kem dv on hd.ma_dich_vu_di_kem=dv.ma_dich_vu_di_kem
+group by k.ma_khach_hang;
 
+-- 6.	Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu của tất cả các loại dịch vụ
+-- chưa từng được khách hàng thực hiện đặt từ quý 1 của năm 2021 (Quý 1 là tháng 1, 2, 3).
+select 
+d.ma_dich_vu,
+d.ten_dich_vu,
+d.dien_tich,
+d.chi_phi_thue,
+l.ten_loai_dich_vu,
+h.ngay_lam_hop_dong
+from dich_vu d 
+left join loai_dich_vu l on d.ma_loai_dich_vu=l.ma_loai_dich_vu
+left join hop_dong h on d.ma_dich_vu=h.ma_dich_vu
+where not (year(h.ngay_lam_hop_dong)= 2021 and (month(h.ngay_lam_hop_dong) in(1,2,3,4)))
+ group by d.ma_dich_vu;
+  
 
