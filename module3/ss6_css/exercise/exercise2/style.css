@@ -1,0 +1,14 @@
+body{
+    width: 550px;
+    height: 550px;
+    text-align: justify;
+}
+p{
+    text-indent:30px;
+}
+.a{
+    color: blue;
+}
+.b{
+    font-weight: bold;
+}
