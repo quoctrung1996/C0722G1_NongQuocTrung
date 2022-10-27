@@ -1,0 +1,23 @@
+#header{
+    background: cornflowerblue;
+    height: 100px;
+    width: 100%;
+}
+#main{
+    background: yellow;
+    height: 600px;
+    width: 70%;
+    float: left;
+}
+#sidebar{
+    background: aquamarine;
+    height: 600px;
+    width: 30%;
+    float: right;
+}
+#footer{
+    background: lawngreen;
+    height: 100px;
+    width: 100%;
+    clear: both;
+}
