@@ -1,0 +1,93 @@
+body{
+    color: white;
+}
+.head{
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    background-color:dimgray;
+    height: 50px;
+}
+.ul{
+    display: flex;
+    padding-left: 0px;
+    position: relative;
+    height: 50px;
+}
+.li{
+    list-style: none;
+    width: 120px;
+    cursor: pointer;
+}
+.li:hover{
+    background-color: cornflowerblue;
+}
+.li:hover li{
+    visibility: visible;
+    list-style: none;
+    background-color:dimgray ;
+}
+.li li:hover{
+    text-align: center;
+    background-color: cornflowerblue;
+}
+.login{
+    margin-right: 0;
+    right: 0;
+    position: absolute;
+}
+.head ul ul {
+    visibility: hidden;
+    padding-left: 0;
+}
+.body_left{
+    width: 15%;
+    height: 820px;
+    background-color:gainsboro;
+    float: left;
+}
+.body{
+    width: 70%;
+    height: 820px;
+    float: left;
+}
+.body_right{
+    width: 15%;
+    height: 820px;
+    background-color:gainsboro;
+    float: left;
+}
+.body_left li{
+    list-style:none;
+    text-align: center;
+    margin: 20px;
+    color: blue;
+    cursor: pointer;
+}
+.body_left li:hover{
+    color: red;
+}
+.body_left ul{
+    padding-left: 0;
+}
+.body_right p{
+    text-align: center;
+    line-height: 50px;
+    margin: 20px;
+    border: solid 1px white;
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+}
+.body_right p:hover{
+    background-color: #7abaff;
+}
+.footer{
+    line-height: 60px;
+    width: 100%;
+    background-color: dimgray;
+    clear: both;
+    text-align: center;
+    font-size: 20px;
+}

@@ -1,0 +1,23 @@
+.card{
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+}
+.content{
+    padding: 20px;
+}
+.header1{
+    padding-top: 10px;
+    font-size: 20px;
+}
+.header2{
+    padding-top: 5px;
+    font-size: 20px;
+}
+.footer{
+    color: blue;
+    padding-top: 20px;
+}
+.p{
+    padding: 20px;
+}

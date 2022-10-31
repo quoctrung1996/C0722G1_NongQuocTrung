@@ -1,0 +1,17 @@
+.boder{
+    box-sizing: border-box;
+    border: solid 1px ;
+    margin: 5px;
+    padding: 0;
+}
+.boder p{
+    margin-top: 20px;
+    text-align: center;
+}
+.boder img{
+    padding: 0;
+}
+img:hover{
+    cursor: pointer;
+}
+

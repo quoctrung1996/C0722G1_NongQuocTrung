@@ -1,0 +1,117 @@
+
+[class*="col-"] {
+    float: left;
+    padding: 0px;
+}
+/*màn hình điện thoai*/
+@media only screen and (max-width:740px ){
+    .col-s-1 {width: 8.33333%;}
+    .col-s-2 {width: 16.66667%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33333%;}
+    .col-s-5 {width: 41.66667%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33333%;}
+    .col-s-8 {width: 66.66667%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33333%;}
+    .col-s-11 {width: 91.66667%;}
+    .col-s-12 {width: 100%;}
+  }
+    /*Màn hinh laptop và máy tính bảng*/
+    @media only screen and (min-width:741px)and (max-width:1240px){
+        .col-m-1 {width: 8.33333%;}
+        .col-m-2 {width: 16.66667%;}
+        .col-m-3 {width: 25%;}
+        .col-m-4 {width: 33.33333%;}
+        .col-m-5 {width: 41.66667%;}
+        .col-m-6 {width: 50%;}
+        .col-m-7 {width: 58.33333%;}
+        .col-m-8 {width: 66.66667%;}
+        .col-m-9 {width: 75%;}
+        .col-m-10 {width: 83.33333%;}
+        .col-m-11 {width: 91.66667%;}
+        .col-m-12 {width: 100%;}
+    }
+
+    /*Màn hình máy tính pc và tivi smart*/
+    @media only screen and (min-width:1241px){
+        .col-l-1 {width: 8.33333%;}
+        .col-l-2 {width: 16.66667%;}
+        .col-l-3 {width: 25%;}
+        .col-l-4 {width: 33.33333%;}
+        .col-l-5 {width: 41.66667%;}
+        .col-l-6 {width: 50%;}
+        .col-l-7 {width: 58.33333%;}
+        .col-l-8 {width: 66.66667%;}
+        .col-l-9 {width: 75%;}
+        .col-l-10 {width: 83.33333%;}
+        .col-l-11 {width: 91.66667%;}
+        .col-l-12 {width: 100%;}
+    }
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.head{
+    height: 120px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+.head p{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: #7abaff;
+}
+.header{
+    background-color: #006266;
+    position: relative;
+}
+ul li{
+    font-size: 20px;
+    line-height: 35px;
+    color: honeydew;
+    list-style: none;
+    margin-left: 100px;
+}
+ul li:hover{
+    color: #7abaff;
+    cursor: pointer;
+}
+.input{
+    height: 35px;
+    margin-top: 12px;
+    right: 100px;
+    position: absolute;
+    width: 200px;
+    border: solid 1px white;
+    border-radius: 15px;
+}
+.body_left{
+    background-color: #079992;
+    height: 700px;
+}
+.body_right{
+    height: 700px;
+    background-color: #38ada9;
+}
+.footer{
+    font-size: 20px;
+    color: honeydew;
+    text-align: center;
+    line-height: 60px;
+    background-color:#006266 ;
+}
+.footer:hover{
+    color: #7abaff;
+    cursor: pointer;
+}
+
