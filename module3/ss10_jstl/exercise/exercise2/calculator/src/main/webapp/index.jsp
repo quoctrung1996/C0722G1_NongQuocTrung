@@ -16,7 +16,7 @@
  <h1>Simple Calculator</h1>
  <form action="/CalculatorServlet" method="post">
      <span>First operand</span>
-     <input type="text" name="number1"><br><br>
+     <input type="text" name="numberFirst"><br><br>
      <span>Operator</span>
      <select name="operator" id="">
          <option value="+">Addition</option>
@@ -25,7 +25,7 @@
          <option value="/">Division</option>
      </select><br><br>
      <span>Second operator</span>
-     <input type="text" name="number2"><br><br>
+     <input type="text" name="numberSecond"><br><br>
      <button>Calculator</button>
  </form>
   </body>
