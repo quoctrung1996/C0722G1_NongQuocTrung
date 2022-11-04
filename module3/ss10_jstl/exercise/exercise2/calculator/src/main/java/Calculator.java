@@ -1,16 +1,16 @@
 public class Calculator {
-    public static double calculate(double number1, double number2, char calculator) throws Exception{
+    public static double calculate(double numberFirst, double numberSecond, char calculator) throws Exception{
         double result = 0;
         switch (calculator) {
             case '+':
-                return result=number1 + number2;
+                return result=numberFirst + numberSecond;
             case '-':
-                return result=number1 - number2;
+                return result=numberFirst - numberSecond;
             case '*':
-                return result=number1 * number2;
+                return result=numberFirst * numberSecond;
             case '/':
-                if (number2 != 0) {
-                    return result=number1 / number2;
+                if (numberSecond != 0) {
+                    return result=numberFirst / numberSecond;
                 } else {
                     throw new Exception("lỗi");
                 }
