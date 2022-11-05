@@ -27,8 +27,8 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void remove(int id) {
-        for (int i = 0; i < findAll().size(); i++) {
-            if(id==findAll().get(i).getId()){
+        for (int i = 0; i < productList.size(); i++) {
+            if(id==productList.get(i).getId()){
                 productList.remove(i);
                 break;
             }
@@ -38,10 +38,21 @@ public class ProductRepository implements IProductRepository {
     @Override
     public Product findById(int id) {
         Product product = null;
-        for (int i = 0; i < findAll().size(); i++) {
-            if(id==findAll().get(i).getId()){
+        for (int i = 0; i < productList.size(); i++) {
+            if(id==productList.get(i).getId()){
                 product= productList.get(i);
                 break;
+            }
+        }
+        return product;
+    }
+
+    @Override
+    public Product search(String name) {
+        Product product=null;
+        for (int i = 0; i <productList.size() ; i++) {
+            if (productList.get(i).getName().equals(name)){
+                return productList.get(i);
             }
         }
         return product;

@@ -21,7 +21,7 @@
     <pre>Giá sản phẩm: <input type="number" name="price"></pre>
     <pre>Mô tả:        <input type="text" name="review"></pre>
     <pre>Nhà sản suất: <input type="text" name="producer"></pre>
-    <pre><button>Lưu</button></pre>
+    <pre>                          <button>Lưu</button></pre>
 </form>
 <c:if test="${mess!=null}">
     <span style="color: red">${mess}</span>

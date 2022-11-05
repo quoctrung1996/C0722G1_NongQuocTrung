@@ -9,5 +9,5 @@ public interface IProductRepository {
     void add(Product product);
     void remove(int id);
     Product findById(int id);
-
+    Product search(String name);
 }

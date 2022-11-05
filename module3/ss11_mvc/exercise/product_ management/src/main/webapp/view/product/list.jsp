@@ -19,7 +19,19 @@
 </head>
 <body>
 <h1>Danh sách sản phẩm</h1>
-<a  style="text-decoration: none" href="/controller-productServlet?action=add">Thêm mới</a>
+<a  style="text-decoration: none;float: left" href="/controller-productServlet?action=add">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Thêm mới
+    </button>
+</a>
+<div style="float: right;margin-right: 100px">
+    <form action="/controller-productServlet?action=search" method="post">
+    <input type="text" placeholder="tên sản phẩm" name="name" >
+        <span> <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Tìm kiếm
+    </button></span>
+    </form>
+</div>
 
 <table class="table table-striped">
     <tr>
@@ -48,7 +60,7 @@
             </td>
             <td>
                     <%--                <button type="button" class="btn btn-warning">Edit</button>--%>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Edit
                 </button>
 
@@ -63,7 +75,6 @@
                             </div>
                             <form action="/controller-productServlet?action=edit&id=${product.getId()}" method="post">
                             <div class="modal-body">
-
                                     <pre>Tên sản phẩm: <input type="text" name="name" value="${product.getName()}"></pre>
                                     <pre>Giá sản phẩm: <input type="number" name="price" value="${product.getPrice()}"></pre>
                                     <pre>Mô tả:        <input type="text" name="review" value="${product.getReview()}"></pre>
@@ -102,7 +113,7 @@
                                 <form action="/controller-productServlet?action=delete&id=${product.getId()}"
                                       method="post">
                                         <%--                                    <input type="submit" value="OK">--%>
-                                    <button type="submit" class="btn btn-primary">OK</button>
+                                    <button class="btn btn-primary">OK</button>
                                 </form>
                             </div>
                         </div>
