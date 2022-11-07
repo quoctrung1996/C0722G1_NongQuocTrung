@@ -124,7 +124,7 @@ public class ProductServlet extends HttpServlet {
 
     private void edit(HttpServletRequest request, HttpServletResponse response) {
         List<Product> productList = productService.findAll();
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("editId"));
         Product product = productService.findById(id);
         String name = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));
@@ -146,7 +146,7 @@ public class ProductServlet extends HttpServlet {
 
     private void removeProduct(HttpServletRequest request, HttpServletResponse response) {
         List<Product> productList = productService.findAll();
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("deleteId"));
         productService.remove(id);
         request.setAttribute("productList", productList);
         try {

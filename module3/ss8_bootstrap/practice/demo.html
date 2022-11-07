@@ -9,26 +9,46 @@
 </head>
 <body>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-</button>
+<td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Edit</button></td>
 
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Chỉnh Sửa</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action=""></form>
+                Bạn muốn sửa thông tin gì nào?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
-                <button type="button" class="btn btn-primary">Sửa</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Thanks </button>
+                <button type="button" class="btn btn-primary">Yes, I want edit</button>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal1">Delete</button></td>
+<div class="modal fade" id="myModal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel1">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc muốn xóa khách hàng này chứ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
