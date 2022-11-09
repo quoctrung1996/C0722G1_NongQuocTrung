@@ -15,7 +15,7 @@ import java.util.List;
 
 @WebServlet(name = "UserServlet", value = "/users")
 public class UserServlet extends HttpServlet {
-    IServiceUser iServiceUser = new ServiceUser();
+   private IServiceUser iServiceUser = new ServiceUser();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

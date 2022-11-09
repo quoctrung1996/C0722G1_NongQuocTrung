@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ServiceUser implements IServiceUser {
-    IRepositoryUser iRepositoryUser = new RepositoryUser();
+    private IRepositoryUser iRepositoryUser = new RepositoryUser();
 
     @Override
     public boolean insertUser(User user) throws SQLException {
