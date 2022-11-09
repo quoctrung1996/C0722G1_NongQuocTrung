@@ -17,7 +17,7 @@ public class RepositoryUser implements IRepositoryUser {
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
-    private static final String SELECT_USER_BY_COUNTRY = "select id,name,email,country from users where country =?;";
+    private static final String SELECT_USER_BY_COUNTRY = "select * from users where country =?;";
     private static final String SORT_BY_NAME = "SELECT * FROM users order by name;";
 
 
@@ -102,8 +102,8 @@ public class RepositoryUser implements IRepositoryUser {
         Connection connection=BaseRepository.getConnectDB();
         try {
             PreparedStatement ps=connection.prepareStatement(SELECT_USER_BY_COUNTRY);
-            ResultSet resultSet= ps.executeQuery();
             ps.setString(1,country1);
+            ResultSet resultSet= ps.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");

@@ -23,7 +23,7 @@
 
     <h2>
         <form action="/users?action=search" method="post">
-        <input type="text" name="country" placeholder="country">
+        <input type="text" name="country"  placeholder="country">
             <button>Search</button>
         </form>
     </h2>
