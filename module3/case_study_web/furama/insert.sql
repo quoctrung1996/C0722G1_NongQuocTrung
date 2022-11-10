@@ -30,7 +30,7 @@ INSERT INTO `furama_resort_web`.`customer_type` (`id`, `name`) VALUES ('3', 'Gol
 INSERT INTO `furama_resort_web`.`customer_type` (`id`, `name`) VALUES ('4', 'Silver');
 INSERT INTO `furama_resort_web`.`customer_type` (`id`, `name`) VALUES ('5', 'Member');
 
-INSERT INTO `furama_resort_web`.`customer` (`id`, `name`, `day_of_birth`, `gender`, `id_card`, `phone_number`, `email`, `address`, `customer_type_id`) VALUES ('1', 'Nguyễn Thị Hào', '1970-11-07', 0, '643431213', '0945423362', 'thihao07@gmail.com', '23 Nguyễn Hoàng, Đà Nẵng', '5');
+INSERT INTO `furama_resort_web`.`customer` (`id`, `name`, `day_of_birth`, `gender`, `id_card`, `phone_number`, `email`, `address`, `customer_type_id`) VALUES ('11', 'Nguyễn Thị Hào', '1970-11-07', 0, '643431213', '0945423362', 'thihao07@gmail.com', '23 Nguyễn Hoàng, Đà Nẵng', '5');
 INSERT INTO `furama_resort_web`.`customer` (`id`, `name`, `day_of_birth`, `gender`, `id_card`, `phone_number`, `email`, `address`, `customer_type_id`) VALUES ('2', 'Phạm Xuân Diệu', '1992-08-08', 1, '865342123', '0954333333', 'xuandieu92@gmail.com', 'K77/22 Thái Phiên, Quảng Trị', '3');
 INSERT INTO `furama_resort_web`.`customer` (`id`, `name`, `day_of_birth`, `gender`, `id_card`, `phone_number`, `email`, `address`, `customer_type_id`) VALUES ('3', 'Trương Đình Nghệ', '1990-02-27', 1, '488645199', '0373213122', 'nghenhan2702@gmail.com', 'K323/12 Ông Ích Khiêm, Vinh', '1');
 INSERT INTO `furama_resort_web`.`customer` (`id`, `name`, `day_of_birth`, `gender`, `id_card`, `phone_number`, `email`, `address`, `customer_type_id`) VALUES ('4', 'Dương Văn Quan', '1981-07-08', 1, '543432111', '0490039241', 'duongquan@gmail.com', 'K453/12 Lê Lợi, Đà Nẵng', '1');

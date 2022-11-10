@@ -70,6 +70,7 @@
         </tr>
     </c:forEach>
 </table>
+
 <form action="/controller-productServlet?action=edit"method="post">
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -78,7 +79,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">
                     Edit product by id=
-                    <input type="text" id="editId" name="editId" style="width: 30px" >
+                    <input type="text"  id="editId" name="editId" style="width: 30px;border: none" >
                    </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
