@@ -16,8 +16,9 @@ public class StudentController {
        model.addAttribute("student",new Student());
        return "create";
    }
+
    @PostMapping("student")
-    public String save(Model model, @ModelAttribute Student student){
+    public String save(Model model,@ModelAttribute Student student){
        model.addAttribute("student",student);
        return "index";
    }
