@@ -18,6 +18,17 @@ import java.util.List;
 @RequestMapping("/product")
 public class productController {
 
+//    static {
+//        try {
+//            SessionFactory sessionFactory = new Configuration()
+//                    .configure("hibernate.conf.xml")
+//                    .buildSessionFactory();
+//            sessionFactory.close();
+//        } catch (HibernateException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     @Autowired
     private IProductService iProductService;
     @GetMapping("")
