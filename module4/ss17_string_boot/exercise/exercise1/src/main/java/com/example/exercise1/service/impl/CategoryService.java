@@ -4,6 +4,7 @@ import com.example.exercise1.model.Category;
 import com.example.exercise1.repository.ICategoryRepository;
 import com.example.exercise1.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -12,8 +13,8 @@ public class CategoryService implements ICategoryService {
     @Autowired
     private ICategoryRepository iCategoryRepository;
     @Override
-    public Iterable<Category> findAll() {
-        return iCategoryRepository.findAll();
+    public Iterable<Category> findAll(Pageable pageable) {
+        return iCategoryRepository.findAll( pageable);
     }
 
     @Override

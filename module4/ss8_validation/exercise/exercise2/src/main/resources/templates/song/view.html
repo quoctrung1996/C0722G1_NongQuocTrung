@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body style="color: red">
+<div class="col-sm-12" style="background-color:gainsboro;height: 70px"><h1
+        style="text-align: center;line-height: 70px  ">Thông tin</h1></div>
+<div style="margin:30px">
+    <p><a href="/song" class="btn btn-primary">Danh sách</a></p>
+
+
+    <table class="table">
+        <tr class="form-group row">
+            <td class="col-sm-3 col-form-label">Tên bài hát:</td>
+            <td class="col-sm-6" th:text="${song.songName}" placeholder="Tên bài hát"></td>
+        </tr>
+
+        <tr class="form-group row">
+            <td class="col-sm-3 col-form-label">Nghệ sĩ:</td>
+            <td class="col-sm-6" th:text="${song.artist}" placeholder="Nghệ sĩ"></td>
+        </tr>
+
+        <tr class="form-group row">
+            <td class="col-sm-3 col-form-label">Thể loại:</td>
+            <td class="col-sm-6" th:text="*{song.category}" placeholder="Thể loại"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

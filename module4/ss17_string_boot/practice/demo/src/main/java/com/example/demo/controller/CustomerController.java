@@ -22,7 +22,7 @@ public class CustomerController {
     @GetMapping("/customer")
     public String showList(Model model) {
         model.addAttribute("customerList", iCustomerService.findAll());
-        return "/list";
+        return "list";
     }
 
     @GetMapping("/create")

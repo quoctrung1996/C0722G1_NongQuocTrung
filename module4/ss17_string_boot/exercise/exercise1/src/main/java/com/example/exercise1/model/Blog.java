@@ -9,7 +9,7 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //id tự tăng
     private int id;
     private String title;
-    @Column(columnDefinition = "text")//thay đổi kdl của column
+    @Column(name = "abc",columnDefinition = "text")//thay đổi kdl của column
     private String content;
     private String author;
     private String date;

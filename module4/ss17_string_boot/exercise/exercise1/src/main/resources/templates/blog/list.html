@@ -33,7 +33,7 @@
     </tr>
     <th:block th:each="blog,rowStat:${blogList}">
        <tr>
-           <td th:text="${rowStat.count}"></td>
+           <td th:text="${rowStat.count}+${blogList.number}*${blogList.size}"></td>
            <td th:text="${blog.title}"></td>
            <td th:text="${blog.author}"></td>
            <td th:text="${blog.date}"></td>
@@ -44,5 +44,8 @@
        </tr>
     </th:block>
 </table>
+<a th:href="@{/blog(page=${blogList.number-1})}" th:if="${blogList.hasPrevious()}">Previous</a>
+<span th:text="${blogList.number+1}+'/'+${blogList.totalPages}"></span>
+<a th:href="@{/blog(page=${blogList.number+1})}" th:if="${blogList.hasNext()}">Next</a>
 </body>
 </html>

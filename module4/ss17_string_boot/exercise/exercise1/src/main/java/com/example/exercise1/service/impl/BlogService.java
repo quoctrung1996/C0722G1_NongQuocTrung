@@ -3,7 +3,10 @@ import com.example.exercise1.model.Blog;
 import com.example.exercise1.repository.IBlogRepository;
 import com.example.exercise1.service.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,8 +16,8 @@ public class BlogService implements IBlogService {
     private IBlogRepository iBlogRepository ;
 
     @Override
-    public Iterable<Blog> findAll() {
-        return iBlogRepository.findAll();
+    public Iterable<Blog> findAll(Pageable pageable) {
+        return iBlogRepository.findAll(pageable);
     }
 
     @Override
@@ -33,7 +36,12 @@ public class BlogService implements IBlogService {
     }
 
     @Override
-    public List<Blog> findBlogByTitleContainingOrAuthorContainingOrderByTitle(String name) {
-        return iBlogRepository.findBlogByTitleContainingOrAuthorContainingOrderByTitle(name,name);
+    public Page<Blog> findBlogByTitleContainingOrAuthorContainingOrderByTitle(String name, Pageable pageable) {
+        return iBlogRepository.findBlogByTitleContainingOrAuthorContainingOrderByTitle(name,name,pageable);
+    }
+
+    @Override
+    public Page<Blog> searchTitleAndAuthor(String name,Pageable pageable) {
+        return iBlogRepository.searchTitleAndAuthor(name,name,name,pageable);
     }
 }
