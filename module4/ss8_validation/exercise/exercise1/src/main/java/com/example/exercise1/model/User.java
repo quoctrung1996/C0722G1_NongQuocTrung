@@ -1,30 +1,17 @@
 package com.example.exercise1.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NotBlank(message = "Tên không được chứa toàn khoảng trắng")
-    @Pattern( regexp = "^([A-Z][a-záàảạãăắằặẵâấầẫậẩéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịùúủũụưứửữựỵỷỹýỳ]*[ ])*([A-Z][a-záàảạãăắằặẵâấầẫậẩéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịùúủũụưứửữựỵỷỹýỳ]*)$", message = "Tên không đúng định dạng")
-    @Size(max = 45)
     private String firstName;
-    @NotBlank(message = "Tên không được chứa toàn khoảng trắng")
-    @Pattern( regexp = "^([A-Z][a-záàảạãăắằặẵâấầẫậẩéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịùúủũụưứửữựỵỷỹýỳ]*[ ])*([A-Z][a-záàảạãăắằặẵâấầẫậẩéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịùúủũụưứửữựỵỷỹýỳ]*)$", message = "Tên không đúng định dạng")
-    @Size(max = 45)
     private String lastName;
-    @Pattern(regexp ="^[0][0-9]{9}$",message = "số điện thoại phải gồm 10 số")
     private String phonenumber;
-    @Min(value = 18,message = "tuổi không được nhỏ 18")
-    //@Pattern(regexp = "^[0-9]{2}$",message ="hãy nhập số")  -->chỉ dùng cho String
     private int age;
-    @Pattern(regexp = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$",message = "hãy nhập email đúng định dạng")
     private String email;
 
     public User(int id, String firstName, String lastName, String phonenumber, int age, String email) {

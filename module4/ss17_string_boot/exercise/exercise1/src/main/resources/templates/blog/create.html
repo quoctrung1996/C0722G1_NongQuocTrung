@@ -19,15 +19,16 @@
             <td><input type="text" th:field="*{content}"></td>
         </tr>
         <tr>
-            <td>Tác giả:</td>
-            <td><input type="text" th:field="*{author}"></td>
+            <td><label for="author">Tác giả:</label></td>
+            <td><input type="text" th:field="*{author}" id="author"></td>
         </tr>
         <tr>
             <td><label for="category">Thể loại:</label></td>
-            <td><select id="category" th:field="*{category}">
+            <td><select th:field="*{category}" id="category">
                 <option th:each="category : ${categoryList}"
                         th:value="${category.id}"
-                        th:text="${category.name}"></option>
+                        th:text="${category.name}">
+                </option>
             </select></td>
         </tr>
         <tr>

@@ -14,7 +14,7 @@
 <div class="col-sm-12" style="background-color:gainsboro;height: 70px"><h1 style="text-align: center;line-height: 70px  ">FORM ĐĂNG KÍ</h1></div>
 <div style="margin:30px">
     <p><a href="/user" class="btn btn-primary">Danh sách User</a></p>
-    <form th:action="@{/user/create}" th:object="${user}" method="post">
+    <form th:action="@{/user/create}" th:object="${userDto}" method="post">
         <div class="form-group row">
             <label class="col-sm-3 col-form-label" for="firstName">First Name:</label>
             <div class="col-sm-6">
@@ -42,7 +42,7 @@
         <div class="form-group row">
             <label class="col-sm-3 col-form-label" for="age">Age:</label>
             <div class="col-sm-6">
-                <input type="number" th:field="*{age}" class="form-control" id="age" placeholder="Age" required>
+                <input type="text" th:field="*{age}" class="form-control" id="age" placeholder="Age" required>
                 <p th:errors="*{age}" class="text-danger"></p>
 
             </div>

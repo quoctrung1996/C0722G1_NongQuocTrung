@@ -1,7 +1,9 @@
 package com.example.exercise1.controller;
 
+import com.example.exercise1.dto.UserDto;
 import com.example.exercise1.model.User;
 import com.example.exercise1.service.IUserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,15 +30,18 @@ public class UserController {
     }
     @GetMapping("/create")
     public String showForm(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("userDto", new UserDto());
         return "user/create";
     }
 
     @PostMapping("/create")
-    public String create(@Validated @ModelAttribute User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String create(@Validated @ModelAttribute UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        new UserDto().validate(userDto,bindingResult);
         if (bindingResult.hasErrors()) {
             return "user/create";
         }
+        User user=new User();
+        BeanUtils.copyProperties(userDto,user);
         iUserService.save(user);
         redirectAttributes.addFlashAttribute("mess", "Thêm mới thành công");
         return "redirect:/user";
