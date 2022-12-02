@@ -13,7 +13,7 @@ public interface IBookService {
     void save(Book book);
 
     void remove(int id);
-    void removeById(int id);
-    void addById(int id);
+
+
 
 }

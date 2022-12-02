@@ -11,13 +11,13 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface IBookReposotory extends JpaRepository<Book,Integer> {
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE `book`.`book` SET `amount` = `amount`-1 WHERE `id` = :id", nativeQuery = true)
-    void removeById(@Param("id") int id);
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE `book`.`book` SET `amount` = `amount`+1 WHERE `id` = :id", nativeQuery = true)
-    void addById(@Param("id") int id);
+//    @Modifying
+//    @Transactional
+//    @Query(value = "UPDATE `book`.`book` SET `amount` = `amount`-1 WHERE `id` = :id", nativeQuery = true)
+//    void removeById(@Param("id") int id);
+//    @Modifying
+//    @Transactional
+//    @Query(value = "UPDATE `book`.`book` SET `amount` = `amount`+1 WHERE `id` = :id", nativeQuery = true)
+//    void addById(@Param("id") int id);
 }
 

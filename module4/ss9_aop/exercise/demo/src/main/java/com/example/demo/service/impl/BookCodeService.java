@@ -34,19 +34,4 @@ public class BookCodeService implements IBookCodeService {
 
     }
 
-    @Override
-    public List<Integer> showCode() {
-        return iBookCodeReposotory.showCode();
-    }
-
-    @Override
-    public boolean isCheck(int bookCode) {
-        List<Integer> codeList = showCode();
-        for (int i = 0; i < codeList.size(); i++) {
-            if (codeList.get(i) == bookCode) {
-                return true;
-            }
-        }
-        return false;
-    }
 }

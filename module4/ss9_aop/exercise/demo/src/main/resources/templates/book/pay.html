@@ -46,10 +46,13 @@
       </div>
     </div>
 
+    <input type="hidden" th:field="*{amount}"  placeholder="Đánh giá" class="form-control" required>
+
+
     <div class="form-group row">
       <label class="col-sm-3 col-form-label" >Nhập mã trả sách:</label>
       <div class="col-sm-6">
-        <input type="text" name="bookCode"  placeholder="" class="form-control" required>
+        <input type="text" name="code"  placeholder="" class="form-control" required>
         <p style="color: red;font-weight: bold" th:text="${mess}" class="text-danger"></p>
       </div>
     </div>

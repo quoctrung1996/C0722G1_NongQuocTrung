@@ -12,9 +12,9 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
-public interface IBookCodeReposotory extends JpaRepository<BookCode,Integer> {
-    @Modifying
-    @Transactional
-@Query(value = "SELECT code FROM book.book_code;",nativeQuery = true)
-    List<Integer> showCode();
+public interface IBookCodeReposotory extends JpaRepository<BookCode, Integer> {
+//    @Modifying
+//    @Transactional
+//    @Query(value = "SELECT code FROM book.book_code;", nativeQuery = true)
+//    List<Integer> showCode();
 }

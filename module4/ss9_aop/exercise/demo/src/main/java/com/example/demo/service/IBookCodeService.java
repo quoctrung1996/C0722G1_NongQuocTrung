@@ -14,7 +14,5 @@ public interface IBookCodeService {
     void save(BookCode bookCode);
 
     void remove(int id);
-    List<Integer> showCode();
-    boolean isCheck(int bookCode);
 
 }

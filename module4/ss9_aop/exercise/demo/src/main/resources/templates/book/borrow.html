@@ -39,6 +39,14 @@
         </div>
 
         <div class="form-group row">
+            <label class="col-sm-3 col-form-label" th:for="amount">Số lượng còn lại:</label>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{amount}"  placeholder="Đánh giá" class="form-control" required>
+                <p th:errors="*{amount}" class="text-danger"></p>
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label class="col-sm-3 col-form-label" th:for="evaluate">Đánh giá:</label>
             <div class="col-sm-6">
                 <input type="text" th:field="*{evaluate}"  placeholder="Đánh giá" class="form-control" required>

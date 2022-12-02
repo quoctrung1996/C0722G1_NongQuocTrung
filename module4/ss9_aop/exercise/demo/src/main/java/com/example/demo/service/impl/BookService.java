@@ -12,6 +12,7 @@ import java.util.Optional;
 public class BookService implements IBookService {
     @Autowired
     private IBookReposotory iBookReposotory;
+
     @Override
     public Iterable<Book> findAll() {
         return iBookReposotory.findAll();
@@ -24,7 +25,7 @@ public class BookService implements IBookService {
 
     @Override
     public void save(Book book) {
-
+        iBookReposotory.save(book);
     }
 
     @Override
@@ -32,13 +33,4 @@ public class BookService implements IBookService {
 
     }
 
-    @Override
-    public void removeById(int id) {
-        iBookReposotory.removeById(id);
-    }
-
-    @Override
-    public void addById(int id) {
-        iBookReposotory.addById(id);
-    }
 }
