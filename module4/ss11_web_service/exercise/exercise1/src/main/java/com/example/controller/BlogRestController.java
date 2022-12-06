@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.model.Blog;
 import com.example.service.IBlogService;
 import com.example.service.ICategoryService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -42,13 +43,13 @@ public class BlogRestController {
         Blog blog = iBlogService.findById(id).get();
 
         if (blog == null) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(blog, HttpStatus.OK);
     }
 
     @GetMapping("category/{id}")
-    public ResponseEntity<Page<Blog>> showList(@PathVariable int id, @PageableDefault(page = 0, size = 2) Pageable pageable) {
+    public ResponseEntity<Page<Blog>> showBlogByCategory(@PathVariable int id, @PageableDefault(page = 0, size = 2) Pageable pageable) {
         Page<Blog> blogList = iBlogService.findByCategoryId(pageable, id);
         if (blogList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -56,4 +57,25 @@ public class BlogRestController {
         return new ResponseEntity<>(blogList, HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Blog> delete(@PathVariable("id") int id) {
+        Blog blog = iBlogService.findById(id).get();
+        if (blog == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        iBlogService.remove(id);
+        return new ResponseEntity<>(blog, HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Blog> update(@RequestBody Blog blog, @PathVariable("id") int id) {
+        Blog blog1 = iBlogService.findById(id).get();
+        if (blog1 == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        iBlogService.save(blog);
+
+        return new ResponseEntity<>(blog, HttpStatus.OK);
+
+    }
 }

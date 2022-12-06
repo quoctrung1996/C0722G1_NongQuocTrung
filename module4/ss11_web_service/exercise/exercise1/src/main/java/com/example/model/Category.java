@@ -1,9 +1,7 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Category {
@@ -11,8 +9,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-//    @OneToMany(mappedBy = "category") //liên kết với khóa ngoại bên kia với tên là category
-//    private Set<Blog> blogs;
+   @OneToMany(mappedBy = "category") //liên kết với khóa ngoại bên kia với tên là category
+   private Set<Blog> blogs;
 //
 //    public Set<Blog> getBlogs() {
 //        return blogs;
