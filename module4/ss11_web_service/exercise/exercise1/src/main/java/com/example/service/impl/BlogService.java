@@ -23,6 +23,10 @@ public class BlogService implements IBlogService {
     public Page<Blog> findAll(Pageable pageable) {
         return iBlogRepository.findAll(pageable);
     }
+    public List<Blog> findAll() {
+        return iBlogRepository.findAll();
+    }
+
 
     @Override
     public Optional<Blog> findById(int id) {
@@ -41,12 +45,21 @@ public class BlogService implements IBlogService {
 
 
     @Override
-    public Page<Blog> findBlogByCategoryContaining(Pageable pageable, String name) {
-        return iBlogRepository.findBlogByCategoryContaining(pageable,name);
+    public Page<Blog> findByCategoryId(Pageable pageable, int id) {
+        return iBlogRepository.findByCategoryId(pageable,id);
     }
 
     @Override
-    public Page<Blog> findByCategoryId(Pageable pageable, int id) {
-        return iBlogRepository.findByCategoryId(pageable,id);
+    public List<Blog> searchTitleOrAuthorOrCategoryName(String name) {
+        return iBlogRepository.searchTitleOrAuthorOrCategoryName(name,name,name);
+    }
+
+    @Override
+    public List<Blog> findBlogByTitleContaining(String name) {
+        return iBlogRepository.findBlogByTitleContaining(name);
+    }
+    @Override
+    public List<Blog> searchTitleOrAuthorOrCategoryName2(String name) {
+        return iBlogRepository.searchTitleOrAuthorOrCategoryName2(name,name,name);
     }
 }

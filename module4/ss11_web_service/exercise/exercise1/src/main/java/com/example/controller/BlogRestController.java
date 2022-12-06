@@ -12,18 +12,47 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("blogs")
+@CrossOrigin("*")
 public class BlogRestController {
     @Autowired
     private IBlogService iBlogService;
     @Autowired
     private ICategoryService iCategoryService;
 
+//    @GetMapping
+//    public ResponseEntity<Page<Blog>> getList(@PageableDefault(page = 0, size = 10) Pageable pageable) {
+//        Page<Blog> blogList = iBlogService.findAll(pageable);
+//        if (blogList.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(blogList, HttpStatus.OK);
+//    }
+
+//    @GetMapping
+//    public ResponseEntity<List<Blog>> getList() {
+//        List<Blog> blogList = iBlogService.findAll();
+//        if (blogList.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(blogList, HttpStatus.OK);
+//    }
     @GetMapping
-    public ResponseEntity<Page<Blog>> getList(@PageableDefault(page = 0, size = 2) Pageable pageable) {
-        Page<Blog> blogList = iBlogService.findAll(pageable);
+    public ResponseEntity<List<Blog>> getListBySearch(@RequestParam(defaultValue = "") String search) {
+        List<Blog> blogList = iBlogService.searchTitleOrAuthorOrCategoryName(search);
+        if (blogList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(blogList, HttpStatus.OK);
+    }
+
+    @GetMapping("/more")
+    public ResponseEntity<List<Blog>> getListBySearch2(@RequestParam(defaultValue = "") String search) {
+        List<Blog> blogList = iBlogService.searchTitleOrAuthorOrCategoryName2(search);
         if (blogList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

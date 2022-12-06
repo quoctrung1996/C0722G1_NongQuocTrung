@@ -10,6 +10,7 @@ import java.util.Optional;
 
 public interface IService<T>{
     Page<T> findAll(Pageable pageable);
+    List<T> findAll();
 
     Optional<T> findById(int id);
 
