@@ -5,24 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="992645db-2bf3-4b36-b55d-f50579627083" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/controller/ClazzController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/dto/StudentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/Clazz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/MyUserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/reposotory/IClazzRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/reposotory/IStudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/reposotory/IUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/IClazzService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/IService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/IStudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/impl/ClazzService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/impl/MyUserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/impl/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module2/out/production/module2/furama_resort/utils/write_and_read/WriteFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/out/production/module2/furama_resort/utils/write_and_read/WriteFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module2/src/furama_resort/utils/write_and_read/WriteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/src/furama_resort/utils/write_and_read/WriteFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module2/src/phuong_tien_giao_thong/model/Oto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/src/phuong_tien_giao_thong/model/Oto.java" afterDir="false" />
@@ -38,6 +20,7 @@
       <change beforePath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/build/libs/furama_resot_web-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/build/libs/furama_resot_web-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/src/main/webapp/view/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/case_study_web/furama/furama_resot_web/src/main/webapp/view/customer/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module3/form/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/form/form.html" afterDir="false" />
@@ -213,7 +196,6 @@
       <change beforePath="$PROJECT_DIR$/../../../../module3/ss11_mvc/exercise/product_ management/src/product_ management.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module3/ss12_jdbc/exercise/user_manager/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/ss12_jdbc/exercise/user_manager/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module3/ss13_jdbc_query/exercise/user_manager/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/ss13_jdbc_query/exercise/user_manager/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,19 +221,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -263,6 +245,7 @@
       <workItem from="1670299020514" duration="32000" />
       <workItem from="1670299096666" duration="147000" />
       <workItem from="1670299280463" duration="13307000" />
+      <workItem from="1670478026534" duration="19000" />
     </task>
     <servers />
   </component>
