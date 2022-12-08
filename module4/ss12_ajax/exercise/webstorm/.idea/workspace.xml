@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="992645db-2bf3-4b36-b55d-f50579627083" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/controller/ClazzController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/dto/StudentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/Clazz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/MyUserDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/reposotory/IClazzRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/reposotory/IStudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/reposotory/IUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/IClazzService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/IService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/IStudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/impl/ClazzService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/impl/MyUserDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss13_spring_security/exercise/src/main/java/com/example/service/impl/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module2/out/production/module2/furama_resort/utils/write_and_read/WriteFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/out/production/module2/furama_resort/utils/write_and_read/WriteFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module2/src/furama_resort/utils/write_and_read/WriteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/src/furama_resort/utils/write_and_read/WriteFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module2/src/phuong_tien_giao_thong/model/Oto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/src/phuong_tien_giao_thong/model/Oto.java" afterDir="false" />
@@ -196,6 +213,7 @@
       <change beforePath="$PROJECT_DIR$/../../../../module3/ss11_mvc/exercise/product_ management/src/product_ management.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module3/ss12_jdbc/exercise/user_manager/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/ss12_jdbc/exercise/user_manager/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../module3/ss13_jdbc_query/exercise/user_manager/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/ss13_jdbc_query/exercise/user_manager/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +262,7 @@
       <updated>1670299018612</updated>
       <workItem from="1670299020514" duration="32000" />
       <workItem from="1670299096666" duration="147000" />
-      <workItem from="1670299280463" duration="12383000" />
+      <workItem from="1670299280463" duration="13307000" />
     </task>
     <servers />
   </component>
