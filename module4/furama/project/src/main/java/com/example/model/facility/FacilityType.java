@@ -9,23 +9,23 @@ import javax.persistence.Id;
 public class FacilityType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String name;
 
 
     public FacilityType() {
     }
 
-    public FacilityType(Long id, String name) {
+    public FacilityType(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
@@ -58,7 +59,7 @@
                    style="margin-left: 60px;color: white">Employee</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link a" href="/furama_web?action=showCutomer" style="color: white;margin-left: 60px">Customer</a>
+                <a class="nav-link a" th:href="@{/customer}" style="color: white;margin-left: 60px">Customer</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link a" href="http://localhost:63342/furama_resort/src/furama_html/furama_home/facility_list.html?_ijt=jl53r35ma5a793m1gvnkevj7rh&_ij_reload=RELOAD_ON_SAVE#" style="color: white;margin-left: 60px">Service</a>

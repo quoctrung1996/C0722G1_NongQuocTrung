@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Facility {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String name;
     private int area;
     private double cost;
@@ -26,7 +26,7 @@ public class Facility {
     public Facility() {
     }
 
-    public Facility(Long id, String name, int area, double cost, int maxPeople, String standardRoom, String desciption, double poolArea, int numberOfFloors, String facilityFree, FacilityType facilityType, RentType rentType) {
+    public Facility(int id, String name, int area, double cost, int maxPeople, String standardRoom, String desciption, double poolArea, int numberOfFloors, String facilityFree, FacilityType facilityType, RentType rentType) {
         this.id = id;
         this.name = name;
         this.area = area;
@@ -41,11 +41,11 @@ public class Facility {
         this.rentType = rentType;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

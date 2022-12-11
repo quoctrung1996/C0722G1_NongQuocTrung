@@ -1,13 +1,12 @@
-package com.example.model.customer;
+package com.example.dto;
 
-import javax.persistence.*;
 
-@Entity
-public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+import com.example.model.customer.CustomerType;
+
+
+public class CustomerDto {
+
     private int id;
-
     private String name;
     private String dateOfBirth;
     private String gender;
@@ -17,17 +16,10 @@ public class Customer {
     private String address;
 
 
-
-    @ManyToOne
     private CustomerType customerType;
 
-
-//    @OneToMany(mappedBy = "customer")
-//    private Set<Contract> contract;
-
-    public Customer() {
+    public CustomerDto() {
     }
-
 
 
     public int getId() {
@@ -102,11 +94,4 @@ public class Customer {
         this.customerType = customerType;
     }
 
-//    public Set<Contract> getContract() {
-//        return contract;
-//    }
-//
-//    public void setContract(Set<Contract> contract) {
-//        this.contract = contract;
-//    }
 }
