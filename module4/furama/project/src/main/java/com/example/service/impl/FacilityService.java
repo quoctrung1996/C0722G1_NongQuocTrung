@@ -34,4 +34,9 @@ public class FacilityService implements IFacilityService {
     public void remove(int id) {
         iFacilityRepository.deleteById(id);
     }
+
+    @Override
+    public Page<Facility> search(String name, String facilityTypeId, Pageable pageable) {
+        return iFacilityRepository.search(name,facilityTypeId,pageable);
+    }
 }
