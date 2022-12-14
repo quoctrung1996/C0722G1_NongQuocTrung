@@ -37,7 +37,7 @@ public class FacilityController {
 //        model.addAttribute("rentTypeList",rentTypeList);
 //        return "facility/list";
 //    }
-    public String showListBySearch(Model model, @PageableDefault(page = 0,value = 1)Pageable pageable, @RequestParam(defaultValue = "") String name, @RequestParam(defaultValue = "")String facilityType){
+    public String showListBySearch(Model model, @PageableDefault(page = 0,value = 5)Pageable pageable, @RequestParam(defaultValue = "") String name, @RequestParam(defaultValue = "")String facilityType){
         Page<Facility> facilityList=iFacilityService.search(name,facilityType,pageable);
         List<FacilityType> facilityTypeList=iFacilityTypeService.findAll();
         model.addAttribute("facilityList",facilityList);

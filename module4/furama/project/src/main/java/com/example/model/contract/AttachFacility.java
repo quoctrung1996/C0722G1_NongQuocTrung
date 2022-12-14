@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class AttachFacility {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String name;
     private double cost;
     private String unit;
@@ -18,7 +18,7 @@ public class AttachFacility {
     public AttachFacility() {
     }
 
-    public AttachFacility(Long id, String name, double cost, String unit, String status) {
+    public AttachFacility(int id, String name, double cost, String unit, String status) {
         this.id = id;
         this.name = name;
         this.cost = cost;
@@ -26,11 +26,11 @@ public class AttachFacility {
         this.status = status;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

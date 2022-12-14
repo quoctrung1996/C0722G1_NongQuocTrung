@@ -28,10 +28,10 @@
                             <a class="nav-link a" th:href="@{/facility}" style="color: white;margin-left: 60px">Service</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled a" style="color: white;margin-left: 60px">Contract</a>
+                            <a class="nav-link  a" style="color: white;margin-left: 60px" th:href="@{/contract}">Contract</a>
                         </li>
                     </ul>
-                    <form class="d-flex" th:action="@{/facility}" method="get">
+                    <form class="d-flex" th:action="@{/customer}" method="get">
                         <input class="form-control me-2" type="search" placeholder="Tên" aria-label="Search" name="name" th:value="${name}"  >
                         <select  class="form-control"  placeholder="" name="facilityType"  >
                             <option value="" >--Loại dịch vụ--</option>

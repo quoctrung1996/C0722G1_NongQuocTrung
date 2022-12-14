@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String startDate;
     private String endDate;
     private double deposit;
@@ -26,7 +26,7 @@ public class Contract {
     public Contract() {
     }
 
-    public Contract(Long id, String startDate, String endDate, double deposit, Customer customer, Facility facility, Employee employee) {
+    public Contract(int id, String startDate, String endDate, double deposit, Customer customer, Facility facility, Employee employee) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -37,11 +37,11 @@ public class Contract {
     }
 
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
