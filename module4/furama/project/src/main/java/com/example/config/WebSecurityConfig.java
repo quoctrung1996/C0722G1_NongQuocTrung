@@ -1,6 +1,5 @@
 package com.example.config;
 
-
 import com.example.service.impl.MyUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -36,8 +35,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .formLogin()
                 .loginPage("/")
-                .defaultSuccessUrl("/student",true).permitAll()
-                .and().authorizeRequests().antMatchers("/student/create").hasRole("ADMIN")
+                .defaultSuccessUrl("/",true).permitAll()
+
+//                .and().authorizeRequests().antMatchers("/student/create").hasRole("ADMIN")
 
                 .and()
                 .authorizeRequests()
@@ -47,7 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests().and().rememberMe()
                 .tokenRepository(persistentTokenRepository())
-                .tokenValiditySeconds(60);
+                .tokenValiditySeconds(2*60);
     }
     @Bean
     public PersistentTokenRepository persistentTokenRepository() {
