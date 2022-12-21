@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+</head>
+<body style="color: red">
+
+<div class="col-sm-12 " style="background-color:rgba(0, 0, 0, 0.05);height: 70px"><h1
+        style="text-align: center;line-height: 70px ; ">THÊM MỚI</h1></div>
+<div style="margin:30px">
+  <p><a href="#" class="btn btn-primary">Danh sách</a></p>
+  <form >
+    <input type="hidden" t>
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Loại dịch vụ:</label>
+      <div class="col-sm-6">
+        <select  id="mySelect" onchange="myFunction()" class="form-control" required
+                placeholder="">
+          <option value="" selected>--Loại dịch vụ--</option>
+          <option>...</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row" id="name">
+      <label class="col-sm-3 col-form-label" for="name">Tên dịch vụ :</label>
+      <div class="col-sm-6">
+        <input type="text"  class="form-control" placeholder="">
+      </div>
+    </div>
+    <div class="form-group row" id="area">
+      <label class="col-sm-3 col-form-label" for="area">Diện tích sử dụng:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+    </div>
+    <div class="form-group row" id="cost">
+      <label class="col-sm-3 col-form-label" for="cost">Chi phí thuê:</label>
+      <div class="col-sm-6">
+        <input type="text"  class="form-control" placeholder="">
+      </div>
+    </div>
+
+    <div class="form-group row" id="maxPeople">
+      <label class="col-sm-3 col-form-label" for="maxPeople">Số lượng người tố đa:</label>
+      <div class="col-sm-6">
+        <input type="text"  class="form-control" placeholder="">
+      </div>
+    </div>
+
+    <div class="form-group row" id="standardRoom">
+      <label class="col-sm-3 col-form-label" for="standardRoom">Tiêu chuẩn phòng:</label>
+      <div class="col-sm-6">
+        <input type="text"  class="form-control" placeholder="">
+      </div>
+    </div>
+
+    <div class="form-group row" id="desciption">
+      <label class="col-sm-3 col-form-label" for="desciption">Mô tả tiện nghi khác:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+    </div>
+
+    <div class="form-group row" id="poolArea">
+      <label class="col-sm-3 col-form-label" for="poolArea">Diện tích hồ bơi:</label>
+      <div class="col-sm-6">
+        <input type="text"  class="form-control" placeholder="">
+      </div>
+    </div>
+
+    <div class="form-group row" id="numberOfFloors">
+      <label class="col-sm-3 col-form-label" for="numberOfFloors">Số tầng:</label>
+      <div class="col-sm-6">
+        <input type="text"  class="form-control" placeholder="">
+      </div>
+    </div>
+
+    <div class="form-group row" id="facilityFree">
+      <label class="col-sm-3 col-form-label" for="facilityFree">Dịch vụ miễn phí đi kèm:</label>
+      <div class="col-sm-6">
+        <input type="text"  class="form-control" placeholder="">
+      </div>
+    </div>
+
+
+    <div class="form-group row" id="rentType">
+      <label class="col-sm-3 col-form-label" for="rentType">Kiểu thuê:</label>
+      <div class="col-sm-6">
+        <select  class="form-control" required placeholder="">
+          <option>...</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <div class="col-sm-9 offset-sm-5">
+        <input type="submit" class="btn btn-primary" value="Save">
+        <input type="reset" class="btn btn-secondary" value="Reset">
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+
+</html>
