@@ -1,0 +1,12 @@
+<h4>Chọn màu</h4>
+<ul>
+  <li><input type="checkbox" [(ngModel)]="color1" >Đỏ</li>
+  <li><input type="checkbox" [(ngModel)]="color2" >Xanh</li>
+  <li><input type="checkbox" [(ngModel)]="color3" >Vàng</li>
+</ul>
+
+<button (click)="choiseColor()">Hiển thị</button><br>
+<div [ngStyle]="{backgroundColor:img1}" style="width: 50px;height: 50px;"></div>
+<div [ngStyle]="{backgroundColor:img2}" style="width: 50px;height: 50px;"></div>
+<div [ngStyle]="{backgroundColor:img3}" style="width: 50px;height: 50px;"></div>
+
