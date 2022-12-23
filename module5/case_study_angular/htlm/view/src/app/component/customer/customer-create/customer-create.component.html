@@ -1,0 +1,81 @@
+<body style="color: red">
+<div class="col-sm-12 " style="background-color:rgba(0, 0, 0, 0.05);height: 70px"><h1
+  style="text-align: center;line-height: 70px ; ">THÊM MỚI</h1></div>
+<div style="margin:30px">
+  <p><a href="" class="btn btn-primary">Danh sách</a></p>
+  <form>
+    <input type="hidden">
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="name">Tên :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="name" placeholder="" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="dateOfBirth">Ngày sinh:</label>
+      <div class="col-sm-6">
+        <input type="date" id="dateOfBirth" class="form-control" placeholder="" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="gender" >Giới tính:</label>
+      <div class="col-sm-6 mt-2" id="gender">
+        <label class="mb-0 mr-3">
+          <input type="radio" class="mr-1" value="Nam" name="gender"> Nam
+        </label>
+        <label class="mb-0 mr-3">
+          <input type="radio" class="mr-1" value="Nữ" name="gender"> Nữ
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="idCard">CMND:</label>
+      <div class="col-sm-6">
+        <input type="text"  class="form-control" id="idCard" placeholder="" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="phoneNumber">SDT:</label>
+      <div class="col-sm-6">
+        <input type="text" id="phoneNumber" class="form-control" placeholder="" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="email">Email:</label>
+      <div class="col-sm-6">
+        <input type="text" id="email" class="form-control" placeholder="" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="address">Địa chỉ:</label>
+      <div class="col-sm-6">
+        <input type="text" id="address" class="form-control" placeholder="" required>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="customerType">Loại khách hàng:</label>
+      <div class="col-sm-6">
+        <select id="customerType"  class="form-control" required placeholder="">
+          <option>
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-9 offset-sm-3">
+        <input type="submit" class="btn btn-primary" value="Save">
+        <input type="reset" class="btn btn-secondary" value="Reset" style="margin-left: 20px">
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+

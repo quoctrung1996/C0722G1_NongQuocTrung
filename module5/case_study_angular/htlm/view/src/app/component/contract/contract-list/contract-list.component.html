@@ -1,0 +1,107 @@
+<div class="col-sm-12 " style="background-color:rgba(0, 0, 0, 0.05);height: 70px"><h1
+  style="text-align: center;line-height: 70px ; ">DANH SÁCH</h1></div>
+<p><a data-bs-toggle="modal" data-bs-target="#addContract" class="btn btn-primary"
+      style="margin: 10px;float: right;margin-right: 50px">Thêm mới</a></p>
+
+
+<div style="margin-top:10px">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Dịch vụ</th>
+      <th scope="col">Khách hàng</th>
+      <th scope="col">Ngày bắt đầu</th>
+      <th scope="col">Ngày kết thúc</th>
+      <th scope="col">Tiền đặt cọc</th>
+      <th scope="col">Tổng tiền</th>
+      <th scope="col" colspan="2">Các dịch vụ đi kèm</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contractAttachFacility">+</a>
+      </td>
+      <td>
+        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#attachFacility">
+          Danh sách các dịch vụ đi kèm
+        </a>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Modal thêm dịch vụ đi kèm-->
+<div class="modal fade" id="contractAttachFacility" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h5 class="modal-title">Thêm dịch vụ đi kèm</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+
+        <div class="modal-body">
+          <input type="hidden">
+          <input type="hidden">
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Chọn dịch vụ:</label>
+            <div class="col-sm-6">
+              <select class="form-control" required placeholder="" name="attachFacility">
+                <option value="">--Chọn dịch vụ--</option>
+                <option>
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Số lượng:</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" placeholder="" required name="quantity">
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Hủy bỏ</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Thêm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal dịch vụ đi kèm-->
+
+<div class="modal fade" id="attachFacility" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Các dịch vụ đi kèm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p style="color: darkred" id="attachFacilityName"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
