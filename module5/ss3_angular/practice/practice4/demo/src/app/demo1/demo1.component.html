@@ -1,0 +1,6 @@
+<p>demo1 works!</p>
+<p [ngStyle]="{color:color}">{{color}}</p>
+<input type="text" [(ngModel)]="color">
+<input type="text" (keydown)="changeName($event.target)" [value]="color">
+
+

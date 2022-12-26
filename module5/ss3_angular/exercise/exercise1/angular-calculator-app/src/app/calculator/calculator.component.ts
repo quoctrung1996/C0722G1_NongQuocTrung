@@ -10,8 +10,6 @@ export class CalculatorComponent implements OnInit {
   number2:number;
   calculation:string;
   result:number;
-
-
   constructor() { }
   calculator(){
     switch (this.calculation){
