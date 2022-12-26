@@ -1,0 +1,57 @@
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-4" *ngFor="let item of facilitys " style="margin-bottom: 50px">
+      <div class="card " style="">
+        <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Garden-Deluxe-5-768x496.jpg"
+             class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <table class="card-text">
+            <tr>
+              <th>Diện tích</th>
+              <td>{{item.area}}</td>
+            </tr>
+            <tr>
+              <th>Số lượng người tối đa :</th>
+              <td>{{item.maxPeople}}</td>
+            </tr>
+            <tr>
+              <th>Kiểu phòng</th>
+              <td>{{item.standardRoom}}</td>
+            </tr>
+            <tr>
+              <th>Miêu tả</th>
+              <td>{{item.desciption}}</td>
+            </tr>
+            <tr *ngIf="item.poolArea!=null">
+              <th>Diện tích hồ bơi</th>
+              <td>{{item.poolArea}}</td>
+            </tr>
+            <tr *ngIf="item.numberOfFloors!=null">
+              <th>Số tầng</th>
+              <td>{{item.numberOfFloors}}</td>
+            </tr>
+            <tr *ngIf="item.facilityFree!=null">
+              <th>Số tầng</th>
+              <td>{{item.facilityFree}}</td>
+            </tr>
+            <tr>
+              <th>Loại dịch vụ</th>
+              <td>{{item.facilityType.name}}</td>
+            </tr>
+            <tr>
+              <th>Kiểu thuê</th>
+              <td>{{item.rentType.name}}</td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+

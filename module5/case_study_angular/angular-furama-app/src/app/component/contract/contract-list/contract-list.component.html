@@ -14,20 +14,18 @@
       <th scope="col">Ngày bắt đầu</th>
       <th scope="col">Ngày kết thúc</th>
       <th scope="col">Tiền đặt cọc</th>
-      <th scope="col">Tổng tiền</th>
       <th scope="col" colspan="2">Các dịch vụ đi kèm</th>
 
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr *ngFor="let contract of contracts,index as i">
+      <td>{{i+1}}</td>
+      <td>{{contract.facilityDemo}}</td>
+      <td>{{contract.customerDemo}}</td>
+      <td>{{contract.startDate|date:"dd/MM/yyyy"}}</td>
+      <td>{{contract.endDate|date:"dd/MM/yyyy"}}</td>
+      <td>{{contract.deposit}}</td>
       <td>
         <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contractAttachFacility">+</a>
       </td>

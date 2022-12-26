@@ -21,16 +21,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr >
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
+    <tr *ngFor="let customer of customers,index as i">
+      <td >{{i+1}}</td>
+      <td >{{customer.name}}</td>
+      <td >{{customer.dateOfBirth|date:"dd/MM/yyyy"}}</td>
+      <td >{{customer.gender}}</td>
+      <td >{{customer.idCard}}</td>
+      <td >{{customer.phoneNumber}}</td>
+      <td >{{customer.email}}</td>
+      <td >{{customer.address}}</td>
+      <td >{{customer.customerType.name}}</td>
       <td><a href="" class="btn btn-warning">Edit</a></td>
       <td>
         <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
