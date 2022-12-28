@@ -1,0 +1,137 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <h2 style="text-align: center">Form đăng kí</h2>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email: </label>
+
+          <span *ngIf="!contactFormValue.email.valid && (contactFormValue.email.dirty ||contactFormValue.email.touched)">
+          <span *ngIf="contactFormValue.email.hasError('required')">
+            <span style="color: red">Email is required</span>
+          </span>
+          <span *ngIf="contactFormValue.email.hasError('pattern')">
+            <span style="color: red">Only characters are allowed</span>
+          </span>
+        </span>
+          <input type="text" class="form-control" id="email" aria-describedby="emailHelp" name="email"
+                 formControlName="email">
+        </div>
+
+
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <span
+            *ngIf="!contactFormValue.password.valid && (contactFormValue.password.dirty ||contactFormValue.password.touched)">
+            <span *ngIf="contactFormValue.password.hasError('required')">
+              <span style="color: red">password is required</span>
+            </span>
+            <span *ngIf="contactFormValue.password.hasError('minlength')">
+              <span style="color: red">Min Length is 6</span>
+            </span>
+          </span>
+          <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password"
+                 formControlName="password" (change)="onPasswordChange()">
+        </div>
+
+
+
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" aria-describedby="emailHelp"
+                 name="confirmPassword" formControlName="confirmPassword" (change)="onPasswordChange()">
+        </div>
+        <div
+          *ngIf="!contactFormValue.confirmPassword.valid && (contactFormValue.confirmPassword.dirty ||contactFormValue.confirmPassword.touched)">
+          <div *ngIf="contactFormValue.confirmPassword.hasError('required')">
+            password is required
+          </div>
+          <div *ngIf="contactFormValue.confirmPassword.hasError('minlength')">
+            Min Length is 6
+          </div>
+          <div *ngIf="contactFormValue.confirmPassword.hasError('mismatch')">
+            Password do not match.
+          </div>
+        </div>
+        <!--        <span *ngIf="contactFormValue.confirmPassword.hasError('mismatch')">Password do not match.</span>-->
+
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <select id="country" name="country" formControlName="country" class="form-control">
+            <option [ngValue]="c.id" [text]="c.name" *ngFor="let c of countryList">
+            </option>
+          </select>
+        </div>
+
+        <div
+          *ngIf="!contactFormValue.country.valid && (contactFormValue.country.dirty ||contactFormValue.country.touched)">
+          <div *ngIf="contactFormValue.country.hasError('required')">
+            country is required
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="text" class="form-control" id="age" aria-describedby="emailHelp" name="age"
+                 formControlName="age">
+        </div>
+
+        <div *ngIf="!contactFormValue.age.valid && (contactFormValue.age.dirty ||contactFormValue.age.touched)">
+          <div *ngIf="contactFormValue.age.hasError('required')">
+            age is required
+          </div>
+          <div *ngIf="contactFormValue.age.hasError('min')">
+            Min age is 18
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Gender</label>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" formControlName="gender"
+                   value="Nam">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Nam
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" checked
+                   formControlName="gender" value="Nữ">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Nữ
+            </label>
+          </div>
+        </div>
+
+        <div
+          *ngIf="!contactFormValue.gender?.valid && (contactFormValue.gender.dirty ||contactFormValue.gender.touched||contactFormValue.gender.pristine)">
+          <div *ngIf="contactFormValue.gender.hasError('required')">
+            gender is required
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="text" class="form-control" id="phone" aria-describedby="emailHelp" name="phone"
+                 formControlName="phone">
+        </div>
+
+        <div *ngIf="!contactFormValue.phone.valid && (contactFormValue.phone.dirty ||contactFormValue.phone.touched)">
+          <div *ngIf="contactFormValue.phone.hasError('required')">
+            phone is required
+          </div>
+          <div *ngIf="contactFormValue.phone.hasError('pattern')  ">
+            Only characters are allowed
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Submit</button>
+      </form>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+

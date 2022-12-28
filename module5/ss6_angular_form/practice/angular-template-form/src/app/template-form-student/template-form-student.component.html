@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <form #createStudentForm="ngForm"
+            (ngSubmit)="onSubmit(createStudentForm)"
+      >
+        <div class="mb-3">
+          <label for="studentName" class="form-label">Student Name</label>
+          <input
+            [(ngModel)]="student.studentName"
+            type="text" class="form-control" id="studentName" aria-describedby="emailHelp" name="studentName">
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input
+            [(ngModel)]="student.address"
+            type="text" class="form-control" id="address" name="address">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
