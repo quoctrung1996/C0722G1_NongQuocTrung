@@ -3,44 +3,93 @@
   style="text-align: center;line-height: 70px ; ">THÊM MỚI</h1></div>
 <div style="margin:30px">
   <p><a href="" class="btn btn-primary">Danh sách</a></p>
-  <form>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
     <input type="hidden">
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="code">Mã khách hàng :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="code" placeholder="" formControlName="code">
+        <span *ngIf="!contactFormValue.code.valid && (contactFormValue.code.dirty||contactFormValue.code.touched)">
+          <span *ngIf="contactFormValue.code.hasError('required')">
+            <span style="color: red">Không được để trống</span>
+          </span>
+          <span *ngIf="contactFormValue.code.hasError('pattern')">
+            <span style="color: red">Hãy nhập đúng định dạng KH-XXXX (X là số từ 0-9)</span>
+          </span>
+        </span>
+      </div>
+    </div>
 
     <div class="form-group row">
       <label class="col-sm-3 col-form-label" for="name">Tên :</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" id="name" placeholder="" required>
+        <input type="text" class="form-control" id="name" placeholder="" formControlName="name">
+        <span *ngIf="!contactFormValue.name.valid && (contactFormValue.name.dirty||contactFormValue.name.touched)">
+          <span *ngIf="contactFormValue.name.hasError('required')">
+            <span style="color: red">Không được để trống</span>
+          </span>
+          <span *ngIf="contactFormValue.name.hasError('pattern')">
+            <span style="color: red">Nhập tên sai định dạng</span>
+          </span>
+        </span>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label" for="dateOfBirth">Ngày sinh:</label>
       <div class="col-sm-6">
-        <input type="date" id="dateOfBirth" class="form-control" placeholder="" required>
+        <input type="date" id="dateOfBirth" class="form-control" placeholder="" formControlName="dateOfBirth">
+        <span *ngIf="!contactFormValue.dateOfBirth.valid && (contactFormValue.dateOfBirth.dirty||contactFormValue.dateOfBirth.touched||contactFormValue.dateOfBirth.pristine)">
+          <span *ngIf="contactFormValue.dateOfBirth.hasError('required')">
+            <span style="color: red">Không được để trống</span>
+          </span>
+        </span>
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label" for="gender" >Giới tính:</label>
+      <label class="col-sm-3 col-form-label" for="gender">Giới tính:</label>
       <div class="col-sm-6 mt-2" id="gender">
         <label class="mb-0 mr-3">
-          <input type="radio" class="mr-1" value="Nam" name="gender"> Nam
+          <input type="radio" class="mr-1" value="Nam" name="gender" formControlName="gender"> Nam
         </label>
         <label class="mb-0 mr-3">
-          <input type="radio" class="mr-1" value="Nữ" name="gender"> Nữ
+          <input type="radio" class="mr-1" value="Nữ" name="gender" formControlName="gender"> Nữ
         </label>
-      </div>
+        <p *ngIf="!contactFormValue.gender.valid && (contactFormValue.gender.dirty||contactFormValue.gender.touched||contactFormValue.gender.pristine)">
+          <span *ngIf="contactFormValue.gender.hasError('required')">
+            <span style="color: red">Không được để trống</span>
+          </span>
+        </p>
+        </div>
     </div>
 
     <div class="form-group row">
       <label class="col-sm-3 col-form-label" for="idCard">CMND:</label>
       <div class="col-sm-6">
-        <input type="text"  class="form-control" id="idCard" placeholder="" required>
+        <input type="text" class="form-control" id="idCard" placeholder="" formControlName="idCard">
+        <span *ngIf="!contactFormValue.idCard.valid && (contactFormValue.idCard.dirty||contactFormValue.idCard.touched)">
+          <span *ngIf="contactFormValue.idCard.hasError('required')">
+            <span style="color: red">Không được để trống</span>
+          </span>
+          <span *ngIf="contactFormValue.idCard.hasError('pattern')">
+            <span style="color: red">CMND là 9 hoặc 12 số</span>
+          </span>
+        </span>
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-sm-3 col-form-label" for="phoneNumber">SDT:</label>
       <div class="col-sm-6">
-        <input type="text" id="phoneNumber" class="form-control" placeholder="" required>
+        <input type="text" id="phoneNumber" class="form-control" placeholder="" formControlName="phoneNumber">
+        <span *ngIf="!contactFormValue.phoneNumber.valid && (contactFormValue.phoneNumber.dirty||contactFormValue.phoneNumber.touched)">
+          <span *ngIf="contactFormValue.phoneNumber.hasError('required')">
+            <span style="color: red">Không được để trống</span>
+          </span>
+          <span *ngIf="contactFormValue.phoneNumber.hasError('pattern')">
+            <span style="color: red">Nhập sai số điện thoại</span>
+          </span>
+        </span>
       </div>
     </div>
 
@@ -62,7 +111,7 @@
     <div class="form-group row">
       <label class="col-sm-3 col-form-label" for="customerType">Loại khách hàng:</label>
       <div class="col-sm-6">
-        <select id="customerType"  class="form-control" required placeholder="">
+        <select id="customerType" class="form-control" required placeholder="">
           <option>
           </option>
         </select>

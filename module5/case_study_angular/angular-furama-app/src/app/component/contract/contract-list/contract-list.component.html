@@ -3,7 +3,6 @@
 <p><a data-bs-toggle="modal" data-bs-target="#addContract" class="btn btn-primary"
       style="margin: 10px;float: right;margin-right: 50px">Thêm mới</a></p>
 
-
 <div style="margin-top:10px">
   <table class="table table-striped table-hover">
     <thead>
@@ -19,7 +18,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let contract of contracts,index as i">
+    <tr *ngFor="let contract of contracts,index as i" style="height: 20px">
       <td>{{i+1}}</td>
       <td>{{contract.facilityDemo}}</td>
       <td>{{contract.customerDemo}}</td>
@@ -102,4 +101,6 @@
     </div>
   </div>
 </div>
+
+
 
