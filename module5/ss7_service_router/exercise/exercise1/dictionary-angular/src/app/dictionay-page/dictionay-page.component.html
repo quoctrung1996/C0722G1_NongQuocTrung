@@ -1,0 +1,12 @@
+<table class="table table-striped table-hover">
+  <tr>
+    <th>ID</th>
+    <th>Word</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let item of iWords">
+    <td>{{item.id}}</td>
+    <td>{{item.word}}</td>
+    <td><button  [routerLink]="['/translate',item.id]">Translate</button></td>
+  </tr>
+</table>
