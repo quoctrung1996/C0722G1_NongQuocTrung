@@ -6,7 +6,7 @@ import {CategoryEditComponent} from './category-edit/category-edit.component';
 import {CategoryDeleteComponent} from './category-delete/category-delete.component';
 
 
-const routes: Routes = [
+const routes: Routes = [{path:'category',children:[
   {
     path: 'list',
     component: CategoryListComponent
@@ -23,6 +23,7 @@ const routes: Routes = [
     path: 'delete/:id',
     component: CategoryDeleteComponent
   },
+  ]}
 ];
 
 @NgModule({
